@@ -1,0 +1,21 @@
+custom data type သတ်မှတ်မယ်ဆို type ဆိုတဲ့ keyword သုံးပီး 
+Type nameကို initial capital letter နဲ့ရေးရမယ်
+နောက်တနည်းနေနဲ့ဆို interfaceကိုသုံးပီး ကြေညာနိုင်တယ်
+eg. type Custom = {name : string};
+    interface Point { x: number, y : number}
+
+    * interface vs type နဲ့ကြေညာတဲ့ custom typeရဲ့ကွာခြားချက်က 
+      interface နဲ့ကြေညာတဲ့ကောင်တွေက extendsလုပ်ပီး type mergeလုပ်သုံးနိုင်တယ်
+      type နဲ့ကြေညာတဲ့ကောင်တွေမှာ မရဘူး
+
+    * typeမှာ extendsလုပ်ပီးသုံးချင်ရင် & နဲ့mergeပီးသုံးလို့ရတယ်
+
+    * နောက်ကွာခြားချက်တခုက interface မှာနောက်ထပ် တခေါက်ထပ်ကြေညာရင် 
+      fieldကို ထပ်ထည့်သလိုလုပ်ပေမဲ့ typeမှာကျတော့ error တက်တယ် 
+      (reference to addingExisitingType.ts)
+
+union type - ဆိုတာ type constraint ပေးလိုက်တာမျိုးပဲ
+             ဘယ်ကောင်ပဲ ဒီ typeမှာ ြဖစ်ရမယ် ဆိုတာ သတ်မှတ်လိုက်တာမျိုးပဲ
+
+literal union type - ဆိုတာက union typeကိုမှ custom typeနဲ့ သတ်မှတ်တာမျိုးကိုခေါ်တယ်
+                     eg. type literal = 'start' | 'pending' | 'end';
