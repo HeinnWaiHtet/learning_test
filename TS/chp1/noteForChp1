@@ -1,0 +1,59 @@
+1. static type - varible ၁ခုသည် typeတခုပဲရှိတယ် သူ့ကို type 1ခုသတ်မှတ်ပီးအခြားတခု ထည့်လို့ရနေတာမျိုးကို ပြောတယ်
+   good point - type checking ကို compile time levelမှာတင်သိနိုင်တယ်။
+   eg. programming language Java, C#, typescript,
+
+2. dynamic type - varible ၁ခုသည် typeတခုမကပဲ မျိုးမျိုးပြောင်းလဲ ထည့်လို့ရနေတာမျိုးကို ပြောတယ်
+   good point နေနဲ့က type flexible ဖြစ်တယ်
+   bad points နေနဲ့က type errorတွေကို မသိနိုင်ဘူး
+   eg. programming language javascript, python
+
+3. weakly type - ဆိုတာက invalid operationတွေကို ပေးလုပ်တဲ့ languageမျိုးကိုခေါတယ် 
+   dynamic typeဖြစ်တိုင်း weakly typeမဖြစ်ဘူး invalid operationတွေကို ပေးလုပ်မှ weakly typeလို့ခေါတယ်
+   eg. programming language javascript, php
+
+4. strongly type - ဆိုတာက invalid operationတွေကို ပေးမလုပ်ဘူး type error cacheလုပ်နိုင်တယ်
+   ဒါပေမဲ့ ဘယ်လောက် stronglyဖြစ်တယ်ဆိုတာ languageပေါ မူတဉ်တယ် 
+   ဥပမာ C++ and java နဲ့မှာဆို java က ပိုပီး stronglyဖြစ်တယ်လို့ပြောလိုရတယ်
+   eg. programming language javascript, python
+
+5. hybrid type - static and dynamic type featureတွေရောပီး ထည့်ထားတဲ့ကောင်မျိုးကိုခေါတယ်
+   eg. programming language C#(dynamic for dynamic type system )
+
+6- sub typing - sub typingဆိုတာက super typeထဲကို super typeသော် လည်းကောင်း super typeကို base ခံထားတဲ့
+                child type သော်လည်းကောင်းထည့်လိုရတယ် သူနဲ့ မဆက်ဆက်နေတဲ့ကောင်တွေထည့်လို မရဘူး
+                အဲ့တာမျိုးကိုခေါ်တယ် 
+
+7. duck typing - ဆိုတာကကျတော့ သူသည် parent child relationshipရှိစရာမလိုဘူး သူ့မှာ relationship ရှိမရှိကို ဂရုမစိုက်ဘူး
+                 သူသုံးချင်တဲ့ကောင်အဲ့မှာရှိလား ရှိရင်ခေါ်လိုက်မယ် အဲ့လိုမျိုးကိုခေါ်တယ်
+                 duck typingက dynamic type programming languageတွေမှာပဲ ရှိတယ်
+
+8. nominal typing - ဆိုတာက class 2ခု သည် structure တူတယ် ဒါပေမဲ့ တခုကနေတခုကို assign လုပ်ခွင့်မပေးဘူး
+                    အဲ့တာမျိုးကို nominal typing ခေါ်တယ် structure တူပေမဲ့ type equal မတူတဲ့ကောင်မျိုးကိုခေါ်တယ် 
+                    eg. programming language Java
+
+9. structural typing - ဆိုတာက class 2ခု သည် structure တူတယ် ပီးတော့ တခုကနေတခုကို assign လုပ်ခွင့်ပေးတဲ့ကောင်မျိုးကို
+                    structural typing ခေါ်တယ် type equality တူစရာမလိုဘူး structureတူရင် ရပီ
+                    eg. programming language javascript, typescript
+
+type hints - ဆိုတာက dynamic type system တွေမှာ type error တွေကို ပြဖို့ရာတွက် enhanced လုပ်ထားတဲ့ကောင်မျိုးကိုခေါတယ်
+
+* javascript မှာ static type annotation ထည့်သုံးချင်ရင် flow.org flowဆိုတဲ့ type checker libraryထည့်သုံးနိုင်တယ်
+
+typescript က transpiler ကိုသုံးတယ်
+transpilerဆိုတာက base language 1ခုကနေ other target languageကိုပြောင်းပေးတဲ့ကောင်မျိုးကိုပြောတာ
+
+type script installation လုပ်မယ်ဆို
+*** npm i -g typescript ***
+
+typescript to javascript file ကို tscဆိုဆိုပီး transpile လုပ်တဲ့phaseကို compilationလို့ခေါ
+
+type inferencing - ဆိုတာ varaible ရဲ့ ညာဘက်က တန်ဖိုးအရ varible ရဲ့ type ကို သတ်မှတ်ပေးတာမျိုးကိုခေါ
+                   type inferencingက static type languageတွေမှာပဲရှိ typescript မှာလည်း type inferencingကိုသုံး
+
+typescript က type checkingကို compile time မှာပဲလုပ် run time မှာ မလုပ်နိုင်
+
+typescript config fileထည့်ချင်ရင် 
+*** tsc --init ***
+
+changes file တွေ watch လုပ်ပီး recompilation လုပ်ချင်ရင်
+*** tsc -w ***
