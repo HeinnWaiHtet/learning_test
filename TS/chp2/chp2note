@@ -19,3 +19,13 @@ union type - ဆိုတာ type constraint ပေးလိုက်တာမ�
 
 literal union type - ဆိုတာက union typeကိုမှ custom typeနဲ့ သတ်မှတ်တာမျိုးကိုခေါ်တယ်
                      eg. type literal = 'start' | 'pending' | 'end';
+
+unknown type - မှာ ဆိုရင် obj ဖြစ်ရင်တောင် သူ့ရဲ့ properties, methodsတွေကို လှမ်းခေါ်သုံးခွင့်မပေးဘူး
+               သူကိုယ်တိုင်ကိုပဲ သုံးခွင့် အခြားကောင်တွေကို parameter passလုပ်ခွင့်ပဲပေးတယ်
+               third parties နေနဲ့ exportလုပ်လိုက်ချင်တယ် ဒါပေမဲ့ သူမှာတိုက်ရိုက် လာမသုံးစေချင်တာမျိုးမှာ သုံးတယ်
+               check in unknown.ts
+
+never type - method မှာ exception ကြောင့် returnကို မရောက်နိုင်တော့တဲ့ ကောင်မျိုးကိုပြောတာ
+
+typle type - array lateral နေနဲ့ ကြေညာပီး ပြန်သုံးချင်ရင် array လို indexနဲ့ ပြန်ခေါ်သုံးတယ် 
+             ဘယ်လိုနေရာတွေမှာသုံးလဲဆို Data object တွေမဆောက်ပဲ DTOလိုမျိုး တိုက်ရိုက်ပြန်ချင်သုံး

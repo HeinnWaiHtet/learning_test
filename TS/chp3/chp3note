@@ -1,0 +1,28 @@
+interface - typescript interface က structure ကို ကိုယ်စားပြုတယ် ပြောချင်တာက ဘယ်လို type, properties
+            တွေပါတယ်ဆိုတာကိုပြောတာ Java ကောင်ကကျတော့ behaviour ကို ကိုယ်စားပြုတယ် ပြောချင်တာက ဘာ method,
+            contractတွေပါတယ်ဆိုတာကိုပြောချင်တာ
+
+weak type - ဆိုတာက သူ့မှာပါတဲ့ type အားလုံးက optional ဖြစ်နေတာမျိုးကိုပြောတာ
+            eg. interface Point {x?: number, y?: number}
+
+in operator - properties ရှိလားလို့စစ်ချင်ရင် သုံးလို့ရ 
+              usage : 'checkType' in testObject
+
+keyof     - type တခုခုရဲ့ တန်ဖိုးကနေ dynamic literal union propertiesပြောင်းချင်ရင်သုံး
+            eg. interface Car {model:string, year:number}
+            type DynamicType = keyof Car; // DynamicType value may be 'model' or 'year'
+            let dynamicProperty : DynamicType;
+            dynamicProperty = 'model';
+
+module   - same group data, class, function တွေကို သပ်သပ်ခွဲရေးထားတာမျိုးကိုပြောချင်တာ
+           java က package လိုကောင်မျိုးနဲ့ သဘောတရားချင်းတူတယ် 
+           ‌ရေးမယ်ဆို module နေနဲ့‌ေရးမဲ့ကောင်ကို export လုပ်ကပီး ပြန်သုံးမဲ့နေရာက import ဆိုပီး
+           name 1ခုခုပေးပီး ပြန်ခေါ်သုံးရတယ် export defaultဆိုတာက ဖိုင်တခုမှာ တခုပဲရှိလို့ရတယ်။
+           file 1 မှာ multiple function or propertiesကို exportလုပ်လို့ရတယ်။
+           export default နဲ့မဟုတ်တဲ့ကောင်တွေကို name exportလို့ခေါ်ပီး သူ့ကို ပြန်သုံးမယ်ဆို
+           exactly export name နဲ့ပြန်ခေါ်သုံးရမယ်။
+           import လုပ်တဲ့အခါမှာ rename လုပ်ပီး သုံးချင်ရင် as ဆိုပီး သုံးလို့ရတယ်။
+           {export_name as rename}
+           module ကိုတကြိမ်တခါတော့ runမယ် ဒါပေမဲ့ခေါ်မသုံးဘူးဆိုရင် import 'module.js'ဆိုပီး ခေါ်သုံးရတယ်
+           ဘယ်နေရာတွေမှာ အသုံး၀င်လဲဆိုရင် css လိုကောင်မျိုးမှာ အသုံး၀င်တယ်
+

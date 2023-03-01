@@ -1,0 +1,6 @@
+Generic     - runtime မှာမှ Type သတ်မှတ်ပီး static type checking လုပ်နိုင်ဖို့ရာသုံး
+
+mixin       - OO မှာဆို မရှိတဲ့ functionality extendလုပ်ချင်ရင် polymophism နဲ့လုပ်သလိုပဲ
+              JS လိုကောင်မျိုးမှာ မရှိတဲ့ကောင်ကို functionality ထပ်ထည့်ချင်ရင် သုံးတာကို mixinလို့ခေါ်တယ်
+              ဥပမာနေနဲ့ javascript array မှာ maxမရှိတဲ့တွက်ကြောင့် အဲ့ကောင်ကို သုံးချင်ရင်
+              Math.max.apply(null, [1,2,3]); လိုမျိုး functionalityကို ငှားရေးလိုက်တဲ့ကောင်မျိုးကိုပြောတာ
