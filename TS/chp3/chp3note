@@ -25,4 +25,7 @@ module   - same group data, class, function တွေကို သပ်သပ�
            {export_name as rename}
            module ကိုတကြိမ်တခါတော့ runမယ် ဒါပေမဲ့ခေါ်မသုံးဘူးဆိုရင် import 'module.js'ဆိုပီး ခေါ်သုံးရတယ်
            ဘယ်နေရာတွေမှာ အသုံး၀င်လဲဆိုရင် css လိုကောင်မျိုးမှာ အသုံး၀င်တယ်
+           reference to use_module.ts, my_module.ts, another_module.ts
 
+           common module ကိုသုံးရန် module install ပေးရန်လို 
+           *** npm i --save-dev @types/node ***
