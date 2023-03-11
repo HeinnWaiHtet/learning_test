@@ -4,3 +4,12 @@ mixin       - OO မှာဆို မရှိတဲ့ functionality extend�
               JS လိုကောင်မျိုးမှာ မရှိတဲ့ကောင်ကို functionality ထပ်ထည့်ချင်ရင် သုံးတာကို mixinလို့ခေါ်တယ်
               ဥပမာနေနဲ့ javascript array မှာ maxမရှိတဲ့တွက်ကြောင့် အဲ့ကောင်ကို သုံးချင်ရင်
               Math.max.apply(null, [1,2,3]); လိုမျိုး functionalityကို ငှားရေးလိုက်တဲ့ကောင်မျိုးကိုပြောတာ
+
+partial     - ရှိနေတဲ့ properties ထဲကကောင်ကိုမှ optional လိုပြောင်းချင်ရင် Partial ကိုသုံးပီး ပြောင်းနိုင်တယ်
+              eg. reference to partial.ts
+
+required    - ရှိနေတဲ့ optional properties ထဲကကောင်တွေကိုမှ မထည့်မနေရ လိုပြောင်းချင်ရင် Requied ကိုသုံးပီး ပြောင်းနိုင်တယ်
+              eg. reference to required.ts
+
+readonly    - ရှိနေတဲ့ properties ထဲကကောင်ကိုမှ readonly လိုပြောင်းချင်ရင် Readonly ကိုသုံးပီး ပြောင်းနိုင်တယ်
+              eg. reference to readonly.ts
