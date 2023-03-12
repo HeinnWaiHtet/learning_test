@@ -1,0 +1,18 @@
+decorator   - decorator တွေက js မှာမရသေးဘူး experimental phase ဖြစ်တဲ့တွက်ကြောင့် သူ့ကိုသုံးမယ်ဆို
+              config file မှာ experimentaldecorator ကို true changeပေးဖို့လိုတယ်
+              decoratorက ဘာလဲဆိုရင် ရှိပီးသား functionality ထဲကို next functionality ထပ် addတာမျိုးကို
+              ခေါ်တယ် decorator functionaကိုခေါ်မယ်ဆို ရှေ့က @ ခံပီးခေါ်တယ်
+              decorator ရဲ့ intent က functionalityတွေကို dynamically အသစ်ထပ်ထည့်မယ်
+              ပီး အခြား ဘယ်နေရာကမဆို reuse လုပ်လို့ရမယ်
+
+              Types of decorator -
+                Class decorator,
+                Method decorator,
+                Property decorator,
+                Parameter decorator,
+                Type အကုန်လုံးက Classထဲမှာရှိတဲ့ကောင်တွေမှာပဲ effect ဖြစ်တယ်။
+
+Class decorator - က constructor function ကိုလက်ခံတယ်
+                  ဘယ်လိုအလုပ်လုပ်လဲဆိုရင် သုံးလိုက်တဲ့ Classရဲ့ constructor ကို decorator functionကို ပို့ပေးပီး လုပ်တယ်
+
+Property decorator - က target & Property keys ကိုလက်ခံတယ်

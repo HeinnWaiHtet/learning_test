@@ -13,3 +13,32 @@ required    - ရှိနေတဲ့ optional properties ထဲကကောင
 
 readonly    - ရှိနေတဲ့ properties ထဲကကောင်ကိုမှ readonly လိုပြောင်းချင်ရင် Readonly ကိုသုံးပီး ပြောင်းနိုင်တယ်
               eg. reference to readonly.ts
+
+pick        - ရှိနေတဲ့ defined typeထဲကနေမှ လိုချင်တဲ့ properties ကိုပဲ ယူမယ်ဆိုရင် Pickကိုသုံးနိုင်
+
+omit        - ရှိနေတဲ့ defined typeထဲကနေမှ ချန်ချင်တာပဲ ချန်ပီး ကျန်တဲ့လိုချင်တဲ့ properties ကိုပဲ ယူမယ်ဆိုရင် Omitကိုသုံးနိုင်
+
+exclude     - ရှိနေတဲ့ union typeထဲကနေမှ ချန်ချင်တာပဲ ချန်ပီး ကျန်တဲ့လိုချင်တဲ့ properties ကိုပဲ ယူမယ်ဆိုရင် Excludeကိုသုံးနိုင်
+
+extract     - ရှိနေတဲ့ union typeထဲကနေမှ constraint အရ လိုချင်တဲ့ properties ကိုပဲ ယူမယ်ဆိုရင် Extractကိုသုံးနိုင်
+              constraint မှာ union typeထဲကနေမရှိတဲ့ကောင်ကို ထည့်နိင်ပေမဲ့ ဒေတာက union typeထဲက ရှိနေတဲ့ကောင်ကိုပဲယူ
+              eg. Extract<UnionType, union Constraint>
+
+nonnullable - null, undefined မထည့်စေချင်ရင် NonNullable နဲ့ type သတ်မှတ်လို့ရတယ်။
+              eg. NonNullable<string| number | undefined>
+
+Parameter   - ပေးလိုက်တဲ့ parameter တိုင်းဟုတ်ရဲ့လား array နဲ့ပေးချင်တဲ့အခါမျိုးမှာ သတ်မှတ်ပီးသုံးလို့ရတယ်
+              Parameter Type ကို tuple, Generic function တွေမှာ AOP အရသုံးချင်တာမျိုးဆိုရင် သုံးနိုင်တယ်
+
+Return      - function return signatureနေကနေမှ type ပြန်သတ်မှတ်ချင်ရင် Return Type သုံးတယ် 
+
+Instance    - factory မှာဆို parent type ကို ပြန်ရတယ် ဒါပေမယ့် အဲ့လိုမဟုတ်ပဲ ကိုဆောက်လိုက်တဲ့ type Instance
+              ကို ပြန်ပေးလိုက်ချင်ရင် Instance type ကို သုံးလို့ရတယ်
+
+ThisParameterType   - လက်ရှိရှိနေတဲ့ Instance ကိုညွှန်းပီးတော့ data reference flow သွားချင်ရင် သုံးတယ်
+
+conditional type    - condition ပေါ်မူတည်ပီး type သတ်မှတ်တာမျိုးကို ခေါ်တယ်
+
+tds         - javascript codeတွေကို type save ဖြစ်ပီး type definition addပီး
+               typescript မှာလာသူံးချင်ရင် type definition file
+              .d.ts ဆိုတာကိုသုံးပီး ပြင်နိုင်တယ်။
