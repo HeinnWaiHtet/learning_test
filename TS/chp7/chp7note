@@ -1,0 +1,17 @@
+Declaration files - ဆိုတာက .d.tsဖိုင်ကို ပြောတာ သူက ဘာလုပ်လဲဆိုရင် old js ဖိုင်တေွကို .ts ဖိုင်ပြန်မချိန်းပဲ
+                    ကြားခံနေနဲ့ type safe ရအောင် compiler ကနေလုပ်ဆောင်ပေးတဲ့နေရာမှာ သုံးဖို့ type 
+                    description နေနဲ့လုပ်ဆောင်ပေးတဲ့ကောင်မျိုး
+
+underscore         - js file တွေကို typescriptကနေသုံးရင် type check error မတက်အောင် type description
+                     ထည့်ဖို့ဆို underscoreကို ထည့်ပီး သုံးနိုင်တယ် အဲ့ကောင်ကို ထည့်ဖို့ဆိုရင် 
+                     npm i @types/underscore ဆိုပီးထည့်သုံးနိုင်တယ်
+                     ပီးရင် အဲ့ကောင်ကိုသုံးမယ့် js file မှာ ပြန်ပီး declareထည့်သုံးလိုက်ရုံပါပဲ
+
+.d.ts ဖိုင်ကို js file ကနေ .ts type check ထည့်ဖို့ create လုပ်မယ်ဆို 
+- .config file မှာ
+    "module": "commonjs",
+    "noEmitOnError": true,
+    "checkJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true
+    အဲ့တာအရင်ချိန်း ပီးရင် tsc ကို run ပေးလိုက်ရင် ရပါပီ

@@ -16,3 +16,7 @@ Class decorator - က constructor function ကိုလက်ခံတယ်
                   ဘယ်လိုအလုပ်လုပ်လဲဆိုရင် သုံးလိုက်တဲ့ Classရဲ့ constructor ကို decorator functionကို ပို့ပေးပီး လုပ်တယ်
 
 Property decorator - က target & Property keys ကိုလက်ခံတယ်
+
+metadata    - ဆိုတာက data about data ကိုပြောတာ ဥပမာနေနဲ့ဆိုရင် file လို့ပြောရင်သူ့မှာဆို file name,
+              creating time, creted user အဲ့လိုမျိုး ဒီဒေတာ ဘာဖြစ်တယ်ဆိုတာမျိုးကို ပြောတဲ့ကောင်ကို ခေါ်တယ် 
+              typescript metadataကိုထုတ်ချင်ရင် config file က compiler option ကို ဖွင့်ပေးဖို့လို
