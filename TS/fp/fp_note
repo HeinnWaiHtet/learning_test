@@ -1,0 +1,8 @@
+arity       - ဆိုတာ function 1ခုကို pass လိုက်တဲ့ arguments အရေတွက်ကိုပြောတာ
+
+First Class - ဖြစ်ဖို့ဆို အောက်က ၃ ချက်ကို ပြေလည်ရမယ်
+              ၁. functionကို variable နေနဲ့ ထည့်နိုင်ရမယ်
+              ၂. function parameter နေနဲ့ pass လုပ်လို့၇ရမယ်
+              ၃. function ကို return value နေနဲ့ ပြန်နိုင်ရမယ်
+            
+
