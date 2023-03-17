@@ -4,3 +4,6 @@ using LINQ;
 // LINQ_WHERE.Run();
 // OfType.Run();
 // OrderBy.Run();
+// ThenBy.Run();
+// GroupBy.Run();
+ToLookUp.Run();
