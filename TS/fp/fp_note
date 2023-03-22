@@ -5,4 +5,74 @@ First Class - ဖြစ်ဖို့ဆို အောက်က ၃ ချက
               ၂. function parameter နေနဲ့ pass လုပ်လို့၇ရမယ်
               ၃. function ကို return value နေနဲ့ ပြန်နိုင်ရမယ်
             
+Compose     - ဆိုတာက functionတွေကို ဆင့်ကာဆင့်ကာခေါ်ပီးသုံးတာကိုပြောတာ
+              function 1ခုရဲ့ output က နောက် function 1ခုရဲ့ input ဖြစ်ရမယ်
+              နောက်တခုက single input single outputဖြစ်မှ function composation ကိုသုံးလို့ရမယ်
 
+Currying    - ဆိုတာက function composationက single input single outputဖြစ်တဲ့ပြသနာကို ဖြေရှင်းဖို့နည်းလမ်းဖြစ်တယ်
+              တခါတလေ multiple input single outputတွက်ဆို composationနဲ့ ဖြေရှင်းလို့မရတော့ Curryingကို သုံးနိုငတယ်
+              ပြောချင်တာက multiple input လက်ခံတဲ့ function တွေကို compose ရအောင် 
+              parameter 1ခုချင်းလက်ခံတဲ့ ပုံစံပြောင်းပီး လက်ခံတဲ့ parameterရေတွက် စုံတော့မှ process invokeလုပ်ပေးတာမျိုးကိုခေါ်တယ်
+
+Partial Application  - ဆိုတာက Curryingမှာလိုအပ်တဲ့ parameterတွေကို အကုန်မပေးပဲ တခုသော် လည်းကောင်းတခုထက်ပိုပီးသော်လည်းကောင်း
+                       အလုံးစုံအပြည့်စုံမပေးသေးခင် ခြေနေကိုခေါ်တယ် 
+
+Point Free   - ဆိုတာက user ပေးလိုက်တဲ့ data ကို မထိပဲ function နေကနေပဲ process invoke လုပ်ပေးတဲ့ကောင်မျိုးကို
+               Point Free Style လို့ခေါ်တယ် ဒါမမဟုတ် သချာ်က combinator လို့ခေါ်တယ် 
+
+Monoid       - ဆိုတာက associativity & identity ကိုပြေလည်စေတဲ့ကောင်မျိုးကိုခေါ်တယ်
+
+associativity   - ဆိုတာက အောက်ကကောင်လိုမျိုးကိုခေါ်တယ်
+                   a, b and c in S, the equation (a • b) • c = a • (b • c) holds.
+                   associativity ရှိတော့ဘာကောင်းလည်ဆိုရင် ဒေတာသန်းနဲ့ချီ processing လုပ်ရရင်
+                   အပိုင်းလေးတွေခွဲပီး reduce map function နဲ့ thread, module ခွဲပီးလုပ်နိုင်တယ် processing time ပိုမြန်တယ်ပေါ့ 
+
+Identity element - ဆိုတာက သူ့နဲ့ process လုပ်ပေမဲ့တန်ဖိုးမပြောင်းသွားတဲ့ တန်ဖိုးမျိုးကိုခေါ်တယ်
+                   ဥပမာနေနဲ့ဆို အပေါင်းတွက်ဆို 0, အမြှောက်တွက်ဆို 1လိုကောင်မျိုးကိုခေါ်တယ်
+
+Functor     - ဆိုတာက map function ပါတဲ့ကောင်ကိုခေါ်တာ. ဥပမာဆိုရင် js array လိုကောင်မျိုးပေါ့
+             အဲ့နေရာမှာ ဘာလို့ mapလိုလဲလို့ပြောရင် imperative မှာဆို side effect useပီး ရှိနေတဲ့ state
+             ကိုပြင်တာမျိုးဖြစ်နိုင်တယ်။ FP မှာကျ side effect မဖြစ်အောင် pure function use တယ် အဲ့နေရာမှာ
+             data transform ဖို့လိုလာတယ် အဲ့ကျတော့ ဘယ်ကနေသွားလဲဆို map ကိုသုံးပီး လုပ်လို့ရတယ်
+             အဲ့လို map လုပ်ဖို့ဆို container or box or lift ဖြ်စနေဖို့လိုတယ် 
+             container ဆိုတာဘာလဲဆို တန်ဖိုးတခုခုကိုယူပီး someting တခုခုနဲ့ wrap လုပ်ထားတာမျိုးကိုခေါ်တယ် 
+             functor ကို category theoryထဲမှာပါတဲ့ algebraic data typeလို့ပြောလို့ရတယ်
+
+Applicative - ဆိုတာက ဘာလဲဆို Functor ရဲ့ map က container value နဲ့ outside functionကို apply လုပ်တယ်
+              အဲ့ချိန်မှာ အခြားcontainer ရဲ့ functionနဲ့ applyလုပ်ချင်ရင်ကျတော့ Applicativeကိုသု့းလိုရတယ်
+              သူကကျတော့ container value နဲ့ outside container functionကို apply လုပ်တယ်
+
+MayBe       - ဆိုတာက Functor, Applicative မှာ error case တွေမှာဆို handle မလုပ်နိုင်တဲ့ကောင်ကို FP ways
+              နဲ့ ဖြေရှင်းဖို့နည်းလမ်းဖြစ်တယ်။ ဒါပေမဲ့ ဒီကောင်က errorကို စစ်ပဲစစ်ပေးတာ ဘာ errorလဲဆိုတာကိုမပြောနိုင်ဘူး။
+              MayBeဆို nothing လားဆိုတာပါမယ် အဲ့ကောင်က ဘာလုပ်တာလဲဆို error case
+              ဟုတ်မဟုတ်ကို စစ်ပီး error case ဆို mapကို Empty MayBe Container wrapလုပ်မယ် မဟုတ်ရင် 
+              mapကို value နဲ့ wrapလုပ်ပီး ပေးလိုက်တဲ့ function နဲ့ apply လုပ်မယ်
+
+Either      - ကကျတော့ ဘာလဲဆို အပေါ်က MayBeမှာရှိနေတဲ့ error detailsကို မပြောနိုင်တဲ့ ပြသနာကို ဖြေရှင်းဖို့နည်းလမ်းဖြစ်တယ်။
+              Eitherမှာ Just(Some or True case) or Nothing(wrong case)ဆိုပီး ၂ခုပါမယ်
+              မှန်ရင် ပေးလိုက်တဲ့ function ကို map မှာ value applyလုပ်ပီး အလုပ်လုပ်မယ်
+              မှားရင် error msg ပြန်ပီး other processing ကို chain လုပ်လို့ရအောင် Container ပြန်မယ် အဓိကက ဒါပါပဲ
+
+Monad       - ဖြစ်ဖို့ဆို functor & Applicative ကိုပြေလည်ရမယ်။ ဒီကောင်က အဓိကကဘာလဲဆို functor မှာကျတော့ map reduceလုပ်ရင်
+              ပေးလိုက်တဲ့ကောင်က function ဖြစ်တယ်။ ဒါပေမဲ့ အဲ့လိုမဟုတ်နေပဲနဲ့ ပေးလိုက်မဲ့ကောင်ကတာ containerထဲက functionဖြစ်နေမယ်ဆို
+              functorနဲ့ ဖြေရှင်းလို့မရတော့ဘူး အဲ့ပြသနာကို Monadသုံးပီးဖြေရှင်းလို့ရတယ် သူ့မှာဆို chain(flatMap, or join)ဆိုတာပါတယ်
+              အဲ့ကောင်က ဘာလုပ်ပေးလဲဆို ခုဏက containerထဲက functionထဲက value ကို unwrapလုပ်ပေးတဲ့ အလုပ်ကိုလုပ်တယ်။
+
+Syncrhonization or Concurrent Problem   - ဆိုတာက တူညီတဲ့ dataကို မတူညီတဲ့ thread, processတွေက၀ိုင်း အလုပ်လုပ်ကျတဲ့အခါ 
+                                          ကြားထဲမှာ dataထပ်ပီး lostဖြစ်သွားတာတွေ ဖြစ်နိုင်တယ်။ အဲ့တာက ဘာ့ကြောင့်ဖြစ်တာလဲဆိုရင်
+                                          mutationကြောင့်ဖြစ်တဲ့ ပြသနာပဲ ဖြစ်တယ်။ ဒါမို့ ဒီပြသနာကို ဖြေရှင်းဖို့   immutable
+                                          data structure(pure function)တွေကို သုံးတာဖြစ်တယ်။
+
+Optics      - ဆိုတာက immutable data structureမှာရှိတဲ့ data 1ခုခု ပြောင်းချင်ရင် အလွယ်တကူ အဆင်မပြေတဲ့ ပြသနာကို
+              ဖြေရှင်းဖို့ နည်းလမ်းပြဖြစ်တယ်။ lenses, prismsတို့ဟာဆိုရင် Optics မျိုးစားတွေပဲဖြစ်ကြတယ်။
+
+lenses      - deep ဖြစ်တဲ့ object structureတွေကို FPနည်းလမ်းအရ getter, settter လုပ်တာကိုခေါ်တယ်။
+
+prop        - ဆိုတာက lenses မှာရှိတဲ့ deep object structureတွေကို လှမ်းယူတဲ့ getter ဖြစ်တယ်။
+
+assoc       - ဆိုတာက lenses မှာရှိတဲ့ deep object structureတွေကို လှမ်းယူတဲ့ settter ဖြစ်တယ်။
+
+Primsms     - ဆိုတာက lensesနဲ့တူတူပါပဲ ဘာကွာလဲဆိုတော့ prisms ကကျတော့ optional properties တွေကို လှမ်း access လုပ်တဲ့ကောင်ဖြစ်တယ်။
+
+Laziness    - ဆိုတာက expression တခုတော့ရှိတယ် ဒါပေမဲ့ သူံရဲ့ တန်ဖိုးကို မခေါ်မချင်း အဲ့ကောင်ကို ထပီး invoke မလုပ်ဘူး
+              ခေါ်လိုက်တော့မှ အဲ့ကောင်ကို ထrunတာမျိုး ကို Lazinessလို့ခေါ်တယ်။

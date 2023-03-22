@@ -1,0 +1,59 @@
+callBack -> promise  -> async await
+asynchronous data structureမှာဆို ဒေတာက ဘယ်ချိန်ပီးမှာလဲ ဆိုတာမသိဘူး 
+အဲ့တော့ ဒေတာပီးမှ လုပ်မယ်ဆိုရင် callBack တွေ ထပ်ကာထပ်ကာ ခေါ်နေရတဲ့ ပြသနာဖြစ်လာရော
+အဲ့တော့ callBack hellပြသနာကို ဖြေရှင်းဖို့ promise ကို သုံးလာကျတယ်။
+promise  -> async await ကို ဘာကြောင့်ချိန်းလာလဲဆိုရင်ကျတော့ promise ရဲ့ 
+imperative design sequentially runဖို့နဲ့ ဘယ်ကောင်အရင်ပီး ဘယ်ကောင်ဆက်လုပ်မယ်ဆိုတာကို
+reasonable လုပ်ဖို့ အဆင်မပြေတဲ့ ပြသနာကို ဖြေရှင်းဖို့နည်းလမ်းဖြစ်တယ်။
+
+FRP(Functional Reactive Programming)
+ဒီကောင်ကကျတော့ဘာလို့လဲဆို asynchronousကို Functional designနဲ့ပေါင်းထိမ်းတာဖြစ်တယ်။
+ပြောချင်တာက အပေါ်က asynchronous data structureအရ 
+complex UI data change မှာ အဆင်မပြေတာတွေကို ဖြေရှင်းဖို့နည်းလမ်းဖြစ်တယ်။
+ဥပမာနေနဲ့ဆို view1 က dataA ကိုသုံးတယ် အဲ့လိုပဲ view2, view3 ကလည်း dataAကိုသုံးတယ်။
+အဲ့ချိန်မှာ view2 ကတာ ဒေတာချိန်းလိုက်ရင် ကျန်တဲ့ view1, view3မှာပါ ဒေတာလိုက်ချိန်းနေဖို့တွက်
+modelling လုပ်ထားတဲ့ကောင်မျိုးဖြစ်တယ်။
+
+Observer(listner, sucribe), Observable(producer, consumer)
+ဒီကောင်က ဘာလဲဆို အပေါ်က ပြောသလို model value 1 ခုရှိမယ် သူ့ကိုစောင့်ကြည့်ပီး
+သူတခုခုချိန်းသွားရင် လိုက်ပြောင်းမယ့် view 3 ခုရှိမယ်ဆိုပါဆို့။ အဲ့လိုမျိုးမှာဆို model change လိုက်တာနဲ့ 
+ပြောင်းလိုက်တဲ့ကြောင်းကို notify လုပ်လိုက်ရင် listner တွေက ပြောင်းလဲသွားတာမျိုးမှာ သုံးတဲ့ကောင်ဖြစ်တယ်။
+listner ဆိုတာက view 3 ခုလိုကောင်မျိုးဖြစ်ပီးတော့
+producer ဆိုတာက model value လိုကောင်မျိုးဖြစ်တယ်။
+event နေနဲ့ကြည့်မယ်ဆို producer က eventထုတ်တဲ့ကောင်ဖြစ်ပီးတော့
+listner ဆိုတာက အဲ့ event ကို နားထောင်ပီး ဘာလုပ်မယ်ဆိုတာ လုပ်မယ့်ကောင်မျိုးဖြစ်တယ်.
+
+Obserable sequence
+Observer, Observable pattern နဲ့ iterator patternနဲ့ ၂ခုပေါင်းထားတဲ့ကောင်မျိုးကို ခေါ်တာ
+
+Cold & Hot Observable
+- subscribe လုပ်တော့မှ data invoke လုပ်ရင် cold လို့ခေါ်တယ်
+- value က subscriber တွေကြားမှာ share မလုပ်ဘူး
+- hot ကကြတော့ သူနဲ့ပြောင်းပြန် subscribeမလုပ်ပဲ data invoke လုပ်ပီး 
+  value ကို subscriber တွေကြားမှာ shareလုပ်တယ်
+
+Operators in FRP
+OOPက operatorsလိုပဲ ဘာလုပ်မယ်ဆိုတဲ့ပေါ်မူတည်ပီး operatorတွေကွဲတယ်။
+operators တွေက FP က currying လိုပဲ ဆင့်ကာဆင့်ကာ လုပ်လို့ရတယ်။
+pipe - FP က pipeလိုပဲ left to right data transferလုပ်
+max  - js က max function လိုပဲ maximum valueရှာရင်သုံး
+every - array ထဲမှာ ရှိတဲ့ကောင်က condition နဲ့ကိုက်ညီရဲ့လား စစ်ရင်သုံး
+find  - js က find function လိုပဲ first found valueရှာရင်သုံး
+throttle - ဆိုတာက server ရဲ့ ခံနိုင်အားနဲ့ request နဲ့ကို ညှိပေးတဲ့ကောင်လိုမျိုးဖြစ်တယ်။
+           ဥပမာနေနဲ့ဆို server က ၁စကန့်မှာ request 1000ကို လက်ခံနိုင်တယ် 
+           အဲ့လိုချိန်မှာ request 1500 တာလာမယ်ဆို server breakdownဖြစ်သွားမှာဖြစ်တဲ့တွက်
+           အရင်လာတဲ့ request 1000 ကိုလက်ခံပီး အခြား 500ကို cutoffလုပ်ပီး ညှိပေးတဲ့ကောင်လိုမျိုးဖြစ်တယ်။
+           နောက်တခုဥပမာနေနဲ့ဆို google မှာစာရှာရင် တကယ်လို့ typing writeတိုင်းတာသွားခေါ်မယ်ဆို အမြဲခေါ်နေရသလိုဖြစ်ပီး
+           serverကို ၀န်ပိစေတယ် အဲ့လိုမျိုးမဟုတ်ပဲ typingမရိုက်ပဲ နားနေတာ ဘယ်နစကန့်နေမှ ခေါ်မယ်
+           အဲ့လိုမျီုးနေရာမှာသုံးတာကို throttleလို့ခေါ်တယ်
+zip   - ပေးထားတဲ့ ‌data source 2ခုကို position အလိုက်ပြန်ပီး join လုပ်တဲ့နေရာမှာသုံးတယ်
+        ဥပမာနေနဲ့ဆို arr1 = [1, 2, 3, 4,5]; arr2 = ['A', 'B', 'C']
+        after zip : result = [[1, 'A'], [2, 'B'], [3, 'C']]
+
+Immutable Data အတွက်ဆိုရင် immutable.js, immer တို့လိုကောင်မျိုးကိုသုံးနိုင်တဘ်။
+immutableကကြတော့ code writing format က FP way သွားပီး
+immerကကြတော့ code writing format က imperative designနဲ့လည်းရေးလို့ရတယ်။
+
+IO Monad
+ဆိုတာက IO side effectတွေကိုဖြစ်စေတယ် IO Monadဆိုတာက
+အဲ့ IO side effectတွေပါတဲ့ function ကိုလက်ခံပီး invoke လုပ်ပေးတဲ့ function ဖြစ်တယ်။
