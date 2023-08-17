@@ -1,0 +1,25 @@
+﻿c#ဆိုတာက ှSee Sharpဆိုတဲ့ အဓိပ္ပါယ်ကနေလာတာဖြစ်တယ် 
+c#ဟာ object-oriented, component-oriented programming languageတမျိုးဖြစ်တယ် 
+
+သူက နောက်ကွယ်မှာ ဘယ်လိုအလုပ်လုပ်လဲဆိုရင် 
+c#နဲ့ ရေးထားတဲ့ ကုဒ်တွေကို common language infrastructure (CLI)နဲ့ ကိုက်ညီတဲ့  intermediate language (IL)ကုဒ်တွေ အနေနဲ့ ပြောင်းပစ်လိုက်တယ် 
+ILကုဒ်ဆိုတာ ဘယ်လိုမျိုးလဲဆိုရင် Data Structureနဲ့ ရေးထားတဲ့ ကုဒ်မျိုးကိုပြောတာ
+ILကုဒ်မှာမှ ၂မျိုးရှိတယ် တခါထဲ run လို့ရတဲ့ executuable file(.exe) နဲ့  project တွေမှာ referenceတွေနေနဲ့ သုံးလို့ရတဲ့(.dll)ဖိုင် တို့ပဲဖြစ်တယ် 
+အဲ့တော့ c#ကုဒ်ကနေ ILကုဒ်ကိုပြောင်းမယ်ဆိုရင် အောက်ပါတိုင်းပြောင်းလို့ရတယ်
+csc /out:OutputFileName.dll TargetFileName.cs (for .dll)
+csc /out:OutputFileName.exe TargetFileName.cs (for .exe)
+
+အဲ့လို ILပြောင်းထားတဲ့ဖိုင်တွေကနေမှ manchine instructionတွေကို ဖတ်ချင်ရင် အောက်ကလိုမျိုး ILဖိုင်နေနဲ့ ပြောင်းပီး ဖတ်လို့ရတယ်
+ildasm /out:OutputFileName.il TargetFileName.dll
+ildasm /out:OutputFileName.il TargetFileName.exe
+
+C# programတခုကို runရင် တကယ့်နောက်ကွယ်မှာတော့ အထက်ကလို ILနေနဲ့ အရင်ပြောင်းပီးမှ
+အဲ့ကနေမှတဆင့် C# programတခုကို စတင် အလုပ်လပ်တဲ့ အချိန်မှာ
+ခုဏက ILကုဒ်တွေကို common language runtime (CLR)ကနေဆွဲတင်ပီး JIT(Just in Time) compilationလုပ်ပီး 
+လက်ရှိrun နေတဲ့ platform(Mac, Window, Linux)ပေါ်မူတည်ပီး သူနဲ့ ကိုက်ညီတဲ့ native code(byte code) နေနဲ့ ပြောင်းပီး 
+runပေးသွားတယ် ဒါပေမဲ့ အဲ့တာတွေက IDEသုံးပီး runလိုက်ရင် သူ့အလိုလျောက် နောက်ကွယ်ကနေလုပ်ပေးသွားတာဖြစ်တဲ့တွက် မမြင်သာဘူး
+ဒါပေမဲ့ နောက်ကွယ်မှာတော့ အဆင့်ဆင့် လုပ်သွားတာဖြစ်တယ်
+
+အဲ့လို မျိုး native codeအရင်မထုတ်ပဲ ကြားထဲမှာ ILအရင် ပြောင်းတာဖြစ်တဲ့တွက်ကြောင့်
+C++တို့လို native codeတိုက်ရိုက်ပြောင်းတဲ့ ကောင်တွေထက်စာရင် နှေးတာဖြစ်တယ်
+
