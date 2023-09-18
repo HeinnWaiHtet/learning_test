@@ -1,0 +1,219 @@
+What is Program?
+program ဆိုတာ လုပ်ငန်းစဥ်တခုကို စနစ်တကျ ဘာပီးဘာလုပ်တယ်ဆိုတာမျိုးကို ဖွဲ့စည်းထားတာြဖစ်တယ်
+
+Programming language ဆိုတာက အဲ့လိုပဲ computer ကို ဘာလုပ်မယ်ဆိုတာ စနစ်တကျဖွဲ့စည်းဖို့ လုပ်ဆောင်ချက်တွေကို လူကနားလဉ်တဲ့ ဘာသာစကားကနေ ကွန်ပျူတာကို ခိုင်းစေနိုင်တဲ့ ဘာသာစကားဖြစ်တယ်
+
+Compilerဆိုတာ လူနားလည်တဲ့ programming Languageကိုယူပီးရင် manchine နားလည်တဲ့ ဘာသာစကား(0,1)နေနဲ့ ပြောင်းပီး လုပ်ဆောင်ပေးတာမျိုးကိုခေါ်တယ် 
+
+Javascript ကို FrontEnd(Mobile, Web Application using react, vue, angular), Backend(using Node, express, nuxt.js,etc), Desktop App(using Electron), Mobile(using React native, ionic)မှာ သုံးနိုင်တယ်
+
+FrontEndဆိုတာ user မြင်ရတဲ့ ကောင်တွေကို လုပ်ဆောင်ပေးတာဖြစ်ပီး Backendဆိုတာ business logic and serviceတွေကို လုပ်ဆောင်ပေးတဲ့ ကောင်မျိုးကို ခေါ်တယ် 
+
+Cloudပေါ်မှာ တင်ထားတဲ့ကောင်ကို SASS(Software as a service)လို့ခေါ်တယ် 
+
+JSက front endမှာဆို browser မှာrunတယ်
+backend မှာဆို Node မှာrunတယ် အဲ့တော့ runတဲ့စက်မှာ Nodeရှိနေဖို့လိုတယ် 
+
+Browser မှာ ဘယ်လို runလဲဆိုရင် client server computingအရသွားတယ် 
+ဥပမာနေနဲ့ဆို facebook ကိုလှမ်းပီး access လုပ်မယ်ဆို 
+လူကနေပီး clientဖြစ်တဲ့ (web browser )ကိုသု့းပီး request 1ခုတောင်းလိုက်တဘ် ဥပမာနေနဲ့ www.facebook.com ပေါ့ 
+အဲ့ request ကို server ဖြစ်တဲ့ HTTP, FTP, SMTPစတဲ့ ကောင်တွေကနေ လက်ခံရပီး user requestလုပ်လိုက်တဲ့ data ကို ပြန်ပေးပီး အဲ့ကောင်ကို user မြင်အောင် browser မှာ လူနားလည်တဲ့ UI(user interface)နေနဲ့ ပြန်ပေးတာကို ခေါ်တယ် 
+
+အဲ့တော့ client and serverကြားမှာ ဘယ်လို ဆက်သွယ်လဉ်းပေါ့ ဘာလို့ဆို client က လှမ်းတောင်းလိုက်တာက machine(eg. window)မှာ ဒေတာတွေကို သိမ်းထားတဲ့ machine(eg. linux)ဆိုပီးရှိနေတဘ် အဲ့ ၂‌ေကာင်ကြား ဘယ်လိုဆက်သွယ်လဲပေါ့ 
+အဲ့လို network(internet)ကိုသုံးပီး ဆက်သွယ်တာကို protocol လို့ခေါ်တယ် 
+Web browser and web serverကြားဆက်သွယ်တဲ့ နည်းပညာကို HTTP protocolလို့ခေါ်တယ် ဘယ်လိုပြောမလဲဆို အဲ့နှစ်ခုကြား ဆက်သွယ်ရေးစာချူပ်လိုပေါ့
+ဘယ်ပုံစံနဲ့ ပို့ရင် လက်ခံမယ် ဘယ်ဒေတာ ပြန်ပေးမဘ်ဆိုတဲ့ စာချုပ်လို ပု့စံမျိုးဖြစ်တယ် 
+ဥပမာနေနဲ့ဆို Netcat Commandsကို သုံးပီး စမ်းကြည့်နိုင်တယ် 
+nc www.google.com (connect to server)
+GET / HTTP/1.0	 (request to server)
+အဲ့အချီန်မှာ server request format တာမှန်မဘ်ဆို server က တောင်းလို်ကတဲ့ ဒေတာနဲ့ သက်ဆိုင်ရာ အချက်လက်တွေ ပြန်ပေးလိမ့်မယ် 
+အဲ့‌ပြန်ရလာတဲ့ ဒေတာတွေကိုမှ Browser ရဲ့ Rendering Engineကနေပီးမှ User မြင်နေရတဲ့ user interfaceအနေနဲ့ ပြန်ပြောင်းပေးတာဖြစ်တယ် 
+
+Browser 1ခုမှာဆို 
+Rendering Engine => HTML, CSS(like webkit, blink)
+JS Engine => Like V8 in chrome
+ဆိုပီး ၂ပိုင်းပါတယ် JS engine က သုံးတဲ့ Browserပေါ်မူတည်ပီး ကွဲပြားတယ် 
+
+အဲ့လိုမျိုး rendering engine and JS engineမတူတဲ့တွက် cross browser issueတွေ့ ရနို်ငတယ် ကုဒ်က ဒီ browser မှာ အဆင်ပြေပီး နောက် browserမှာမလုပ်တာမျိုး ကြုံတွေ့နို်ငတယ် 
+
+How Browser and reuest response work
+
+use Browser 
+	http request => web server
+	http response <= web server
+
+In http response = HTML CSS + JS
+ 	HTML CSS => work from Rendering Engine
+        JS => work from JS Engine
+
+Compiler ဆိုတာက source code ကိုယူပီး machine code(computer နားလည်တဲ့ ကုဒ်)နေနဲ့ ပြောင်းပေးတာကို ခေါ်တယ် တိုက်ရိုက်ပြောင်းပေးတဲ့ ကောင်တွေက C, C++, Goတို့လိုကောင်မျိုးတွေဖြစ်တယ် ဘာကောင်းလဲဆိုရင် machine direct နားလည်တဲ့ကောင်ဖြစ်တဲ့တွက်ကြောင့် process executing time မြန်တယ် ဒါပေမဲ့ platform dependent ဖြစ်တယ် အဲ့နေရာမှာ platform ဆိုတာဘာကိုဆိုလိုလဲဆို runနေတဲ့ OS(operating system) like window, mac, linuxနဲ့ လုပ်ဆောင်နေတဲ့ CPUပေါ်မူတည်နေတာကိုပြောတာ အဲ့တော့ ဘာဖြစ်လဲဆိုရင် window မှာ runထားတဲ့ကောင်ကို Linux မှာ runမရဘူး
+
+အဲ့တော့ compilerပေမဲ့ platform independent မဖြစ်တဲ့ကောင်နေနဲ့ဆိုရင် ဘာရှိလဲဆို Java, C#တို့လိုကောင်မျိုးရှိတယ် သူတို့ကကျ ဘယ်လိုလုပ်လဲဆို Javaမှာဆိုရင်ကျ source codeကို ယူပီး byte codeထုတ်လို်က်တယ် အဲ့byte codeကိုမှ JVM(java virtual machine)နေပီး native code(computer နားလည်တဲ့ ကုဒ်)နေနဲ့ ပြောင်းပေးတာဖြစ်တဲ့တွက် platform independent ဖြစ်သွားတယ် ဒါပေမဲ့ processing timeမှာတော့ C, Goတို့လောက်တော့ မြန်မှာ မဟုတ်ဘူး
+
+နော်ကတခုကကျတော့ interpreter သူကကျတော့ native code နေနဲ့ မထုတ်ပဲ on the fly (run နေတဲ့ ချိန်မှာမှ)လုပ်ဆောင်ပေးသွားတာဖြစ်တယ် အဲ့ကြောင့် သူက အခြားကောင်တွေထက်စာရင် ပိုနှေးတယ် ဒါပေမဲ့ ဘာနေနဲ့ သုံးရလဲဆို dynamic type language တွေမှာ လုပ်ဆောင်လို့ရတယ် 
+
+1. static type - varible ၁ခုသည် typeတခုပဲရှိတယ် သူ့ကို type 1ခုသတ်မှတ်ပီးအခြားတခု ထည့်လို့ရနေတာမျိုးကို ပြောတယ်
+   good point - type checking ကို compile time levelမှာတင်သိနိုင်တယ်။
+   eg. programming language Java, C#, typescript,
+
+2. dynamic type - varible ၁ခုသည် typeတခုမကပဲ မျိုးမျိုးပြောင်းလဲ ထည့်လို့ရနေတာမျိုးကို ပြောတယ်
+   good point နေနဲ့က type flexible ဖြစ်တယ်
+   bad points နေနဲ့က type errorတွေကို မသိနိုင်ဘူး
+   eg. programming language javascript, python
+
+3. weakly type - ဆိုတာက invalid operationတွေကို ပေးလုပ်တဲ့ languageမျိုးကိုခေါတယ် 
+   dynamic typeဖြစ်တိုင်း weakly typeမဖြစ်ဘူး invalid operationတွေကို ပေးလုပ်မှ weakly typeလို့ခေါတယ်
+   eg. programming language javascript, php
+
+4. strongly type - ဆိုတာက invalid operationတွေကို ပေးမလုပ်ဘူး type error cacheလုပ်နိုင်တယ်
+   ဒါပေမဲ့ ဘယ်လောက် stronglyဖြစ်တယ်ဆိုတာ languageပေါ မူတဉ်တယ် 
+   ဥပမာ C++ and java နဲ့မှာဆို java က ပိုပီး stronglyဖြစ်တယ်လို့ပြောလိုရတယ်
+   eg. programming language javascript, python
+
+5. hybrid type - static and dynamic type featureတွေရောပီး ထည့်ထားတဲ့ကောင်မျိုးကိုခေါတယ်
+   eg. programming language C#(dynamic for dynamic type system )
+
+6- sub typing - sub typingဆိုတာက super typeထဲကို super typeသော် လည်းကောင်း super typeကို base ခံထားတဲ့
+                child type သော်လည်းကောင်းထည့်လိုရတယ် သူနဲ့ မဆက်ဆက်နေတဲ့ကောင်တွေထည့်လို မရဘူး
+                အဲ့တာမျိုးကိုခေါ်တယ် 
+
+7. duck typing - ဆိုတာကကျတော့ သူသည် parent child relationshipရှိစရာမလိုဘူး သူ့မှာ relationship ရှိမရှိကို ဂရုမစိုက်ဘူး
+                 သူသုံးချင်တဲ့ကောင်အဲ့မှာရှိလား ရှိရင်ခေါ်လိုက်မယ် အဲ့လိုမျိုးကိုခေါ်တယ်
+                 duck typingက dynamic type programming languageတွေမှာပဲ ရှိတယ်
+
+8. nominal typing - ဆိုတာက class 2ခု သည် structure တူတယ် ဒါပေမဲ့ တခုကနေတခုကို assign လုပ်ခွင့်မပေးဘူး
+                    အဲ့တာမျိုးကို nominal typing ခေါ်တယ် structure တူပေမဲ့ type equal မတူတဲ့ကောင်မျိုးကိုခေါ်တယ် 
+                    eg. programming language Java
+
+9. structural typing - ဆိုတာက class 2ခု သည် structure တူတယ် ပီးတော့ တခုကနေတခုကို assign လုပ်ခွင့်ပေးတဲ့ကောင်မျိုးကို
+                    structural typing ခေါ်တယ် type equality တူစရာမလိုဘူး structureတူရင် ရပီ
+                    eg. programming language javascript, typescript
+
+type hints - ဆိုတာက dynamic type system တွေမှာ type error တွေကို ပြဖို့ရာတွက် enhanced လုပ်ထားတဲ့ကောင်မျိုးကိုခေါတယ်
+
+
+variable ဆိုတာ နောက်တချိန်မှာ ပြန်သုံးမယ့် တန်ဖိုးတခုခု number,string, boolean လိုမျိုး တန်ဖိုးတခုခုကို memory addressပေါ်မှာ နေရာ ယူထားတဲ့ကောင်မျိုးဖြစ်တယ် 
+Eg. let a = 20;
+
+a ဆိုတာက variable name, 20 ဆိုတာက variable တန်ဖိုး ကြေညာမယ်ဆို 
+အထက်က syntax လို မျိုး မှန်ရမယ် 
+အဲ့တာကိုမှ ခုက ကိန်းဂဏန်းတန်ဖိုးရှိနေတာကို အခြား တန်ဖိုးပြောင်းလဲ ထည့်လို့ရတယ်
+Eg. let a = 20;
+a = 'hello';
+a = true;
+
+အဲ့လိုမျိုး variable တခုထဲကိုမှ တန်ဖိုးပြောင်းလဲထည့်ရတာကို dynamic type language လို့ခေါ်တယ် language နေနဲ့ဆို Javascript, python, PHPတို့လိုကောင်မျိုးရှိတယ်
+
+နောက်တခုကကျတော့ static type language သူကကျ ဘဘ်လိုလဲဆို type တခုကို ကြေညာပီးသွားရင် အခြားတစ်ခု ပြောင်းလဲထည့်လို့မရတာမျိုးကိုခေါ်တဘ် language နေနဲ့ဆို Java, C#တို့လိုကောင်မျိုးဖြစ်တယ် ဥပမာနေနဲ့ဆို
+int a = 10;
+a = false; // Error can't assign
+
+Scripting Languageဆိုတာ သူကြည့်ပဲ နေလို့မရပြ အခြားတခုပေါ်မှာ မှီပီးနေရတာမျိုးကိုခေါ်တဘ် ဥပမာဆို JSလိုကောင်မျိုးပေါ့ သူဆို browserပေါ်မှာ ကပ်တွယ်နေရတာဖြစ်တယ် 
+
+Syntax - ဆိုတာ ရေးထုံးကိုခေါ်တယ် ဥပမာ variable ဘယ်လိုကြေညာလဲဆိုတာမျိုး
+Semantic - ဆိုတာက လုပ်ဆောင်ချက်ကို ပြောတာ ရေးထုံးတူပေမဲ့ ‌ေနာက်ကွယ်က လုပ်ဆောင်ချက်တွေက မတူနို်ငဘူး ဥပမာဆို Javaမှာဆို 3/2က 1ရပေမဲ့ Javascriptမှာဆို 1.5ရတယ် အဲ့လိုမျိုး internal workingမတူတာမျိုးကိုခေါ်တဘ် 
+Pragmatic - ဆိုတာက ပိုပီး လက်တွေ့ကျတာကိုခေါ်တဘ် language ပေးထားတဲ့ကောင်တွေကို သူံနေရာနဲ့သူ မှန်မှန်ကန်ကန် အသုံးချတက်တာမျိုးကိုခေါ်တဘ်  အဖြေရတာချင်းတူပေမဲ့ efficient ဖြစ်ဖြစ် ပိုကောင်းတဲ့ကောင်မျိုး ဘယ်လိုရေးမလဲဆိုတာမျိုးကိုခေါ်တဘ် 
+
+Lexical Strcutureဆိုတာက ရေးလိုက်တဲ့ syntaxတွေကို တခုချင်းပြန်ဖြတ်ပီး programming languageရဲ့ အောက်ဆုံးကနေပီး Grammar ruleတွေ မှန်မှန် ပြန်စစ်တာမျိုးကို ခေါ်တဘ် 
+
+Commentsဆိုတာက ဘာလုပ်တာလဲဆိုတာသိအောင် မှတ်ထားတဲ့ကောင်မျိုးကိုခေါ်တဘ် Javascript မှာဆို 
+// for single line coment, /* */ for multiline comment ဆိုပီး ရှိတယ် 
+အဲ့ကောင်တွေက program runတဲ့ချိန်မှာဆိုရင်တော့ ထည့်ပီး လုပ်ဆောင်သွားမှာ မဟုတ်ဘူး 
+
+-------------------------------------
+
+Literal ဆိုတာက immediate value ထည့်လိုက်တာမျိးကိုပြောတာ
+Eg. 
+23 		number lateral
+'Hello'	string lateral
+ true	boolean lateral
+ 1.2		number lateral
+
+identifierဆိုတာ နာမည်ပေးလို့ရတာမျိုးကိုခေါ်တဘ် 
+Eg variable name, function name တို့လိုကောင်မျိုးကိုခေါ်တဘ် သူ့မှာလဲနာမည်ပေးမယ်ဆို ruleတွေရှိတယ် _,letter, $နဲ့စလို့ရတယ် အဲ့လိုမဟုတ်ဘူးဆို syntax error တက်မယ် နောက်ကကောင်တွေကျ letter, digit, underscore, dollar sign လိုက်လိုရတယ်
+identifierတွေက case sensitiveဖြစ်တယ် ပြောရမယ်ဆို let a = 20; let A = 30; ကမတူဘူး
+ပီးရင် reserve wordတွေ မပေးရဘူး RESERVE WORDSဆိုတာက ဒီlangague ကနေပီး သုံးမယ် သတ်မှတ်ထားတဲ့ နာမည်တွေသုံးမရဘူး ဘယ်လိုကောင်မျိုးလဲဆို let, if, while, functionတို့လိုကောင်မျိုး ကိုခေါ်တာ 
+
+Unicode ဆိုတာ english စာမဟုတ်တဲ့ အခြား ဘာသာစကား language စာလုံးတွေကို ပြောတာ
+Javascript မှာက semicolon က optional ဖြစ်တယ်ပါလဲရတယ် မပါလဲရတယ် ဒါပေမဲ့ ဖြစ်နိုင်ရင်တော့ ထည့်တာကောင်းတဘ်
+
+variableဆိုတာ ထပ်ကာထပ်ကာ အသုံးပြုမဲ့ကောင်တန်ဖိုးတွေကို အဲ့လိုမျိုးသုံးရင် နောင်ကျ ပြင်ဖို့မလွယ်တဲ့ ပြသနာတွေကို ဖြေရှင်းဖို့ တန်ဖိုး(value)တွေ သိမ်းထားတဲ့ကောင်ဖြစ်တယ် 
+value ဆိုတာက lateral တွေဖြစ်တယ် 
+
+Type ဆိုတာက ဘာလဲဆိုရင် valueတွေရဲ့ အမျိုးအစားဖြစ်တယ် type ကိုစစ်ချင်ရင် typeof variable nameဆိုပီး စစ်လို့ရတယ် 
+eg. let a = 10;
+console.log('type of a ' , typeof a);
+Type က 1. set of possible values, 2.determine operation အဲ့ ၂ချက်ကို ဆုံးဖြတ်တယ် 
+ဥပမာနေနဲ့ဆို 
+let a = 10;
+a = a + 5; // number + number(make number addition)
+console.log('value of a ', a); // 15
+
+a = '10';
+a = a + 5; // string + number(make string concatenation)
+console.log('value of a ', a); // 15
+
+dynamic type language တွေမှာ type သည် value ပေါ်မှာ မူတည်တယ်
+static type langague တွေမှာကျ type သည် varaible and typeပေါ်မူတည်တယ် 
+
+အဲ့ကျ variable, type and value ဘဘ်လိုဆက်ဆက်နေလဲဆို 
+variable => value store 
+value  => define type
+type => 1. set of possible value 2. determine operation
+
+Typeမှာဆို primitive, object typeဆိုပီး ၂ခုပါတယ်
+primitive typeဆိုတာ ထပ်ခွဲလို့မရတဲ့ typeမျိုးကိုခေါ်တာ ဘာတွေပါလဲဆိုရင်
+number, boolean, string, null, undefined, symbolဆိုပီးပါတယ်
+primitive typeမဟုတ်တဲ့ကောင်တွေကို object type လို့ခေါ်တယ် 
+
+Number ထဲမှာ ဘာပါလဲဆို ကိန်းပြည့်(integral type), ဒသမကိန်း (floating point)တွေပါတယ် Number Type ကြေညာချင်တယ်ဆိုရင်
+let a = 5; 
+a = 3.2;
+a = 0xff; //hexa lateral from 0 to 9, a to f (color code, image processing)တွေမှာ သုံး
+‌a = 0b11; // binary(only 0 and 1)
+a = 1_000_000; // readableဖြစ်အောင် underscore ထည့်ရေးရ
+
+Arithematic တွေနနဲ့ဆို +,-,*,/,%တွေပါတဘ် အခြားကောင်တွေသုံးချင်ရင် Mathထဲကပါတယ် build in function တေွသု့းလို့ရတယ် ဥပမာ 2နှစ်ထပ်လိုချင်ရင် Math.pow(2,2)ဆိုပီး သုံးနိုင်တယ် 
+ 0.3 - 0.2ကိုနုတ်ရင် 0.1မ၇ဘူး အဲ့တာဘာလို့လဲဆိုရင် computer limitationကြောင့်ဖြစ်တယ် အဲ့တာဘာလိုလဲဆို PIလို irrational numberတွေကို store လုပ်ရင် approximatelyသိမ်းတဲ့ အကျိုးဆက်နေနဲ့ float valueတေါကို သိမ်းတဲ့နေရာမှာပါ effectဖြစ်တာဖြစ်တယ် 
+number တန်ဖိုးတခုကို 0နဲ့စားရင် infinity ရတယ် 
+0ကို 0နဲ့စားရင် number 1ခုကို invalid operation လာလုပ်ရင် NaN(Not a Number)ရတဘ်
+NaNက NaNနဲ့ တူလားဆိုလဲ မတူဘူးပဲရမယ် ဘာလို့ဆိုတော့ NaNရနိုင်တဲ့ အကြောင်းရင်းများစွာရှိလို့ဖြစ်တယ် 
+ a = 0;
+      b = 12 / a;
+      console.log("B ", b);
+      b = 0 / 0;
+      console.log("B ", b);
+      b = a * "hello";
+      console.log("B ", b);
+      b++;
+      console.log("B ", b);
+      console.log("B ", b == b);
+
+number 1ခုက NaNလားစစ်ချင်ရင် isNaNနဲ့စစ်ရတယ် Eg. isNaN(b)
+1/0 ဆို positive infinity
+-1/0 ဆို negative infinity
+0မှာ positive 0 (0), negative 0(-0)ဆိုပီးရှိ 
+ဘယ်နေရာမှာကွာလဲဆို infinityထုတ်တဲ့နေရာမှာရှိ 
+ဒါပေမဲ့ positive and negative 0တူလားဆိုတူတယ်
+ဘာလို့ အဲ့တာတွေကွာလဲဆို number တွေကို represent လုပ်ရင် ရှေံဆုံး 1bitစာကို 
+sign bit နဲ့ representလုပ်လို့ဖြစ်တယ်
+
+power ကို double asteriskနဲ့လဲရေးလို့ရတယ်
+Math.pow(2, 3) or 2**3;
+
+အရမ်းများတဲ့ ကိန်းဂဏန်းတန်ဖိုးကို သိမ်းချင်ရင် BigIntကိုသုံးနိုင်တယ်
+ဒါပေမဲ့ အားနည်းချက်နေနဲ့ slow ဖြစ်စေတယ်
+--------------------------------------
+
+Text or String ဆိုတာ character တွေများကြီးစုထားတဲ့ကောင်ကိုခေါ်တယ်
+string ၁ခုကြေညာမယ်ဆို string lateral 3ခုနဲ့ ကြေညာရတယ်။
+single quote, double quote, backtickကြိုက်တာနဲ့ ကြေညာရတယ်
+Eg. let str = 'hello';
+str = "Hello";
+str = `Hello`;
+double quoteထဲမှာ double quote,single quotထဲမှာesingle quoteထည့်ချင်ရင်
+escapeလုပ်ပစ်ရမယ်
+Eg. str = "Hello \"I'm good"";
+
+string 2ခုချိတ်ဆက်ချင်ရင် + ကိုသုံးနိုင်တယ်
+multiline သုံးချင်ရင် backtickကိုသုံးနိုင်တယ်
