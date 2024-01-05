@@ -1,0 +1,25 @@
+<html>
+    <script>
+        let quantity = 2;
+        let price =  200;
+        let str1 = 'Price ' + price + 'Quantity'+ quantity + 'Total ' + (price * quantity);
+        console.log('Str1 ', str1);
+
+        str1 = `Price ${price}
+        Qty ${quantity}
+        total ${price * quantity}`;
+        console.log('Str1 ', str1);
+
+        function stringConcat(name){
+            return `Hello ${name}`;
+        }
+
+        console.log(stringConcat('John'));
+        console.log(stringConcat`John`);
+
+        function sum(strings, a, b){
+            return `Sum of ${a} and ${b} is ${a + b}`;
+        }
+        console.log(sum`${1}${2}`);
+    </script>
+</html>

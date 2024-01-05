@@ -216,4 +216,96 @@ escapeလုပ်ပစ်ရမယ်
 Eg. str = "Hello \"I'm good"";
 
 string 2ခုချိတ်ဆက်ချင်ရင် + ကိုသုံးနိုင်တယ်
+      eg.
+        let quantity = 2;
+        let price =  200;
+        let str1 = 'Price ' + price + 'Quantity'+ quantity + 'Total ' + (price * quantity);
+        console.log('Str1 ', str1);
+
 multiline သုံးချင်ရင် backtickကိုသုံးနိုင်တယ်
+        str1 = `Price ${price}
+        Qty ${quantity}
+        total ${price * quantity}`;
+        console.log('Str1 ', str1);
+
+backtickuကို template tag function အနေနဲ့သုံးနိုင်တယ် ဘယ်လိုလုပ်လဲဆို 
+fuction name + backtick ဆိုတဲ့ပုံစံနဲ့သွားတယ် 
+အပေါ်က string.raw()ဆိုတဲ့ function ကို လုပ်ဆောင်တဲ့အခါမှာ parameter အနေနဲ့ backtick
+ထဲကောင်ကို ထည့်ေပးပီး လုပ်ဆောင်သွားတာဖြစ်တယ် 
+string.raw({raw: `Hello\nWorld`})ဆိုတာမျိုး ရေးစရာမလိုပဲ
+string.raw`Hello\nWorld` ဆိုပီးရေးလို့ရတယ် ရမယ့် ရလဒ်ကတော့ အတူတူပဲဖြစ်တယ်
+
+နောက်ထပ်ဥပမာ တခုအနေနဲ့ဆိုရင် အောက် function ကိုခေါ်တဲ့ အခါမှာ ပုံမှန်ခေါ်နေကြပုံစံအစား
+backtickကိုသုံးနိုင်တယ်
+function stringConcat(name){
+   return `Hello ${name}`;
+}
+
+console.log(stringConcat('John'));
+console.log(stringConcat`John`);
+
+multiple argument တွက်ဆို ေအာက်ကလို သုံးနိုင်တယ်
+function sum(strings, a, b){
+   return `Sum of ${a} and ${b} is ${a + b}`;
+}
+console.log(sum`${1}${2}`);
+
+strings က ဘာကိုဆိုလိုတာလဲဆို ေပးလိုက်တဲ့ စာကြောင်းက template lateral နဲ့မဟုတ်တဲ့ အခြား တန်ဖိုးတေွကို ယူဖို့ဖြစ်တယ်
+ဥပမာဆိုရင်  အောက်ကောင်ကို ထပ်ကြည့်ပါ
+const person = "Mike";
+const age = 28;
+
+function myTag(strings, personExp, ageExp) {
+  const str0 = strings[0]; // "That "
+  const str1 = strings[1]; // " is a "
+  const str2 = strings[2]; // "."
+
+  const ageStr = ageExp < 100 ? "youngster" : "centenarian";
+
+  // We can even return a string built using a template literal
+  return `${str0}${personExp}${str1}${ageStr}${str2}`;
+}
+
+const output = myTag`That ${person} is a ${age}.`;
+
+console.log(output);
+// That Mike is a youngster.
+ ေပးလိုကတဲ့ string က That, is a, .ဆိုတဲ့ေကာင်တေွက stringsထဲကိုရောက်သွားပီး အဲဲ့ကောင်ကို 
+ ပြန်လည်သုံးချင်ရင် အသုံးပြုလို့ရပါတယ် multiple argumentတွက်ဆို strings ေနရာမှာရှိတဲ့ေကာင်က
+ မထည့်လို့မရပါဘူး
+
+ -----------------------------------
+ boolean ဆိုတာကလဲ primitive data type အမျိုးစားဖြစ်တယ်
+ သူ့မှာ value အနေနဲ့ true, falseဆိုပီး နှစ်မျိုးရှိတယ် 
+ သူ့ကို ဘယ်နေရာတေွမှာ သုံးလဲဆိုရင် လုပ်မလားမလုပ်ဘူးလားဆိုတဲ့ condition တေွစစ်တဲ့အခါမှာ သုံးတာများတယ်
+ ဥပမာေနနဲ့ဆိုေအာက်က ဥပမာကိုကြည့်ပါ
+ let raining = false;
+console.log('Type of raining ', typeof raining);
+if(raining){
+   console.log('Take umbrella');
+}else{
+   console.log('Take Hat');
+}
+
+javascript boolean က အခြားlanguage ေတွနဲ့ မတူဘူး condition မှာ boolean ဖြစ်နိုင်တဲ့ တန်ဖိုးက
+true, false တင်မကပဲ အခြားတန်ဖိုးေတွလဲ ဖြစ်နိုင်တယ်
+အဲ့တော့ အဲ့တန်ဖိုးကို ဘယ်လိုခွဲခြားမလဲဆို ပုံမှန် true, falseမဟုတ်ပဲ 
+truthy falsyဆိုပီး ခွဲခြားမှတ်သားနိုင်တယ် truthy ဖြစ်နိုင်တဲ့ အခြေနေက များစွာရှိတဲ့တွက်ကြောင့်
+falsy ကိုမှတ်ထားရင် ကျန်တာက truthy ဆိုပီး ခွဲခြားနိုင်တယ်
+falsy ဖြစ်တဲ့ ေကာင်တေွကတော့ 
+
+undefined, null, NaN, 0, -0, false, ""
+တို့ပဲဖြစ်တယ် အဲ့တန်ဖိုးကလွဲ အခြား တန််ဖိုးတေွက truthyတန်ဖိုးတေွဖြစ်ကြတယ် 
+မြင်အောင်ဥပမာေပြာရမယ်ဆို
+အပေါ်က ဥပမာကိုပဲ အောက်ကလိုေရးနိုင်တယ်
+if(1){
+   console.log('Truthy value');
+}
+
+if({name: 'John'}){
+   console.log('truthy value');
+}
+
+if('mgmg'){
+   console.log('truthy value');
+}
