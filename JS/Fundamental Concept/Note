@@ -309,3 +309,163 @@ if({name: 'John'}){
 if('mgmg'){
    console.log('truthy value');
 }
+
+----------------
+null & undefined
+null ကော undefinedကောက တန်ဖိုးမရှိဘူးဆိုတာကို  ပြောတာ
+ဒါပေမဲ့ ဘာကွာလဲဆိုရင် 
+undefined ကကျတော့ variable တခုကို ေကြညာထားတယ် ဒါပေမဲ့ တန်ဖိုးသတ်မှတ်ထားတာမရှိတာမျိုး
+objectကနေ မရှိတဲ့ propertiesကို ယူတဲ့အခါမျိုး string ကနေ မရှိတဲ့ index valueကိုထုတ်တဲ့ အခါမျိုးတေွမှာ undefined
+တန်ဖိုးကိုရမယ်
+nullကကျတော့ တန်ဖိုးတခုကို သေသေချာချာ null valueထည့်တဲ့ အခါမျိုးမှာ nullအနေနဲ့ ရမယ်
+
+နောက်ကွာခြားချက်တခုကကျတော့ data type 
+undefinedရဲ့ data type ကကျတော့ undefined ဖြစ်ပီး
+nullရဲ့ data type ကကျတော့ objectဖြစ်တယ်
+
+ဥပမာအနေနဲ့ဆို အောက်ပါတိုင်းဖြစ်တယ်။
+let obj = {};
+console.log('Obj ', obj.age); // undefined
+
+let data;
+console.log('data', data); // undefined;
+
+let str = 'Hello';
+console.log('Str [10]', str[10]); // undefined;
+console.log('Type of data ', typeof data); // undefined;
+
+data = null;
+console.log('Data ', data); // null
+console.log('Type of data', typeof data); // object
+
+အဲ့တာမို့ ရိုးရိုး value equality နဲ့ စစ်မယ်ဆို true ရပီး
+reference equality နဲ့ စစ်မယ်ဆို falseတန်ဖိုးကိုရမယ်
+ေပြာချင်တာက ဒိလိုဖြစ်တယ်။
+undefined == null; // true
+undefined === null; // false
+
+---------------------------
+Global Object
+Global Objectဆိုတာက window ဆိုတဲ့ထဲမှာရှိတဲ့ကောင်တေွကို ပြောတာဖြစ်တယ်
+window မှာရှိတဲ့ကောင်တွေကိုခေါ်ချင်ရင် window.ဆိုတာမသုံးပဲနဲ့လဲခေါ်နိုင်တယ်။
+ဥပမာအနေနဲ့ဆိုရင် isNaNလားစစ်ချင်ရင်
+window.isNaN(10); // false
+isNaN(10); // false
+နဲ့ အတူတူပဲဖြစ်တယ်။
+
+-----------------------
+Immutable Primitive values and Mutable Object Values
+immutable ဆိုတာက variable မှာရှိတဲ့တန်ဖိုးကို အခြားvariable တွေထဲမှာ ထည့်ထားပီး 
+အဲ့တန်ဖိုးကို ပြင်လိုက်ရင် သူ့တန်ဖိုးကို သုံးထားတဲ့ အခြားvariableတွေမှာ တန်ဖိုးမပြောင်းလဲသွားတာကို ပြောတာဖြစ်တယ်
+immutable ကို primitive type တွေဖြစ်တဲ့ number, boolean, string, undefined, null, symboleတို့မှာတွေ့ရမှာဖြစ်တယ်
+
+mutableကတော့ သူနဲ့ပြောင်းပြန်ဖြစ်တယ် မှာရှိတဲ့တန်ဖိုးကို အခြားvariable တွေထဲမှာ ထည့်ထားပီး 
+အဲ့တန်ဖိုးကို ပြင်လိုက်ရင် သူ့တန်ဖိုးကို သုံးထားတဲ့ အခြားvariableတွေမှာပါ တန်ဖိုးပြောင်းလဲသွားတာကို ပြောတာဖြစ်တယ်
+mutableကိုတော့ object data typeတွေမှာ တွေ့ရမှာဖြစ်တယ်
+
+ဥပမာအနေနဲ့ဆိုရင် အောက်ကကောင်ကိုကြည့်ရအောင်
+let a = 10;
+let b = a;
+console.log('a ', a, 'b ', b); // a 10 b 10
+a = 20;
+console.log('a ', a, 'b ', b); // a 20 b 10
+
+let obj ={
+   name : 'HWH',
+   age : 21
+};
+let obj1 = obj;
+console.log('Obj ', obj, 'Obj1 ', obj1); // obj name = HWH, age =21, obj1 name = HWH, age =21   
+obj.name = 'HWH2';
+console.log('Obj ', obj, 'Obj1 ', obj1); // obj name = HWH2, age =21, obj1 name = HWH2, age =21  
+
+အပေါ်ကတခုမှာဆို a ရဲတန်ဖိုး 10ရှိနေတာကို bထဲထည့်လိုက်တယ် ပီးနောက်မှာတော့ a ရဲ့တန်ဖိုးကို 20 လို့ပြန်ပြီးထည့်ပီး
+တန်ဖိုးထုတ်ကြည့်တဲ့အခါ a ရဲ့တန်ဖိုးက 20ဖြစ်သွားပီး b ရဲ့တန်ဖိုးကတော့ 10 ပဲရှိနေတာကိုတွေ့ရမှာဖြစ်တယ်
+ဒါကဘာလို့ဆိုရင် primitive data typeရဲ့ immutable data structure ကြောင့်ဖြစ်တယ်
+ထပ်ရှင်းရမယ်ဆို primitive type တွေက variable 1 ခုနေအခြားတခုကို ထည့်တည့်အခါမှာ value ကိုပဲ သွားထည့်တာဖြစ်တယ်
+value copy လို့နောက်တမျိုးပြောနိုင်ပါသေးတယ်
+
+ဒါပေမဲ့ ဒုတိယဥပမာမှာ objတန်ဖိုးကို obj1 ထဲကို ထည့်ထားပါတယ်
+အဲ့နောက်မှာ objရဲ့name ဆိုတဲ့ property ကို HWH2ဆိုပီးပြောင်းလိုက်တယ်
+ဒါပေမဲ့ အဲ့တန်ဖိုးက obj1ရဲ့ nameမှာပါပြောင်းလဲသွားတာကို တွေ့ရမှာ ဒါက ဘာလို့လဲဆို objectမှာရှိတဲ့
+mutatble data structureကြောင့်ဖြစ်တယ်
+အသေးစိတ်ရှင်းရမယ်ဆို objဆိုတဲ့ object ကို ဆောက်လိုက်လိုက်တဲ့အချိန်မှာ computer memoryမှာ 
+ဥပမာအနေနဲ့ 0x12 ဆိုတဲ့ နေရာလေးနဲ့ memory address သွားယူတယ်
+အဲ့အချိန်မှာ obj တန်ဖိုးကို obj1ထဲကို ထည့်လိုက်တယ် ဒါပေမဲ့ သူကကျတော့ တန်ဖိုးပဲ ကော်ပီယူသွားတာမဟုတ်ပဲ
+ခုဏက memory addressကို သွားကူးသွားတာဖြစ်တယ် 
+ဒါ့ကြောင့်မို့ objကော obj1ကောက 0x12 ဆိုတဲ့ memory addressကို သွားပီးထောက်နေပီးမှ အဲ့memory addressမှာရှိနေတဲ့ 
+name, ageဆိုတဲ့ တန်ဖိုးကို သွားယူတာဖြစ်တယ်
+ဒါကြောင့်မို့ objကနေပီး nameဆိုတဲ့ တန်ဖိုးပြောင်းလိုက်တယ်ဆိုတာက 0x12 ဆိုတဲ့ memory addressမှာရှိတဲ့ name ဆိုတဲ့ တန်ဖိုးကို
+ပြောင်းလဲလိုက်တာဖြစ်တဲ့တွက်ကြောင့် obj1ရဲ့ nameတန်ဖိုးကိုပါ ပြောင်းလဲသွားတာဖြစ်တယ်။
+object မှာ copy ကူးတာကကျတော့ reference semantic ကိုသုံးသွားတာဖြစ်တယ်။
+
+ဒါပေမဲ့ obj ကိုပဲ အောက်က ဥပမာကိုဆက်ကြည့်ရအောင်
+
+obj1 = {
+   name : 'mgmg',
+   age : 18
+};
+console.log('Obj ', obj, 'Obj1 ', obj1); // obj name = HWH2, age =21, obj1 name = mg mg, age = 18
+
+ဒီကောင်မှာဆိုရင်ကျ obj1 ကိုနောက်ထပ် object အသစ်တန်ဖိုးထည့်လိုက်တယ်
+ပီးပြန်ပီးတန်ဖိုးတွေထုတ်ကြည့်တဲ့အချိန်မှာကျတော့ obj နဲ့ obj1 တန်ဖိုးမတူနေတာကိုတွေ့ရမယ် 
+ဒါကဘာလို့လဲဆိုရင် obj1ရဲ့ တန်ဖိုးကို ချိန်းတာမဟုတ်ပဲ နောက်ထပ်objectအသစ်တခု ဆောက်လိုက်တာကြောင့်ဖြစ်တယ်
+ပြောရမယ်ဆို အစက objနဲ့ obj1 က memory address 0x12ကို အတူတူကြည့်နေရာကနေ obj1 ကိုနောက်ထပ် object အသစ်ထည့်လိုက်တဲ့အတွက်ကြောင့်
+obj1 က ဥပမာအနေနဲ့ memory address 0x13ဆိုတဲ့ အသစ်ကိုသွားပြောင်းထည့်လိုက်လို့ဖြစ်တယ်
+ဒါ့ကြောင့် ဒိချိန်မှာ obj က 0x12, obj1 က 0x13မှာရှိတဲ့ တန်ဖိုးအသီးသီးကို ယူထားပီး အလုပ်လုပ်နေကြလို့ဖြစ်တယ်
+ဒါကတော့ object mutable data structure ရဲ့ နောက်ထပ်သိထားသင့်တဲ့ အကြောင်းရာတခုဖြစ်တယ်။
+
+------------------------
+Type Conversion
+- ဆိုတာက ရှိနေတဲ့ data type တခုကနေ အခြားတခုကို ပြောင်းလဲတာမျိုးကို ပြောတာဖြစ်တယ်။
+အဲ့တော့ data type တခုကနေ အခြားတခုပြောင်းရင် JS မှာ ဘယ်လိုပြောင်းလို့ရလဲ ဘယ်လိုတန်ဖိုးတွေကို ပြောင်းလဲသွားလဲ ဆက်ကြည့်ကြရအောင်
+
+type ၁ခုကနေ number typeကိုပြောင်းမယ်ဆိုရင် parseInt(value)လို့ပြောင်းလို့ရသလို +valueဆိုပီးလဲပြောင်းလို့ရတယ်
+အဲ့တော့ အခြားtype တခုကနေ number typeကိုပြောင်းမယ်ဆို အောက်ကလိုပုံစံမျိုးပြောင်းလဲမှာဖြစ်တယ်။
+
+undefinde to number ကိုပြောင်းမယ်ဆို NaNရမယ် eg. +undefined; // NaN
+null to number ကိုပြောင်းမယ်ဆို 0ရမယ် eg. +null; // 0
+boolean true to number ကိုပြောင်းမယ်ဆို 1ရမယ် eg. +true; // 1
+boolean false to number ကိုပြောင်းမယ်ဆို 0ရမယ် eg. +false; // 0
+empty string to number ကိုပြောင်းမယ်ဆို 0ရမယ် eg. +''; // 0
+nonempty numeric string to number ကိုပြောင်းမယ်ဆို numeric valueရမယ် eg. +'10'; // 10
+noempty non-numeric string to number ကိုပြောင်းမယ်ဆို NaNရမယ် eg. +'abc'; // NaN
+
+type ၁ခုကနေ string typeကိုပြောင်းမယ်ဆိုရင် value.toString()လို့ပြောင်းလို့ရသလို value + ''ဆိုပီးလဲပြောင်းလို့ရတယ်
+အဲ့တော့ အခြားtype တခုကနေ string typeကိုပြောင်းမယ်ဆို အောက်ကလိုပုံစံမျိုး ပြောင်းလဲမှာဖြစ်တယ်
+
+undefined to string ကိုပြောင်းမယ်ဆို 'undefined'ရမယ် eg. '' + undefined; // undefined
+null to string ကိုပြောင်းမယ်ဆို 'null'ရမယ် eg. '' + null; // null
+boolean true to string ကိုပြောင်းမယ်ဆို 'true'ရမယ် eg. '' + true; // true
+boolean false to string ကိုပြောင်းမယ်ဆို 'false'ရမယ် eg. '' + false; // false
+number 0 to string ကိုပြောင်းမယ်ဆို '0'ရမယ် eg. '' + 0; // '0'
+Infinity to string ကိုပြောင်းမယ်ဆို 'Infinity'ရမယ် eg. '' + Infinity; // Infinity
+-Infinity to string ကိုပြောင်းမယ်ဆို '-Infinity'ရမယ် eg. '' + -Infinity; // -Infinity
+NaN to string ကိုပြောင်းမယ်ဆို 'NaN'ရမယ် eg. '' + NaN; // NaN
+
+type ၁ခုကနေ boolean typeကိုပြောင်းမယ်ဆိုရင်!!valueလို့ပြောင်းလို့ရသလို Boolean(value)ဆိုပီးတော့လဲ ပြောင်းလို့ရတယ်
+အဲ့တော့ အခြားtype တခုကနေ boolean typeကိုပြောင်းမယ်ဆို အောက်ကလိုပုံစံ မျိုးပြောင်းလဲမှာဖြစ်တယ်
+undefined to boolean ကိုပြောင်းမယ်ဆို falseရမယ် eg.!!undefined; // false
+null to boolean ကိုပြောင်းမယ်ဆို falseရမယ် eg.!!null; // false
+empty string to boolean ကိုပြောင်းမယ်ဆို falseရမယ် eg.!!''; // false
+nonempty numeric string to boolean ကိုပြောင်းမယ်ဆို trueရမယ် eg.!!'10'; // true
+noempty non-numeric string to boolean ကိုပြောင်းမယ်ဆို trueရမယ် eg.!!'abc'; // true
+NaN to boolean ကိုပြောင်းမယ်ဆို falseရမယ် eg.!!NaN; // false
+number 0 to boolean ကိုပြောင်းမယ်ဆို falseရမယ် eg.!!0; // false
+number -0 to boolean ကိုပြောင်းမယ်ဆို falseရမယ် eg.!!-0; // false
+number 1 to boolean ကိုပြောင်းမယ်ဆို trueရမယ် eg.!!1; // true
+-Infinity to boolean ကိုပြောင်းမယ်ဆို trueရမယ် eg.!!-Infinity; // true
+Infinity to boolean ကိုပြောင်းမယ်ဆို trueရမယ် eg.!!Infinity; // true
+
+objectတန်ဖိုးကနေ number typeကိုပြောင်းမယ်ဆိုရင် ဘယ်လိုလုပ်လဲဆိုရင် အဲ့ object မှာ valueOfဆိုတဲ့ function ကနေပြန်တဲ့တန်ဖိုးရှိလားကြည့်မယ်
+ရှိရင် အဲ့ကပြန်တဲ့တန်ဖိုးကို ပြန်ကြည့်ပီးမှ အပေါ်က nubmer typeကိုပြောင်းတဲ့ပုံစံတိုင်းပြန်လုပ်မယ်
+ဟုတ်ပီ အဲ့တော့ valueOfဆိုတဲ့ function မရှိဘူးဆို toStringဆိုတဲ့ function ကနေပြန်တဲ့တန်ဖိုးရှိလား ထပ်ကြည့်မယ်
+ရှိရင် အဲ့ကပြန်တဲ့တန်ဖိုးကို ပြန်ကြည့်ပီးမှ အပေါ်က number typeကိုပြောင်းတဲ့ပုံစံတိုင်းပြန်လုပ်မယ်
+ဟုတ်ပီ အဲ့တော့ toStringဆိုတဲ့ function ကော valueOfဆိုတဲ့ function ကောရှိရင်ကျတော့ valueOfက ပြန်တဲ့ တန်ဖိုးကိုကြည့်ပီး အလုပ်လုပ်မှာ ဖြစ်တယ်။
+တခုဖြစ်ရမှာက အဲ့functionတွေကနေပြန်တဲ့ တန်ဖိုးတွေက primitive type ဖြစ်နေဖို့လိုတယ် 
+primitive type မဟုတ်ပဲ object typeကိုပဲ ပြန်ထားတာဆိုရင်တော့ error တက်မှာဖြစ်တယ်။
+
+toString, valueOf function 2ခုလုံးမရှိနေဘူးဆိုရင်တော့ 
+number typeကိုပြောင်းရင် NaN
+string typeကိုပြောင်းရင် '[Object object]'
+boolean typeကိုပြောင်းရင် trueရမှာပဲဖြစ်တယ်

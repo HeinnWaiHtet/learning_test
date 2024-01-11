@@ -1,0 +1,24 @@
+<html>
+    <script>
+        let a = 10;
+        let b = a;
+        console.log('a ', a, 'b ', b); // a 10 b 10
+        a = 20;
+        console.log('a ', a, 'b ', b); // a 20 b 10
+
+        let obj ={
+            name : 'HWH',
+            age : 21
+        };
+        let obj1 = obj;
+        console.log('Obj ', obj, 'Obj1 ', obj1); // obj name = HWH, age =21, obj1 name = HWH, age =21   
+        obj.name = 'HWH2';
+        console.log('Obj ', obj, 'Obj1 ', obj1); // obj name = HWH2, age =21, obj1 name = HWH2, age =21   
+
+        obj1 = {
+            name : 'mgmg',
+            age : 18
+        };
+        console.log('Obj ', obj, 'Obj1 ', obj1); // obj name = HWH2, age =21, obj1 name = mg mg, age = 18
+    </script>
+</html>

@@ -1,0 +1,34 @@
+<html>
+    <script>
+        let data = '123';
+        data = data + 10; // data + toString(10)
+        console.log('data ', data);
+        console.log('3 * 10', '3' * '10');
+        console.log('3 * Hello', '3' * 'Hello');
+
+        let str = 5 + '';
+        console.log('Type of str', typeof str);
+
+        let num = +data;
+        console.log('Type of num ', typeof num);
+        console.log('Convert to num from undefined ', +undefined);
+        console.log('Convert to num from null ', +null);
+        console.log('Convert to num from boolean false ', +false);
+        console.log('Convert to num from boolean true ', +true);
+        console.log('Convert to num from empty string ', +'');
+        console.log('Convert to num from number string ', +'1.2');
+        console.log('Convert to num from invalid string ', +'Hello');
+
+        // Convert to boolean
+        let boldata = !!data;
+        console.log('Type of boldata ', typeof boldata);
+        console.log('Convert to boolean from undefined ', !!undefined);
+        console.log('Convert to boolean from null ', !!null);
+        console.log('Convert to boolean from boolean false ', !!false);
+        console.log('Convert to boolean from boolean true ', !!true);
+        console.log('Convert to boolean from empty string ', !!'');
+        console.log('Convert to boolean from number string ', !!'1.2');
+        console.log('Convert to boolean from invalid string ', !!'Hello');
+
+    </script>
+</html>
