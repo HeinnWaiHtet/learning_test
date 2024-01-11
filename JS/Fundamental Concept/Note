@@ -463,9 +463,14 @@ objectတန်ဖိုးကနေ number typeကိုပြောင်း�
 ရှိရင် အဲ့ကပြန်တဲ့တန်ဖိုးကို ပြန်ကြည့်ပီးမှ အပေါ်က number typeကိုပြောင်းတဲ့ပုံစံတိုင်းပြန်လုပ်မယ်
 ဟုတ်ပီ အဲ့တော့ toStringဆိုတဲ့ function ကော valueOfဆိုတဲ့ function ကောရှိရင်ကျတော့ valueOfက ပြန်တဲ့ တန်ဖိုးကိုကြည့်ပီး အလုပ်လုပ်မှာ ဖြစ်တယ်။
 တခုဖြစ်ရမှာက အဲ့functionတွေကနေပြန်တဲ့ တန်ဖိုးတွေက primitive type ဖြစ်နေဖို့လိုတယ် 
+valueOfကနေ ပြန်တဲ့ကောင်က object ဖြစ်ပီး toStringကနေပြန်တဲ့ တန်ဖိုးက primitive type ဆိုရင်တော့
+toStringကနေ ပြန်တဲ့တန်ဖိုးကိုယူပီး ဆက်လက်လုပ်ဆောင်သွားမှာဖြစ်တယ်။
 primitive type မဟုတ်ပဲ object typeကိုပဲ ပြန်ထားတာဆိုရင်တော့ error တက်မှာဖြစ်တယ်။
 
 toString, valueOf function 2ခုလုံးမရှိနေဘူးဆိုရင်တော့ 
 number typeကိုပြောင်းရင် NaN
 string typeကိုပြောင်းရင် '[Object object]'
 boolean typeကိုပြောင်းရင် trueရမှာပဲဖြစ်တယ်
+
+object ကနေ string ပြောင်းရင်လဲ object to number typeပြောင်းတဲ့ ပုံစံ အဆင့်တိုင်းလုပ်သွားမှာဖြစ်တယ်
+ဒါပေမဲ့ object ကနေ boolean ပြောင်းရင်တော့ အမြဲ trueရမှာပဲဖြစ်တယ်
