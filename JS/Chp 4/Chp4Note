@@ -1,0 +1,23 @@
+Expression
+-ဆိုတာက တန်ဖိုးထုတ်ပေးတဲ့ကောင်မှန်သမျှကိုခေါ်တာ ဥပမာဆို 
+let a = 10;
+အဲ့မှာဆို 10ဆိုတဲ့ တန်ဖိုးကိုထုတ်ပေးတဲ့ကောင်ဖြစ်တဲ့ ညီမျှခြင်းညာဘက်ကကောင်က expression လို့
+ခေါ်တယ်။
+နောက်တခုနေနဲ့ဆို 
+let b = a + 10;
+အဲ့မှာဆို a + 10 ကို expression လို့ခေါ်တယ်။
+
+Primaray expression or Simple Expression
+- ဆိုတာက constant or literal values, certain language keywords, and variable references.
+တနဖိုးတွေကိုဆိုလိုတာပါဖြစ်တယ်။
+ဥပမာဆို
+1.23
+'Hello World'
+/pattern/
+
+true
+false
+null
+this
+အဲ့တန်ဖိုးတွေကို ပြောတာပဲဖြစ်တယ်
+
