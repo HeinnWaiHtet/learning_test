@@ -21,3 +21,218 @@ null
 this
 အဲ့တန်ဖိုးတွေကို ပြောတာပဲဖြစ်တယ်
 
+Function Definition Expression -
+ဆိုတာက funtion ကို funtion ကို lateral နည်းနဲ့ကြေညာတာကိုခေါ်တယ်။
+
+eg. let square = function(x) { return x * x; };
+
+Property Access Expression ဆိုတာက property value တွေကိုdot ခေါက်ပြီးတော့
+ဒါမှမဟုတ် bracket နဲ့ object Property or funtion တွေကို ခေါ်တာကိုခေါ်တာဖြစ်တယ်။
+ဥပမာအနေနဲ့ဆို
+let o = {x: 1, y: {z: 3}}; 
+let a = [o, 4, [5, 6]]; o.x
+o.y.z
+o["x"]
+a[1]
+a[2]["1"]
+a[0].x
+
+Conditional Property Access
+ဆိုတာက condition ပေါ်မှာ မူတည်ပီးတော့မှ properties ကိုခေါ်တာမျိုးကိုခေါ်တာဖြစ်တယ်
+ဥပမာဆို 
+let obj = {x: 1, y: 2};
+အဲ့မှာ obj?.x ဆိုပီးခေါ်တာမျိုးကိုပြောတာဖြစ်တယ်။
+ဆိုလိုတာက objက null ဖြစ်နေရင် နောက်က expression ကို ဆက်မလုပ်ဘူး
+အဲ့လိုကောင်မျိုးကိုခေါ်တာဖြစ်တယ်။
+
+array မှာ တန်ဖိုးရှိမှခေါ်မယ်ဆိုရင်ကျတော့ arr?.[index]ဆိုပီးသုံးတယ်
+
+function တခုကို ခေါ်တာကိုကြတော့ Invocation Expression ဆိုပြီးတော့
+အပေါ်ကလို obj က null ဖြစ်မဖြစ်ပေါ်မှာမူတည်ပီး ခေါ်တာကိုကြတော့ conditional Invocationလို့ခေါ်တယ်။
+
+eg. obj?.functionName()
+
+new နဲ့ object ဆောက်တာကိုကျတော့ Object creation Expression လို့ခေါ်တယ်။
+
+Operator
+operation ကိုလုပ်ပြီးတော့တန်ဖိုးတခုပြန်ထုတ်ပေးတာကို operator လို့ခေါ်တယ်။
+operator တွေကိုဘာနေရေးလဲဆိုလို့ရှိရင် punctuation character နဲ့ရေးတယ်။
+eg. + , - , * , / , % , ** , < , > , <= , >= , == ,!= , === ,!== , && , || ,
+တချို့ operator ကြာတော့wordလေးတွေပါတယ်
+ဘယ်လိုကောင်မျိုးလဲဆိုလို့ရှိရင် delete, instanceof, typeof လိုကောင်မျိုးတွေဖြစ်တယ်။
+
+pre or post increate ++
+eg. let counter = 0;
+let var = counter++;
+သူ့ရဲ့အဓိပ္ပါယ်ကပါတဲ့ဆိုလို့ရှိရင်counterတန်ဖိုးကိုvalueထည့်မယ်။
+ပြီးတော့မှcounterကို1တိုးမယ်။
+
+အဲဒါကိုဘာလို့ခေါ်လဲဆိုလို့ရှိရင် postfix လို့ခေါ်တယ်။
+အဲ့တာကိုပဲ prefix နဲ့ရေးမယ်ဆိုရင်ကျတော့ သူက counter တန်ဖိုးကို အရင်တုိးပီးမှ
+တန်ဖိုးကို value ထဲထည့်မယ်။
+let var = ++counter;
+
+သူံရဲ့ associativity ကျတော့ rightဖြစ်တယ် ဘာလဲဆိုရင် 
+တကယ်လို့ presendence တူတာခြင်းဆို ဘယ်ကောင်ကို အရင်လုပ်မလဲဆိုတာဖြစ်တယ်။
+
+rightဖြစ်တဲ့အတွက်ကြောင့်rightကောင်အရင်လုပ်မည်
+associativityက ဘာကိုပြောချင်တာလဲဆိုလို့ရှိရင်levelတူးချင်ရှိတဲ့ကောင်ဆိုရင်
+ဘယ်ကောင်ကိုအရင်လုပ်မှာလဲဆုံးဖြတ်တာမျိုးကိုခေါ်တယ်။
+Eg. 2 ** 3 ** 2 ဆိုရင် 512ရလိမ့်မယ် ဘာလို့ဆို associativity right ဖြစ်တဲ့တွက်
+3 ** 2 ကို အရင်လုပ်ပီးမှ ရတဲ့တန်ဖိုး ကို 2 ** 9ဆိုပီးလုပ်လို့ဖြစ်တယ်။
+
+operator တွေက precedence level တူရင် ဘာနဲ့ထပ်ခွဲလဲဆိုလို့ရှိရင်associativityနဲ့ပြန်ခွဲတယ်။
+Nက ဘာကိုဆိုလိုလဲဆိုရင် no of operand ကိုပြောတာဖြစ်တယ်။
+++လုပ်မယ်ဆိုရင် vaiable 1လုံးပဲလိုတယ်။
+
+Type က lval -> num ဆိုတာက lvalက input, num ဆိုတာက output ခေါ်တယ်
+lvalဆိုတာက variable တွေကိုပြောတာဖြစ်တယ်။
+rvalဆိုတာက assignment ရဲ့ ညာဘက်မှာရှိတဲ့ကောင်တွေကိုပြောတာဖြစ်တယ်။
+anyဘာပဲလာလာရတယ်လို့ပြောတာဖြစ်တယ်။
+
+operator precidenceအရဆိုလို့ရှိရင်unary operatorတွေကအမြင့်ဆုံးဖြစ်တယ်
+
+binary operator ဆိုတာကoperand နှစ်ခုလိုတဲ့ကောင်တွေဆိုတာဖြစ်တယ်။
+ 
+eg. let result = 1 + 4 / 2 * 5;
+expressionကိုကြည့်လိုက်လို့ရှိရင် ပထမဆုံး precidence အနေနဲ့အရင်ကြည့်တယ်
+တကယ်လို့ presidence ကတူနေတယ်ဆိုရင် associativityကိုပြန်ကြည့်တယ်
+ဒီကောင်မှာဆိုလို့ရှိရင်အစားနဲ့အမြောက်ကprecidenceတူတယ်
+associativity ပြန်ကြည့်ရင် leftဖြစ်တဲ့တွက် leftဖြစ်တဲ့အစားကိုအရင်လုပ်တယ်
+ပြီးတော့မှ အမြောက်တန်ဖိုးကိုဆက်လုပ်တယ်။
+နောက်ဆုံးမှ တန်ဖိုးကိုပေါင်းတယ်။
+operator တွေကအဲလိုနည်းလမ်းအတိုင်းလုပ်ဆောင်တယ်
+presidence နည်းတဲ့ကောင်ကိုအရင်လုပ်စေချင်တယ်ဆိုရင်သူ့ကို လက်သည်းကွင်းထဲမှာ ထည့်ပီးလုပ်ဆောင်ရမယ်။
+
+ဘာလို့လဲဆိုရင်သူကpresidenceအမြင့်ဆုံးမို့လို့ဖြစ်တယ်။
+
+open သုံးခုလိုအပ်တဲ့ကောင်အနေနဲ့ဆို ternaryတခုပဲရှိတယ်။
+
+precedenceအနိမ့်ဆုံးကောင်က assignment operator တွေဖြစ်တယ်။
+သူတို့ကဘယ်လိုသွားလဲဆိုရင်right to leftသွားတယ်။
+
+operator side effect ဆိုတာကမူလတန်ဖိုးကိုပြောင်းသွားစေတာမျိုးကိုခေါ်တယ်။
+
+ဥပမာအပေါင်း အပေါင်းဆိုလို့ရှိရင်ကတန်ဖိုးကိုမပြောင်းလဲဘူး
+let a = 10;let b = 20;
+a + b
+ဆိုရင်aတန်ဖိုးလည်းမပြောင်းလဲသလို bတန်ဖိုးလည်းမပြောင်းလဲဘူး။
+အဲ့တာဆို သူ့မှာ side effectမရှိဘူး
+++ ဆိုရင် မူလရှိနေတဲ့တန်ဖိုးကို ၁တိုးသွားတယ်။
+အဲလိုကောင်မျိုးကိုside effectရှိတာလို့ခေါ်တယ်။
+ကျန်တဲ့ကောင်က delete လို့ကောင်မျိုး
+သူဆိုရင်လည်းမူရင်းရှိနေတဲ့objectတန်ဖိုးရဲ့ propertiesတွေကိုဖျက်ပစ်နိုင်တယ်
+
+Order of Evaluationဆိုတာက ဘယ်ကောင်ကို အရင်လုပ်မှာလဲဆိုတာ ဆုံးဖြတ်တာမျိုးဖြစ်တယ်။
+
+
++ operator
+operand နှစ်ခုထဲကတစ်ခုခုသည် stringဖြစ်ခဲ့ရင် string concatenation ကိုအလုပ်လုပ်တယ်။ 
+eg. '2' + 3 + 3 ဆိုရင် operator precedenceအရ string concatenationကနိမ့်တယ်
+ဒါပေမဲ့associativityကိုပြန်ကြည့်ရင် left to right ဖြစ်တဲ့တွက်ကြောင့် left က
+string concatenationကို အရင်လုပ်ပီးမှ ညာဘက်ကကောင်ကို ဆက်လုပ်တဲ့တွက်ကြောင့်
+string တန်ဖိုးရမှာဖြစ်တယ်။
+
+array နဲ့ပေါင်းမယ်ဆို array ကို toStringပြောင်းပစ်ရတယ်
+eg. '2' + [10, 20, 30] ဆိုရင် '210,20,30'ဆိုတာရတယ်။
+
+တကယ်လို့ object တခုတာပါခဲ့ရင် အဲ့object ကို အရင်ဆုံး primitive type ပြောင်းတယ်။
+
+အဲလိုပြောင်းပီးမှသက်ဆိုင်ရာoperation ကိုဆက်လုပ်တာဖြစ်တယ်
+
+one of the operandသည်stringမဟုတ်ဘူးဆိုရင်number operational လုပ်မယ်
+eg. false + 3 မှာဆိုရင်နှစ်ခုလုံးကstringမဟုတ်တဲ့အတွက်ကြောင့်numberပြောင်းပြီးတော့လုပ်ဆောင်မယ်
+
+https://262.ecma-international.org/5.1/
+11.6.1
+
+Object ကို number ပြောင်းမယ်ဆိုရင် side effect ဖြစ်ပီး objectက number
+အနေနဲ့ပြောင်းသွားမှာဖြစ်တယ်။
+
+let obj = {};
+++obj;
+console.log(typeof obj);
+
+Bitwise operator တွေက bit 0,1 ပေါ်မှာ မူတည်ပီးလုပ်သွားတာမျိုးဖြစ်တယ်။
+AND &, OR |, Not !, XOR^ ဆိုပီးရှိတယ်။
+
+let a = 2;
+console.log(a.toString(2)); 
+ဆိုရင် 2 ကို base 2အနေနဲ့ပြောင်းလဲသွားမှာြဖစ်ပီး တန်ဖိုးဆို 10ဆိုပီးရမှာဖြစ်တယ်။
+
+Shift left ဆိုတာက ဘယ်ဘက်ကိုရွေ့တာကိုခေါ်တယ်။
+Eg. 2 << 1ဆိုရင် ဘယ်ဘက်ကိုပြောင်းလိုက်တဲ့တွက်
+10 << 2 ကနေ 100 ဆိုပီး တန်ဖိုး 4ရသွားမှာဖြစ်တယ်။
+ဒိကောင်တွေကို ဘယ်တွေမှာသုံးလဲဆို image processing, crytography တွေမှာသုံးတယ်။
+
+Shift right ဆိုရင်က left နဲ့ပြောင်းပြန် ညာဘက်ကိုရွေ့မှာ ဖြစ်တယ်။
+
+relational operatorဆိုတာကကြီးသလားငယ်သလားညီသလားစစ်တာမျိုးခေါ်တယ်။
+Eg. ==, > , >=, < , <=,!=,!== ဆိုပီးရှိတယ်။
+
+equality မှာနှစ်မျိုးရှိတယ်
+value equality ==, strict equality === ဆိုပီးရှိတယ်
+==က တန်ဖိုးတူညီရပြီကျန်တာတူစရာမလိုဘူး
+===ကတော့တန်ဖိုးကောtypeကောတူဖို့လိုအပ်တယ်
+recommand အနေနဲ့ဆို strict equality ကိုသုံးသင့်တယ်။
+
+double equal ကိုabstract equality လို့ခေါ်တယ်။
+https://262.ecma-international.org/5.1/#sec-11.9.3
+11.9.3
+
+1. Typeနှစ်ခုလုံးကတူတယ်ဆိုရင်
+ 1.1. x က undefinedဆိုရင် true
+ 1.2. x က nullဆိုရင် true
+ 1.3. Numberဆိုရင်
+    1.3.1. x or y က NaN ဆိုရင် false
+    1.3.2. x က +0 y က -0 ဆိုရင် true
+    1.3.3. x က -0 y က +0 ဆိုရင် true
+    1.3.4 ကျန်တာဆို false
+ 1.4. xက ​Stringဆိုရင် x and y same character တွေမှာရှိရင် true  မဟုတ်ရင် false
+ 1.5. x က boolean ဆိုရင် 2နှစ်ခုလုံးတူရင်true မတူရင် false
+ 1.6. x and y က same objectဆို true မဟုတ်ရင် false
+
+2. x null y undefinedဆိုရင် true
+3. x undefined y nullဆိုရင် true
+4. x number and y string x ==  yကုိ numberပြောင်းတဲ့တန်ဖိုးနဲ့ နိုင်းယှဥ်ပီးပြန်
+5. x string and y number ToNumber(x) == y ကိုပြန်ပေးမယ်။
+6. x boolean ဆိုရင် ToNumber(x) == y ကိုပြန်ပေးမယ်။
+7. y boolean ဆိုရင် x == ToNumber(y) ကိုပြန်ပေးမယ်
+8. x string or number y object ဆိုရင် x == ToPrimitive(y) ကိုပြန်ပေးမယ်။
+9. x object and y string or number ဆိုရင် ToPrimitive(x) == y ကိုပြန်ပေးမယ်။
+10. အပေါ်ကဟာတွေမဟုတ်ရင် false
+
+Comparison Operator
+ကြီးလာငယ်လားညီလားစစ်တာမျိုးကိုပြောတယ်
+>, >=, <, <=,!=, === ဆိုပီးခေါ်တာမျိုးကိုပြောတာဖြစ်တယ်။
+အဲ့ကောင်တေွမှာဆို operand ဘာပဲပေးပေး numberပြောင်းပြီးမှလုပ်တာဖြစ်တယ်။
+1. objectပါတယ်ဆိုရင်တန်ဖိုကို ToPrimitiveပြောင်းပြီးတော့လုပ်ဆောင်တယ်။
+2. နှစ်ဖက်စလုံးက string ဖြစ်တယ်ဆိုရင် string comparisonကိုလုပ်တယ်
+eg. 'apple' > 'banana' ဆိုပီးခေါ်တာမျိုးကိုပြောတာဖြစ်တယ်။
+ဘယ်လိုနှိုင်းယှဉ်လဲဆိုရင် character code အရ ယှဥ်တာဖြစ်တယ်။
+
+In Operator
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
