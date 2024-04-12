@@ -1,0 +1,681 @@
+Statements
+Statements ဆိုတာက ပီးပြည့်စုံတဲ့ စာကြောင်းတခုကိုဆိုလိုတာဖြစ်တယ်။
+Expressionက တန်ဖိုးတခုကိုပြန်ပေးပီး Statementကတော့ တခုခုဖြစ်သွားအောင်လုပ်ဆောင်ပေးexecute
+လုပ်ပေးတာမျိုးကိုခေါ်တယ်။
+ဥပမာအနေနဲ့ဆို functionကို call လုပ်တာမျိုးက statement ဖြစ်တယ်။
+
+assignment, function callတွေကိုကျတော့ expression statementလို့ခေါ်တယ်။
+Eg. 
+a = 10;
+callFunction();
+
+functionကြေညာတတွေ variable ကြေညာတာတွေကျတော့ declaration statementလို့ခေါ်တယ်။
+Eg.
+let a = 10;
+function callFunction() {}
+
+if, while, do while, for, for in, for of, switch, try-catch-finally
+တို့ကိုကျတော့ control structure statement လို့ခေါ်တယ်။
+
+5.1 Expression Statements
+side effects ရှိတဲ့ expression တွေကို expression statementလို့ခေါ်တယ်။
+ဘာတွေပါလဲဆိုရင် unary operator, delete, console.log, Math functionလိုကောင်မျိုးတွေဖြစ်တယ်။
+
+Eg. 
+greeting = 'Hello' + name;
+i *= 5;
+counter++;
+delete obj.name;
+console.log('Hello World');
+Math.pow(2,3);
+
+Compound and Empty Statements
+- ဆိုတာက multiple statementတွေကို ပေါင်းပီး block({}) - curly bracket အဖွင့်ပိတ်ထဲမှာ
+ပေါင်းရေးတာမျိုးကိုခေါ်တာဖြစ်တည်။
+
+Conditionals Statements
+- ဆိုတာက အခြေနေပေါ်မှာ မူတည်ဆုံးဖြတ်ပီး ဘာလုပ်မယ်ဆိုတာမျိုးကို သတ်မှတ်တာမျိုးဖြစ်တယ်။
+
+ဘာတွေပါလဲဆိုရင် if else, else if, switchတို့ပဲဖြစ်တယ်
+
+If statement
+ - if statementကိုရေးမယ်ဆိုရင် if (expression) statement ဆိုပီးရေးရတယ်။
+ expressionမှာကျတော့ဘာဖြစ်ရမလဲဆိုရင် truthy တန်ဖိုးဖြစ်ရမယ်။
+ ေပးထားတဲ့ expressionနဲ့မှန်ရင် if ရဲ့အောက်က statement တွေကိုလုပ်ဆောင်မှာပဲဖြစ်တယ်
+
+if(username == null)
+ username = 'HWH';
+
+ဒီမှာဆိုရင် if မှာက statement တခုတည်းပဲရှိတယ်။
+အဲ့လိုမှမဟုတ်ပဲ
+if(username == null){
+    username = 'HWH';
+    address = 'SOMEWHERE';
+}
+
+condtion မှန်လို့ လုပ်စေချင်တဲ့အကြောင်းအရာများလို့ အဲ့ကောင်တွေအားလုံးကို
+တစုတပေါင်းထဲလုပ်စေချင်ရင် multiple statementsတွေကို block ထဲမှာထည့်ပီးတော့ ရေးလို့ရတယ်။
+
+else 
+- elseကကျတော့ဘာလဲဆိုရင် ifက expressionက မမှန်ဘူးဆိုရင် အလုပ်လုပ်မဲ့ကောင်ပဲဖြစ်တယ်။
+ဥပမာ အနေနဲ့ဆိုရင် အသက်၁၈ပြည့်ပီးရင် vote ပေးလို့ရမယ် မဟုတ်ရင် ပေးလုိ့မရဘူးဆိုတာကို
+အောက်ကလိုမျိုးရေးနိုင်တယ်။
+
+let age = 16;
+if(age >= 18){
+    console.log('You Can Vote')
+}else{
+    console.log('You are too young to vote');
+}
+
+ဒိကုဒ်မှာဆို အသက်က ၁၈ထပ်ငယ်တဲ့အတွက်ကြောင့် if ထဲကexpressionနဲ့မကိုက်တဲ့တွက်
+else က တန်ဖိုးထွက်လာမှာဖြစ်တယ်။
+
+if else
+- ကကျတော့ တခုထပ်မကသော ဆုံးဖြတ်ချက်ရွေးချယ်မှုတွေကို လုပ်ချင်ရင် သုံးတယ်။
+ဥပမာအနေနဲ့ဆို အမှတ်မှာ ၈၀ထပ်ကျော်ရင် ဂုဏ်ထူး ၄၀ ကနေ ၇၉ဆို အောင်တယ် ၄၀အောက်ဆိုကျတယ်
+အဲ့လိုမျိုးတခုထပ်ပိုတဲ့ အခြေနေတွေမှာဆို if else ကိုသုံးနိုင်တယ်။
+အောက်ကလိုမျိုး ရေးနိုင်တယ်။
+
+let mark = 76;
+if(mark >= 80){
+    console.log('Distinction');
+}else if(mark >= 40){
+    console.log('Pass');
+}else{
+    console.log('Fail');
+}
+
+ဒီဥပမာမှာဆိုရင် ပထမဆုံးအခြေနေတွက်ကို if သုံးတာကိုမြင်ရမယ်
+ကျန်တဲ့အခြေနေတွေကိုထပ်ဆင့်ကဲစစ်ဖို့ကျတော့ အဲ့အခြေနေကို else ifထဲမှာစစ်ထားတာတွေ့ရမယ်
+ပထမ ဂုဏ်ထူးမှတ်ကိုစစ်လိုက်တယ် 
+ဂုဏ်ထူးမှတ်မဟုတ်ဘူး အဲ့ကျရင် အောင်လားဆိုတာကိုကျတော့else if ထဲမှာစစ်တယ်
+နောက်ဆုံးအခြေနေ အဲ့လိုအောင်တာ ဂုဏ်ထူးပါတာမဟုတ်ဘူးဆိုတဲ့အခြေနေကျတော့
+elseဆိုပီးထည့်လိုက်ပီး ကျတယ်ဆိုတာဆိုပီးထုတ်လိုက်တယ်
+ယခုလက်ရှိအမှတ်က 76ဖြစ်တဲ့တွက်ကြောင့် အောင်တယ်ဆိုတဲ့ 'Pass' resultရမှာဖြစ်တယ်။
+
+switch statement
+- အခြေနေတွေကိုစစ်ခြင်ရင်သုံးတယ်။
+if else if နဲ့ဘာကွာလဲဆိုရင် if, else ifမှာ expression မှာ logical operator နဲ့
+operation တွေလုပ်လို့ရတယ်
+ဒါပေမဲ့ switchမှာကတော့ expressionမှာ type 1ခုကိုပဲလက်ခံပီး  case မှာက အဲ့ expression type
+ပေါ်မှာမူတည်ပီး ကိုက်ညီမှုရှိမရှိစစ်တာဖြစ်တယ်။
+syntax အနေနဲ့ဆိုရင် အောက်ပါတိုင်းဖြစ်တယ်။
+switch(expression) 
+{
+    statements
+}
+
+if မှာဆိုရင် expression မှာ အောက်ပါလိုမျိုးသု့းနိုင်တယ်။
+if(true && false && true){
+    Statements
+}
+
+switch ရဲ့ expressionမှာတော့ type ကိုပဲလက်ခံလို့ရတယ်။
+ဥပမာအနေနဲ့ဆို
+let currentDay = 2;
+switch(currentDay){
+    case 0:
+        console.log('Monday');
+        break;
+    case 1:
+        console.log('Tuesday');
+        break;
+    case 2:
+        console.log('Wednesday');
+        break;
+    case 3:
+        console.log('Thursday');
+        break;
+    case 4:
+        console.log('Friday');
+        break;
+    case 5:
+        console.log('Saturday')
+        break;
+    case 7:
+        console.log('Sunday');
+    default:
+        console.log('Something Wrong');
+        break;
+}
+
+ဒီဥပမာမှာဆိုရင် switchရဲ့ expressionထဲမှာလက်ခံတဲ့ကောင်က number typeဖြစ်ပီး 
+case တခုချင်းစီမှာ စစ်ထားတဲ့ကောင်ကလဲ numberဖြစ်ဖို့လိုပါတယ်။
+ဟုတ်ပီ အဲ့တော့ caseမှာ number မဟုတ်ပဲ အခြားtypeဆိုရင်ကောမရဘူးလားဆိုတော့ရပါတယ်။
+ဒါပေမဲ့ မှန်ကန်တဲ့တန်ဖိုးတော့ရမှာမဟုတ်ပါဘူ ဘာလို့လဲဆိုရင် switch မှာက တန်ဖိုးကိုစစ်ရင် 
+strict equality နဲ့စစ်လို့ဖြစ်တယ်။
+ပြောချင်တာက အဲ့ကောင်ကို if မှာဆိုရင် မှန်တယ်ထွက်လိမ့်မယ်။အောက်က ဥပမာကိုကြည့်ရအောင်
+if(2 == '2'){
+    console.log('Wednesday');
+}
+
+switch(2){
+    case '2':
+        console.log('Wednesday');
+        break;
+}
+
+အထက်ကဥပမာမှာဆိုရင် if နဲ့ရေးထားတဲ့ကောင်က တန်ဖိုးထွက်လာမှာဖြစ်ပီး switchကကောင်ကတော့ တနဖိုးထွက်လာမှာမဟုတ်ပါဘူး
+ဒါမို့ switchမှာ default က strict equalityဆိုတာမှတ်ထားသင့်ပါတယ်
+နောက်တခုကတော့ break ပါ။ သူက ဘာလုပ်ဖို့ထည့်ပေးရလဲဆိုရင် မှန်ကန်တဲ့ အခြေနေတခုကိုတွေ့ရင်
+အောက်က ကျန်တဲ့အခြေနေတွေကိုဆက်မလုပ်ရအောင်လို့ဖြစ်တယ်။
+အထက်ကဥပမာမှဦဆို တန်ဖိုးက 2ဖြစ်တဲ့အတွက် case 2က logကိုထုတ်ပီးတာနဲ့ switchကနေ ထွက်သွားမှာပဲဖြစ်ပါတယ်။
+
+ပိုမြင်သာအောင် နောက်ထပ်ဥပမာတခုကိုကြည့်ရအောင်။
+Monday to Fridayဆိုရင် အလုပ်လုပ်ရက် မဟုတ်ရင် ပိတ်ရက်ဆိုတာမျိုးကို switch နဲ့ရေးမယ်ဆိုအောက်ကလိုမျိုးရေးလို့ရတယ်။
+
+switch(day){
+    case 'Monday':
+    case 'Tuesday':
+    case 'Wednesday':
+    case 'Thursday':
+    case 'Friday':
+        console.log('GO TO WORK');
+        break;
+    default:
+        console.log('Stay Home');
+        break;
+}
+
+ဒီမှာဆိုရင် case တွေတခုပီးတုင်းမှာ ဘယ်statment, breakမှ မပါတာကိုတွေ့ရမယ် အဲ့ထဲက တခုခုနဲ့ကိုက်ညီရင်
+အောက်က GO TO WORKဆိုတဲ့ logကိုထုတ်မှာပဲ ဖြစ်တယ်။ 
+ဟုတ်ပီ အဲ့တော့ အဲ့အခြေနေတွေနဲ့ မကိုက်ညီရင်ကျ ဘာလုပ်မှာလဲ။
+အဲ့အခြေနေတွေနဲ့ မကိုက်ညီဘူးဆိုရင် default ဆိုတဲ့ထဲ၀င်လာပီး defaultထဲကကောင်ကို လုပ်ဆောင်မှာဖြစ်ပါတယ်။
+ပြောချင်တာက caseမှာ ကိုက်ညီမှုမရှိတာနဲ့ defaultထဲကိုရောက်လာမှာဖြစ်တယ်။
+if else က else clauseနဲ့တူပါတယ်။
+if မှာ else မပါပဲရေးနိုင်သလို switchမှာလဲ defaultလုပ်စရာမရှိရင် မထည့်ပဲ ရေးသားနိုင်ပါတယ်၊
+အောက်ကလိုမျိုးပဲရေးသားနိုင်ပါတယ်။
+switch(day){
+    case 'Monday':
+    case 'Tuesday':
+    case 'Wednesday':
+    case 'Thursday':
+    case 'Friday':
+        console.log('GO TO WORK');
+        break;
+}
+
+if, switchကို ဘာလို့ခေါလဲဆိုရင် selection statementလို့ခေါ်တယ် 
+ပေးလိုက်တဲ့ expressionပေါ်မူတည်ပီး ကိုက်ညီတဲ့ ဘယ်အရာကိုလုပ်ဆောင်မယ်ဆိုတာမျိုးဖြစ်တယ်။
+
+Loops
+- Loopsဆိုတာက ဘာလဲဆိုရင် ထပ်ကာထပ်ကာလုပ်ဆောင်တာမျိုးကိုခေါ်တယ်။
+loopsဆိုကလဲ statementဖြစ်တယ်။ သူ့ထဲမှာဘာတွေပါလဲဆိုရင် while, do while, for, for of, for in
+ဆိုတဲ့ အမျိုးစားတွေပါ၀င်တယ်။
+
+For Loop
+ဒီကောင်ကိုဘယ်အခြေနေမျိုးမှာသုံးလဲဆိုရင် လုပ်ဆောင်ရမယ့် အကြိမ်အရေတွက်ကို အတိကျသိရင် 
+for loopကိုသုံးသင့်တယ်။ပြောချင်တာက ကျွန်တော်တို့က Helloဆိုတဲ့စာသားကို ဆယ်ကြိမ်ထုတ်ချင်တယ်ဆိုပါစို့
+console.log('Hello')ဆိုတာကို ဆယ်ကြိမ်ရေးနေမဲ့အစား for loop ကိုသုံးနိုင်တယ်
+
+for(let i = 0; i < 10; i++){
+    console.log('Hello');
+}
+
+ဒီမှာဆိုလို့ရှိရင်အပိုင်းသုံးပိုင်းပါဝင်တယ်
+ပထမတစ်ခုကတော့ initializer, နောက်တစ်ခုက condtion, နောက်ဆုံးတခုက loop counter
+တို့ပဲဖြစ်ကြပါတယ်။
+
+ပထမဆုံးအပိုင်းဖြစ်တဲ့ initializer ကတော့ loop counter တန်ဖိုးကိုသတ်မှတ်ပေးတာဖြစ်တယ်
+let i = 0
+
+ဒုတိယပိုင်းဖြစ်တဲ့ condtionကတော့ loopရဲ့ body {} ထဲကကောင်ကို execute လုပ်မလုပ်ဆိုတာကို
+ဆုံးဖြတ်ပေးဖို့ဖြစ်တယ်။
+condtionကမှန်တော့မှ body {}ထဲကကောင်က အလုပ်လုပ်မှာဖြစ်တယ်။
+
+နောက်ဆုံးအပိုင်းကတော့ counter increment ပဲဖြစ်ပါတယ်
+သူကဘယ်လိုလုပ်လဲဆိုရင် conditionကကောင်ကို ထိန်းချုပ်ဖို့အတွက်ဖြစ်ပါတယ်
+တကယ်လို့ counter incrementမပါခဲ့ရင် infinite loopဖြစ်နေမှာဖြစ်တယ်
+
+တစ်ခုစဉ်းစားကြည့်ရအောင်။ အဲ့အစိတ်ပိုင်းသုံးခုမပါပဲနဲ့ရေးလို့မရဘူးလားဆိုတော့ရတယ်။
+တကယ်လို့ အစိတ်ပိုင်းသုံးခုလုံးတာမပါခဲ့ရင်တော့ infinite အဆုံးမရှိတဲ့ loop ဖြစ်နေမှာဖြစ်တယ်။
+initializer, loopcounterကိုတော့မပါပဲနဲ့ သပ်သပ်စီခွဲရေးလို့ရတယ်။
+ဥပမာ
+let i = 0;
+for( ; i < 10; ){
+    console.log('Hello');
+    i++;
+}
+
+ဒါဆိုလို့ရှိရင်လဲ result ကတော့အတူတူရမှာ ဖြစ်ပါတယ်။
+initializerကို အရင်ကြိုရေးပီးတော့ incrementကို loop body ထဲမှာ ထည့်လိုက်တာပဲဖြစ်တယ်။
+ဒါပေမဲ့ recommend ပေးချင်တဲ့နည်းလမ်းကတော့
+for(initializer, condtion, increment){
+    statements
+}
+ဆိုတဲ့နည်းလမ်းပဲဖြစ်ပါတယ်။
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
