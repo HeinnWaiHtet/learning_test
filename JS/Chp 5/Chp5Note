@@ -246,7 +246,65 @@ for(initializer, condtion, increment){
 }
 ဆိုတဲ့နည်းလမ်းပဲဖြစ်ပါတယ်။
 
+ခုfor loopကိုသုံးပီးရေးထားတဲ့ကောင်ကိုနောက်တမျိုးသု့းပီးရေးနိုင်ပါသေးတယ်။ အဲ့တာကတော့ while loop ပဲဖြစ်ပါတယ်
 
+while
+- ကိုကျတော့ ဘယ်လိုချိန်မျိုးမှာသုံးသင့်လဲဆိုရင် condition ပေါ်မှာမူတည်ပီး loopလုပ်ချင်ရင်သုံးနိုင်တယ်
+ဘယ်လိုခေါ်သေးလဲဆိုရင် condition control loopလို့ခေါ်တယ်။
+syntax အနေနဲ့ဆို အောက်ပါတိုင်းဖြစ်တယ်။
+while (expression) statement
+expression မှာက truthy value ဖြစ်ဖို့လိုအပ်တာပြဖြစ်ပါတယ်။
+အပေါ်က ဥပမာကိုပဲ ပြန်ရေးမယ်ဆိုရင်
+eg.
+let i = 0;
+while(i < 10){
+    console.log('Hello');
+    i++;
+}
+
+condition မမှန်မချင်း loop bodyက execute လုပ်နေမှာပဲဖြစ်တယ်။
+condition controlအတွက် loop counter control or state valueကတော့ 
+မှာ ပြောင်းလဲပေးဖို့ မမေ့ဖို့လိုအပ်တယ် မဟုတ်ရင် infinite loop ဖြစ်သွားမှာဖြစ်တယ်။
+
+do/while
+နောက်တခုကတော့  do/while loopပဲဖြစ်တယ်။
+သူကလဲ while loopလိုပဲ condition control loopပဲဖြစ်တယ်။
+ဘာကွာလဲဆိုရင်ကျတော့  do/while က အနည်းဆုံးတကြိမ်တော့ လုပ်နေမှာပဲဖြစ်တယ်။
+while မှာကျတော့ အစထဲက condtionမှားရင် တကြိမ်တောင်မှ လုပ်မှာ မဟုတ်ပေမဲ့
+do/whileမှာကျတော့ အနည်းဆုံးတကြိမ်တော့ လုပ်မှာဖြစ်တယ်။ 
+ဘယ်လိုနေရာမျိုးတွေမှာ သုံးလဲဆိုရင် user login attempတို့ number guessတို့မျိုးမှာဆိုသု့းနိုင်ပါတယ်။
+syntax အနေနဲ့ကတော့ အောက်ပါတိုင်းဖြစ်တယ်။
+do
+statement
+while (expression);
+
+သူ့မှာကျတော့ condition expressionက နောက်ဆုံးမှလာတာပဲဖြစ်တယ်။
+ဥပမာနေနဲ့ဆို အောက်ကကောင်လေးကို ကြည့်ကြရအောင်။
+let num = parseInt(Math.random() * 10 +1);
+let userNum;
+let attempt = 0;
+do
+{
+    userNum = parseInt(prompt("Enter your guess"+(attempt+1)));
+    if(userNum< num)
+    {
+        console.log('Too small');
+    }
+    else if(userNum > num)
+    {
+        console.log('Too large');
+    }
+    attempt++;
+}while(userNum !== num);
+
+console.log('Correct at attempt ',attempt);
+
+ဒီဥပမာမှာဆိုရင် ပထမက random number တလုံးကိုတောင်းပီး user ဆီကနေ number 1လုံးတောင်းပီး
+ခန့်မှန်းခိုင်းတာဖြစ်တယ်။ အဲ့မှာ ပထမဆုံးအနည်းဆုံး တကြိမ်တော့ခန့်မှန်းရမှာဖြစ်တဲ့တွက်ကြောင့် do /while
+ကိုသု့းတာဖြစ်တယ်။ ပီးတော့ ခန့်မှန်းတိုင်းမှာ ခန့်မှန်းတဲ့ အကြိမ်အရေတွက်ကို  တိုးသွားပီး ခန့်မှန်းလိုက်တာ
+မှန်ရင် ထွက်သွားပီး ဘယ်နကြိမ် ခန့်မှန်းခဲ့ရတယ်ဆိုတာကို ထုတ်ပြမှာဖြစ်တဘ်။
+တကယ်လို့ မှားရင်တော့ မမှန်မချင်း user input ပြန်တောင်းနေမှာဖြစ်တယ်
+အဲ့လိုအခြေနေမျိုးတွက်ဆိုရင်သုံးနိုင်ပါတယ်။
 
 
 
