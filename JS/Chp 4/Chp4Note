@@ -212,18 +212,251 @@ eg. 'apple' > 'banana' ဆိုပီးခေါ်တာမျိုးကိ
 ဘယ်လိုနှိုင်းယှဉ်လဲဆိုရင် character code အရ ယှဥ်တာဖြစ်တယ်။
 
 In Operator
+in opeartorက keyရှိလားမရှိဘူးလားစစ်ချင်ရင်သုံးတယ်။
+syntaxအနေနဲ့ဆိုရင် left side မှာက string, symbol or value ဖြစ်ရမယ်။
+eg. 'name' in obj, 1 in arr
+objectမှာဆိုရင် object ရဲ့ keysရှိလားဆိုတာမျိုး
+arrayမှာကျရင်တော့ index မှာ တန်ဖိုးရှိလားဆိုတာမျိုးကိုသုံးတယ်။
+ဥပမာဆို 
 
+let obj = {
+   name : "TK",
+   age  : 38
+};
+console.log(" 'name' in obj ", 'name' in obj);
+console.log(" 'toString' in obj ", 'toString' in obj);
+let arr = [10,,20,30];
+console.log('1 in arr ', 1 in arr);
+console.log('Arr[1 ] ',arr[1]);
 
+arr = [10,undefined,20,30];
+console.log('1 in arr ', 1 in arr);
 
+ပထမ nameဆိုတဲ့တန်ဖိုးကိုစစ်ရင် true ပြန်မယ်
+object တွေမှာtoStringက default ပါပီသား ဖြစ်တဲ့တွက်ကြောင့် 'toString' in obj ဆိုရင်လည်း true ပြန်မယ်
+မရှိတဲ့ propertiesကိုစစ်မယ်ဆို false ပြန်မယ်
 
+array မှာ index တွေကိုစစ်တာမို့ 1 in arr ဆိ ုရင် true ပြန်မယ်။
+ဒါပေမဲ့ arr[1] ကိုကြည့်ရင် ဘာမှတန်ဖိုးသတ်မှတ်ထားတာမရှိတဲ့တွက် undefined ကိုပဲပြန်မှာဖြစ်တယ်။
+အောက်ဆုံးက 1 in arrမှာဆိုရင်တော့ တန်ဖိုး undefinedသတ်မှတ်ထားတာရှိတဲ့တွက်ကြောင့် trueပြန်မှာဖြစ်တယ်။
 
+instanceof Operator
+operator ရဲ့ ဘယ်ဘက်ကကောင်က operator ညာဘက်က ကောင်ရဲ့ instance ဖြစ်လား မဟုတ်လားစစ်ချင်ရင်သုံးတယ်။
 
+let d = new Date(); // Create a new object with the Date() constructor d instanceof Date // => true: d was created with Date()
+d instanceof Object // => true: all objects are instances of Object
+d instanceof Number // => false: d is not a Number object
+let a = [1, 2, 3]; // Create an array with array literal syntax
+a instanceof Array // => true: a is an array
+a instanceof Object // => true: all arrays are objects
+a instanceof RegExp // => false: arrays are not regular expressions
 
+ပထမ တခု date က object ရဲ့ instance ဖြစ်တာကို စစ်ရင် true ပြန်မယ် ဘာလို့ဆို type အကုန်လုံးရဲ့ root level
+က object ဖြစ်လို့ဖြစ်တယ်
+ဒါပေမဲ့ instanceof number လားဆိုရင် false ပြန်မှာဖြစ်တယ်
+တကယ်လို့ opeartor right hand sideမှာရှီတဲ့ကောင်က object class တခုခုမဟုတ်ရင် TypeError တက်မှာဖြစ်တယ်။
 
+၄.၁၀ Logical Expression
+- ဆိုတာဘာလဲဆိုရင် &&, ||, !တို့လိုကောင်မျိုးတွေ ဖြစ်ပါတယ်။
+သူ့ကိုဘယ်လိုနေရာမှာသုံးလဲဆိုရင် အခြေနေပေါ်မူတည်ပီး မှန်လားမှားလားဆိုတာမျိုး စစ်ဆေးတဲ့နေရာမှာသုံးတယ်။
 
+သူတို့ကို ဘယ်လိုမျိုးသွားလဲဆိုရင် binary truth table opearion နဲ့အလုပ်လုပ်တာဖြစ်တယ်။
+အောက်ကဇယားကိုကြည့်ကြည့်ရအောင်
 
+opearand1   opearand2   AND(&&)   OR(||)   NOT(!)
+true        true        true     true     false
+true        false       false    true     false
+false       true        false    true     true
+false       false       false    false    true
 
+ANDကို အလွယ်မှတ်မယ်ဆို operand နှစ်ခုလုံးက trueဖြစ်မှာဖြစ်မယ်
+ORကိုကျတော့ opearand2ခုလုံးက falseဖြစ်မှသာ false ပြန်မယ်
+NOTကိုကျတော့ opearandတန်ဖိုး တခုတည်းကိုကြည့်ပြ ီးtrue ဆိုfalse, falseဆို trueပြောင်းလဲလိုက်တာဖြစ်တယ်
+ဒီနေရာမှာတခုပြန်မှတ်ရမှာက ဒီ true falseတွေက truthy falsyတန်ဖိုးနဲ့ အလုပ်လုပ်တယ်ဆိုတာပဲဖြစ်တယ်။
+ပြောချင်တာက အောက်ကလို operation တွေကိုလဲလုပ်ဆောင်ပေးမယ်လို့ဆိုလိုတာဖြစ်တယ်။
+console.log('true && "true" ', true && 'true');
+console.log('null && "true" ', null && 'true');
+console.log('true && {} ', true && {});
 
+အဲ့ကျတော့ပြန်မှတ်မယ်ဆိုရင် 
+ANDမှာ first opearnd ကတာ falsyဖြစ်မယ်ဆို false ပြန်မှာဖြစ်ပီး truthyဖြစ်ခဲ့မယ်ဆိုရင်
+ညာဘက်ကတန်ဖိုးပြန်ပေးမှာဖြစ်တယ် ညာဘက်ကလို့ဘာလို့ပြောရလဲဆိုရင်
+true && 'true' မှာဆိုရင် တန်ဖိုးက string 'true' ပြန်ပေးမှာဖြစ်တယ်
+
+ORမှာကျရင်တော့ first opearand က truthyဖြစ်ရင် first opearandတန်ဖိုး ပြန်မှာဖြစ်ပါတယ်
+မဟုတ်ရင်တော့ second operandတန်ဖိုးပြန်ပေးမှာဖြစ်တယ်။
+ဥပမာ 'hello' || falseဆိုရင် တန်ဖိုးက stirng 'hello' ပြန်ပေးမှာဖြစ်ပါတယ်။
+
+အဲ့ကျတော့ ဒီကောင်တွေက ဘယ်လိုနေရာတွေမှာအသုံး၀င်လဲပေါ့ react လိုကောင်မျိုးမှာဆို condition ေပါ်မူတည်ပီး
+ဘယ်componentပြမယ်ဆိုပီးလုပ်တယ်ဆိုပါဆို ဒါပေမဲ့ အဲ့ကောင်တွေမှာ if statementကိုသုံးမရဘူး အဲ့ကျတော့
+ ဒီ logical expression တွေက အသုံးပြုပီးရေးလို့ရတယ်။
+ ဥပမာ true && <Component1 />
+
+နောက်တခုက module တွေဆာက်တဲ့နေရာမျိုးမှာလဲသုံးနိုင်တယ်။
+ဥပမာ 
+window.module = window.module || {
+   api : {},
+   method()
+};
+ပြောရမယ်ဆို module ဆောက်ထားပီးပီဆိုရှိနေတဲ့ module ကိုသုံးပီး မရှိသေးရင် အသစ်ဆောက်ပေးလိုက်မယ်
+အဲ့လိုမျိုးအနေနဲ့လည်းသုံးနိုင်တယ်။
+
+AND(&&), OR(||) operaotr ကို short circuiting လို့ခေါ်တယ်ဘာလို့လဲဆိုရင် condition တခုက ကိုက်ညီသွားရင် အခြားတခုကို 
+ဆက်စစ်စရာမလိုတော့ဘူးဖြစ်တယ်ဥပမာအနေနဲ့ဆို
+function getTrue(){
+   console.log('Call GetTrue');
+   return true;
+}
+
+function getFalse(){
+   console.log('Call GetFalse');
+   return false;
+}
+
+console.log(getFalse() && getTrue())ဆိုပီးခေါ်ရင် 
+'Call GetFalse'
+falseဆိုပီးရမှာဖြစ်တယ်
+ANDမှာဆို ဘယ်ဘက်က expressionကမှားတယ်ဆိုတာနဲ့ ညာဘက်ကကောင်ကို ဆက်လုပ်မှာမဟုတ်ဘူးဖြစ်တယ်။
+
+console.log(getTrue() || getFalse())ဆိုပီးခေါ်ရင် 
+'Call GetTrue'
+trueဆိုပီးရမှာဖြစ်တယ်
+ORမှာဆို ဘယ်ဘက်က expressionကမှန်တယ်ဆိုတာနဲ့ ညာဘက်ကကောင်ကို ဆက်လုပ်မှာမဟုတ်ဘူးဖြစ်တယ်။
+
+4.11 Assignment Expressions
+
+တန်ဖိုးတခုကို ထည့်တဲ့အချိန်မှာသုံးတယ်။ တခုမှတ်ရမှာက = operator ရဲ့ left hand sideတန်ဖိုးက
+lvalueဖြစ်ရမယ်။ lvalueဆိုတာက variable, property, array element တွေဖြစ်နေဖို့လိုတယ်လို့ဆိုလိုချင်တာဖြစ်တယ်။
+
+obj.name = 'HWH';
+arr = [];
+age = 10;
+အဲ့လိုမျိုးဖြစ်ဖို့လိုတယ်လို့ဆိုလိုတာဖြစ်တယ် အဲ့လိုlvalueမဟုတ်ပဲ
+ 10 = 10ဆိုတာမျိုး လုပ်ခွင့်မပေးဘူးဖြစ်တယ်။
+တကယ်လို့မှားယွင်းစွာ သုံးမိမယ်ဆိုရင် အောက်ပါ error တက်မှာပဲဖြစ်တယ်။
+Uncaught SyntaxError: Invalid left-hand side in assignment
+
+assignment operator ကို တခါတည်း opeation တွေနဲ့တွဲပီးလဲလုပ်ဆောင်နိုင်တယ်။
+အောက်ကဇယားကို ကြည့်ကြရအောင်။
+
+Operator       Example        Equivalent
++=             a+=b           a=a+b
+-=             a-=b           a=a-b
+*=             a*=b           a=a*b 
+/=             a/=b           a=a/b
+%=             a%=b           a=a%b
+**=            a**=b          a=a**b      
+<<=            a<<=b          a=a<<b
+>>=            a>>=b          a=a>>b
+>>>=           a>>>=b         a = a >>> b
+&=             a&=b           a=a&b
+|=             a|=b           a=a|b
+^=             a^=b           a=a^b
+
+ပထမဆုံး += ကိုကြည့်ကြရအောင် သူ့ကိုရေးမယ်ဆို a+=b ဆိုပီးရေးမှာဖြစ်တယ်
+ဘယ်လိုအလုပ်လုပ်လဲဆိုတော့ a + b ကိုအရင်ပေါင်းမယ်
+အဲ့က ရလာတဲ့တန်ဖိုးကိုမှ a တန်ဖိုးထဲကိုပြန်ထည့်ပေးမှာဖြစ်တယ်။
+ကျန်တဲ့ operator တွေကလဲ အလားတူလုပ်ဆောင်ချက်မျိုးပဲလုပ်ဆောင်မှာဖြစ်တယ်။
+
+4.12 Evaluation Expressions
+- ဆိုတာက string အနေနဲ့ရေးထားတဲ့ javascript expressionတွေကို 
+သတ်ဆိုင်ရာ javascript opeartionလုပ်ဆောင်ချက်အနေနဲ့ လုပ်ဆောင်ပေးတာဖြစ်တယ်
+ဥပမာဆို
+let str = '2 + 3';
+console.log(eval(str)); // Output: 5
+
+strထဲမှာ javascript expression ဖြစ်တဲ့ '2 + 3'တန်ဖိုးရှိနေတယ်
+အဲ့တာကို ကို eval() function က ဖတ်ပီး အလုပ်လုပ်လိုက်မယ်ဆိုရင် သတ်ဆိုင်ရာ opeartionလုပ်ဆောင်ချက်အနေနဲ့
+လုပ်ဆောင်သွားမှာဖြစ်တယ်။
+အဲ့တော့ ဘာဖြစ်နိုင်လဲဆိုရင် command injection, code execution လို့ခေါ်တဲ့ security vulnerability တွေဖြစ်လ ာနိုင်တယ်။
+ဒါကြောင့် eval() ကိုမသုံးသင့်ဘူးဖြစ်တယ်။ အဲ့တော့တယောက်ယောက်က
+ကိုယ့်ရဲ့ user textboxကနေအဲ့လို injectionမျိုးမသုံးနိုင်အောင်ဆိုရင် ဘာလုပ်ရမလဲဆို 'use strict'
+ဆိုပီး ကြေညာပီးတော့သုံးလို့ရနိုင်တယ်။
+ strict mode ကနေ eval() ကိုသုံးလို့မရတော့ဘူးဖြစ်တယ်။
+ ဥပမာ
+ 'use strict';
+let str = '2 + 3';
+console.log(eval(str));
+ အဲ့လိုမျိုးအသု့းပြုနိုင်တယ်။
+
+ 4.13 Miscellaneous Operators
+
+The Conditional Operator (?:)
+ဒီကောင်ကဘာလဲဆိုရင်  if-else statement ကိုတစ်ကြောင်းထဲမှာ ရေးနိုင်တဲ့ operator ပဲဖြစ်တယ်။ ဥပမာ-
+let age = 18;
+let canVote = age >= 18 ? 'Yes' :  'No';
+console.log(canVote); // Output: 'Yes'
+ဒီဥပမာဆိုရင်  အသက်၁၈နှစ်ရှိတဲ့သူက မဲ ပေးနို့ငရဲ့လား ဆိုတာကို စစ်ဆေးတာပဲဖြစ်တယ်။
+အဲ့လိုကောင်မျိုးတွက်ဆိုရင် ပုံမှန် if elseနဲ့မသုံးတော့ပဲ conditional opeartorကိုအသုံးပြုနိုင်တယ်
+condition ကမှန်ရင် ?အနော်ကက တန်ဖိုးကို ပြန်မှာဖြစ်ပီး မှာရင်တော့ : အနောက်ကတန်ဖိုးကိုပြန်ပေးမှာဖြစ်တယ်။
+
+First-Defined (??)
+- ဒိကောင်ကကျတော့ဘယ်လိုလဲဆိုရင် လက်ရှိတန်ဖိုးက null, undefined တန်ဖိုးဖြစ်လို့ 
+defaultတန်ဖိုးတခုခုသတ်မှတ်ချင်တဲ့အခါမျိုးမှာသုံးနို်ငတယ်။
+syntax အနေနဲ့ဆို
+
+lval ?? 'Defaul Value';
+ဥပမာ
+let obj;
+obj = obj ??  { name: 'John', age: 30 };
+console.log(obj); // Output: { name: 'John'， age: 30 }
+ပထမ objတန်ဖိုးက ဘာမှ မထည့်ထားတဲ့တွက် undefinedဖြစ်နေမဘ် အဲ့တော့ 
+အောက်မှာကျတော့ တကယ်လို့ obj တန်ဖိုးတာ မရှိဘူးဆို defaul တန်ဖိုးဖြစ်တဲ့
+ { name: 'John', age: 30 } ကိုပြန်ပေးမှာပဲဖြစ်တယ်။
+ဒါကြောင့်ဒီချိန်မှာ objတန်ဖိုးကိုထုတ်ကြည့်မယ်ဆိုရင် { name: 'John', age: 30 }ဆိုတာကိုရမှာဖြစ်တယ်။
+
+The typeof Operator
+- ဒီ operator ကဘာလုပ်တာလဲဆိုရင် variable တစ်ခုရဲ့ data type ကို ပြန်ပေးတာပဲဖြစ်တယ်။
+ဥပမာ-
+let x = 10;
+console.log(typeof x); // Output: 'number'
+let y = 'hello';
+console.log(typeof y); // Output: 'string'
+let z = true;
+console.log(typeof z); // Output: 'boolean'
+ဒီလိုမျိုး variable တွေရဲ့ data typeကို စစ်ချင်ရင် အသုံးပြုနိုင်တယ်။
+
+The delete Operator
+- ဒီ operator ကဘာလုပ်တာလဲဆိုရင် object property, array index value တစ်ခုကို 
+ဖျက်ပစ်တဲ့အခါမျိုးမှာသုံးနိုင်တယ်။
+ဥပမာ-
+let obj = {
+   name: 'John',
+   age: 30
+   };
+   delete obj.age;
+   console.log(obj); // Output: { name: 'John' }
+   let arr = [1, 2, 3, 4, 5];
+   delete arr[2];
+   console.log(arr); // Output: [1, 2, undefined, 4, 5]
+
+ဒိမှာဆိုရင် ပထမ obj.age ကို ဖျက်လိုက်တဲ့အခါ obj ထဲက age property ကပျောက်သွားပီး
+ {name: 'John'} ဆိုတဲ့ object ကိုရမှာဖြစ်ပါတယ်။
+ ဒါပေမဲ့ array တန်ဖိုးကို ဖြတ်တဲ့အခါမှာတော့ array indexက ပြတ်မသွားပဲ
+ အဲ့အခန်းရဲ့တနဖိုးကိုပဲ ဖြတ်လိုက်တာမျိုးဖြစ်တယ်။
+ ဒါကြောင့်မို arr[2] ကိ ုဖျက်လိုက်တဲ့အခ်ါ arr ထဲမှာ undefined တန်ဖိုးကိုရမှာဖြစ်ပါတယ်။
+ မူလ array lengthအတိုင်းပဲ ရှိနေမှာဖြစ်ပီး ဖြတ်လိုက်တဲ့အခန်းတန်ဖိုးပဲ 
+ undefined ဖြစ်သွားမှာဖြစ်တယ်။
+
+The comma Operator (,)
+- ဒီ operator ကဘာလုပ်တာလဲဆိုရင် expression တွေကို ပေါင်းစပ်ပြီး လုပ်ဆောင်တာမျိုးဖြစ်တယ်။
+ပြောချင်တာက expression တွေကို ပေါင်းစပ်ပြီး လုပ်ဆောင်တဲ့အခါမှာ right အဖြစ်ဆုံးဘက်ကကောင်ကို
+return, evalute လုပ်ပီး leftဘက်က ကောင်တွေကိုကျတော့ ပုံမှန်တိုင်း execute လုပ်သွားမှာဖြစ်တယ်။
+ဥပမာအနေနဲ့ဆို
+for(let i=0,j=10; i < j; i++,j--) {
+   console.log(i+j);
+}
+
+ဒီမှာဆို for loopရဲ့ assignment section မှာ comma operator ကို အသုံးပြုပီး
+vaiable ၂ခုကိုတခါ တည်းသတ်မှတ်ကြေညာလို့ရတယ်။
+
+နောက်တခုနေနဲ့ဆိုရင်
+const sqr = (a) => (console.log('a', a), (a ** a));
+console.log(sqr(10)); 
+// a, 10
+// 10000000000
+ဆိုတာမျိးရမှာဖြစ်တယ်။
+ပထမ console.log('a', a) ကို ပထမဆုံးလုပ်ပီး a ** a ကို returnပြန်ပေးသွားမှာပဲဖြစ်တယ်။
 
 
 
