@@ -306,34 +306,262 @@ console.log('Correct at attempt ',attempt);
 တကယ်လို့ မှားရင်တော့ မမှန်မချင်း user input ပြန်တောင်းနေမှာဖြစ်တယ်
 အဲ့လိုအခြေနေမျိုးတွက်ဆိုရင်သုံးနိုင်ပါတယ်။
 
+for / of
+- ဒီကောင်ကကျတော့ ဘယ်လိုနေရာမျိုးမှာသုံးလဲဆိုရင် Iterator valueတွေကို loop ပတ်ချင်၇င်သုံးတယ်
+Iterator valueဆိုတာက array, map, setတို့လိုကောင်မျိုးကိုပြောတာဖြစ်တယ်။
+ဒီကောင်ကို ES6(ECMA 2015)မှာမှ သုံးလို့ရမှာဖြစ်တဲ့ အဲ့အရင်ကောင်တွေဆို၇င်တော့ သု့းလို့ရမှာမဟုတ်ပါဘူး။
+ဥပမာ အနေနဲ့ဆို အောက်ပါတိုင်းရေးလို့ရတယ်။
+let data = [1, 2, 3, 4, 5, 6, 7, 8, 9], sum = 0; 
+for(let element of data) {
+    sum += element;
+}
+sum // => 45
 
+data arrayထဲမှာရှိတဲ့ အခန်းတခုချင်းဆီုကို loop ပတ်ပီး အဲ့အခန်းထဲကတန်ဖိုးကို elementထဲမှာထည့်ပေးလိုက်ပီး
+တန်ဖိုးကို element ဆိုတဲ့ ကောင်ကတဆင့်သု့းနိုင်မှာဖြစ်တယ်။
+for of က immuatable ဖြစ်တဲ့တွက်ကြောင့် let element အစား const elementကိုသုံးဖို့ အကြံပြုချင်တယ်။
+မြင်သာအောင်ပြရမယ်ဆိုရင်
+let data = [1, 2, 3, 4, 5, 6, 7, 8, 9], sum = 0; 
+for(let element of data) {
+    element *= element;
+}
 
+data; // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+loop bodyမှာ element တန်ဖိုးကိုပြောင်းလဲလိုက်ပေမဲ့
+နောက်ဆု့းတန်ဖိုးမှာတော့ မပြောင်းလဲဘူးဆိုတာကိုတွေ့ရမှာဖြစ်တယ် ဒါကြောင့်မို့ const နဲ့သုံးဖို့ အကြံပြုတာဖြစ်တယ်။
 
+အဲ့တော့ objectကို for / ofနဲ့သုံးကြည့်မယ်ဆိုရင်
+let obj = {
+    name: 'HWH',
+    age: 21
+}
 
+for(let data of obj){
+    console.log(data);
+}
+အဲ့ကုဒ်ကိုတာ runလိုက်မယ်ဆို obj is not iterable
+အဲ့ error တန်ဖိုးထွက်လာမှာဖြစ်တယ်။ဘာလို့လဲဆိုရင် objectက iterableမဟုတ်လို့ပဲဖြစ်ပါတယ်
+အဲ့ကြတော့ object ကို for of နဲ့သုံးချင်ရင် အောက်ပါနည်းလမ်းတေွတိုင်းသု့းလို့ရနိုင်ပါတယ်။
 
+for(let key of Object.keys(obj)){
+    console.log(obj[key]);
+}
 
+for(let value of Object.values(obj)){
+    console.log(value)
+}
 
+for(let (key, value) of Object.entries(obj)){
+    console.log(key, value)
+}
 
+for/in
+- ကကျတော့ iterable ဖြစ်ဖို့မလိုပါဘူး သူကကျတော့ဘယ်လိုလုပ်လဲဆိုရင် keyရှိတဲ့ကောင်ကို ယူပီးလုပ်ဆောင်တာဖြစ်တယ်။
+အောက်ကလိုမျိုးပဲရေးသားနိုင်ပါတယ်။
+let obj = {
+    name: 'HWH',
+    age: 21
+}
 
+for(let key in obj){
+    console.log(obj[key])
+}
 
+5.5 Jumps
+- control statment တွေကနေကျော်ချင်တယ်ဆိုရင်သုံးပါတယ်။
+သူကလဲ statement အမျိုးစားပဲဖြစ်တယ်။
 
+break
+- သူ့ကို ဘယ်ချိန်မှာသုံးလဲဆိုရင် လက်ရှိရှိနေတဲ့ loop or switchကနေထွက်ဖို့ဆိုရင်သုံးပါတယ်။
+ဘယ်ကောင်ကို break ဖြစ်သွားလဲဆိုရင် innermostကောင်ကို breakလုပ်ပီး ထွက်သွားမှာပဲဖြစ်ပါတယ်။
+ဥပမာအနေနဲ့ဆိုရင် အောက်ကကောင်ကိုကြည့်ရအောင်
+for(let i=0; i < 10; i++)
+{
+    console.log('Counter ',i);
+    if(i==5)
+    {
+        break;
+    }
+}
+console.log('End of body');
 
+ဒီမှာဆိုရင် i ရဲ့တန်ဖိုးက 5ဖြစ်ရင် breakလုပ်မယ်လုိ့ရေးထားပါတယ် 
+အဲ့တာမို့ i တန်ဖိုးက 5ဖြစ်တာနဲ့ for loopကနေထွက်သွားမှာပဲဖြစ်ပါတယ်။
+တန်ဖိုးကတော့ အောက်ပါတ်ိုင်းရမှာဖြစ်တယ်။
+Counter  0
+Counter  1
+Counter  2
+Counter  3
+Counter  4
+Counter  5
+End of body
 
+Continue
+သူကကျတော့ ဘယ်လိုအလုပ်လုပ်လဲဆိုရင် continue လို့ရေးထားတဲ့အောက်ကကောင်တွေကို ဆက်မလုပ်တော့ပဲ
+loopကို ကျော်လိုက်ပီး နောက်loop အဆင့်ကိုရောက်သွားမှာဖြစ်ပါတယ်။
+ဥပမာကိုကြည့်ရအောင်
+for(let i=0; i < 10; i++)
+{
+    if(i==5)
+    {
+        continue;
+    }
 
+    console.log('Counter ',i);
+}
+console.log('End of body');
 
+ဒီမှာဆိုရင် i ရဲ့တန်ဖိုးက 5ဖြစ်ရင် continueလုပ်မယ်လုိ့ရေးထားပါတယ် 
+အဲ့တာမို့ i တန်ဖိုးက 5ဖြစ်တာနဲ့ loop body အောက်က statements တွေကို ဆက်မလုပ်တော့ပဲနဲ့
+နောက်ထပ်loop အခြေနေတခုကိုပြောင်းသွားမှာပြဖြစ်တယ်။
+တန်ဖိုးကတော့ အောက်ပါတ်ိုင်းရမှာဖြစ်တယ်။
+Counter  0
+Counter  1
+Counter  2
+Counter  3
+Counter  4
+Counter  6
+Counter  7
+Counter  8
+Counter  9
+End of body
 
+Labeled Statements
+သူ့ကကျတော့ ဘာလဲဆိုရင် ပုံမှန် break, continueက innermost ဖြစ်တဲ့ loop or switch
+ကိုပဲအလုပ်လုပ်မှာဖြစ်တယ်။ အဲ့လိုမဟုတ်ပဲ loop ၂ထပ်ရှိပီး အတွင်းက loopကနေ အပြင်က
+loopကို break or continueလုပ်ချင်ရင် labelတခုပေးပီး label statment အနေနဲ့သု့းနိုင်ပါတယ်။
+အောက်က ဥပမာလေးကိုကြည့်ရအောင်
 
+outer: for(let i = 0; i < 5; i++){
+    console.log('Outer ', i);
+    for(let j = 0; j < 5; j++){
+        console.log('Inner ', j);
+        if(j == 1){
+            break outer;
+        }
+    }
+}
+console.log('End of Loop');
 
+ဒီဥပမာမှာဆိုရင် အပြင်က loop အတွက် label တခုထားထားပီး inner loopက jတန်ဖိုးက 1နဲ့
+ညီရင် outer loop ရဲ့ label ကို berakလုပ်လိုက်တာပဲဖြစ်တယ်
+ဒါ့ကြောင့် အဖြေကတော့ အောက်ကလိုပြရမှာဖြစ်တယ်။
+Outer 0
+Inner 0
+Inner 1
+End of Loop
 
+တကယ်လိုတာ အပေါ်က ဥပမာကို label break မလုပ်ပဲ ရိုးရိုးပဲ break လုပ်မယ်ဆိုရင်တော့ 
+အောက်ကလို result ရမှာဖြစ်တယ်။ ဘာလို့လဲဆိုရင် အထက်ကပြောခဲ့သလို innermostကိုပဲ 
+လုပ်တာဖြစ်လို့ဖြစ်တယ်။ အောက်က ဥပမာကိုပြန်ကြည့်ရအောင်
 
+for(let i = 0; i < 5; i++){
+    console.log('Outer ', i);
+    for(let j = 0; j < 5; j++){
+        console.log('Inner ', j);
+        if(j == 1){
+            break;
+        }
+    }
+}
+console.log('End of Loop');
+Outer 0
+Inner 0
+Inner 1
+Outer 1
+Inner 0
+Inner 1
+Outer 2
+Inner 0
+Inner 1
+Outer 3
+Inner 0
+Inner 1
+Outer 4
+Inner 0
+Inner 1
+End of Loop
 
+return
+- ကကျတော့ဘာလဲဆိုရင် function တခုရဲ့ အဆုံးလို့သတ်မှတ်ချင်ရင်သုံးတယ်။
+တကဘ်လို့ return statement အောက်မှာ အခြားသော statement တွေရှိနေရင်လဲ ဆက်လုပ်မှာမဟုတ်ပါဘူး။
+ဥပမာကုဒ်ကိုကြည့်ကြရအောင်
 
+function returnDemo(){
+    console.log('Before Return');
+    return;
+    console.log('After return');
+}
 
+returnDemo(); // Before Return
+တကဘ်လို့ ဒီfunctionကိုခေါ်တဘ်ဆိုရင်တော့ Before Returnဆိုတာပဲရမှာဖြစ်တယ်
+return ပီးမှထုတ်ထားတဲ့ After Returnကိုတော့ လုပ်ဆောင်သွားမှာ မဟုတ်ပါဘူး
 
+yield
+- yield statement ကိုတော့ generator funcitonတွေမှာသုံးပါတယ်။
+အကျယ်တ၀ံ့ကိုတော့ နောက်အခန်းတွေမှ ဆက်ရှင်းပါ့မယ်။
 
+throw
+- ကတော့ error တခုခုတွေ့ရင် exceptionကို signalအနေနဲ့ လုပ်ဆောင်ပေးတဲ့ကောင်ပဲဖြစ်တယ်။
+ဥပမာနေနဲ့ ကိန်းဂဏန်း၂ခုကို စားတဲ့ကောင်ကိုစဥ်းစားရအောင်
+တကယ်လို့ ပေးလိုက်တဲ့ ကိန်းတခုခုကတာ number မဟုတ်ဘူးဆိုရင် number မဟုတ်ပါဘူးဆိုတဲ့ 
+error ကို signal ပေးမယ်ဆိုရင် အောက်ပါတိုင်းရေးနိုင်တယ်။
+syntax အနေနဲ့ကတော့ throw expression;ဆိုပီးပဲဖြစ်တယ်။
+ဥပအမာအနေနဲ့ဆိုရင်
+function div(a,b)
+{
+console.log('Div called ',a,' ', b );
+if( isNaN(a) || isNaN(b))
+{
+    throw new Error('some operand is NaN ');
+}
+return a/b;
+}
 
+try/catch/finally
+- ဒိကောင်ကကျတော့ ဘယ်လိုနေရာမှာသုံးလဲဆို ခုဏကအပေါ်မှာဖော်ပြခဲ့သလို throw လုပ်ထားတဲ့ Error
+တွေကို ပုံမှန်တိုင်းခေါ်လိုက်ရင် error တက်ပီးသွားရင် program crash ဖြစ်သွားတဲ့တွက်ကြောင့် 
+အောက်က ကျန်ရှိတဲ့အလုပ်တွေကိုဆက်လုပ်နိုင်မှာမဟုတ်ဘူး။ အဲ့တော့ အဲ့လိုမျိုးမဖြစ်အောင် သုံးတယ်။
+try အထဲမှာကျတော့ ခေါ်မယ့် function or statement or expressionကိုရေးပီး
+catchထဲမှာကတော့ exception တခုခုဖြစ်ရင် ပြချင်တဲ့ log လိုကောင်မျိုး errorဖြစ်ရင်လုပ်မဲ့
+ကောင်တွေရေးပါတယ်။ finally ကတော့ အမြဲ runမဘ့် blockပဲဖြစ်တယ်။ error case ဖြစ်သည်ဖြစ်စေ
+မဖြစ်သည်ဖြစ်စေ runမှာဖြစ်ပါတယ်။ သူ့မှာဆိုရင်တော့ db connection ပိတ်တာတွေ
+object ကိုပြန် clean တာမျိုးတွေမှာ သုံးသင့်ပါတယ်။
+syntax အနေနဲ့ကတော့ 
+try{ 
+    // statments
+}catch(e){
+    // exception case 
+}finally{
+    // always execute
+}
 
+အဲ့တော့ အထက်က ဥပမာကိုပြန်ပီးခေါ်မယ်ဆို အောက်ကလို ခေါ်နိုင်တယ်။
 
+try
+{
+let data = div(NaN,10);
+console.log('Data ',data);
+}
+catch(e)
+{
+console.log('We catch error ',e);
+}
+finally
+{
+console.log('Finally run');
+}
+console.log('End of program');
+
+div(NaN, 10)ဆိုပီးခေါ်လိုက်မယ်ဆိုရင် div ကနေပီး NaNဖြစ်နေတဲ့တွက် exception throwလိုက်မှာဖြစ်တဲ့တွက်
+catchထဲကိုရောက်လာပီး throw လို်ကတဲ့ message dataကိုပြပိး နောက် finally ထဲကကောင်ကို
+ဆက်လက်လုပ်ဆောင်မှာဖြစ်တဘ် နောက်ဆုံးမှာမှ ကျန်တဲ့ statementsတွေကိုဆက်လုပ်မှာဖြစ်တယ်။
+ရလာဒ်နေနဲ့ကတော့ အောက်ပါတိုင်းပဲဖြစ်တယ်။
+
+Div called NaN 10
+We catch error Error: some operand is NaN
+Finally run
+End of program
 
 
 
