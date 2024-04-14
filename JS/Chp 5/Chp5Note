@@ -563,22 +563,231 @@ We catch error Error: some operand is NaN
 Finally run
 End of program
 
+5.6 Miscellaneous Statements
+with
+- ဆိုတာက ဘာလဲဆိုရင်တူညီတဲ့ object တွေကို groupလုပ်ပီး temperaily variable
+အနေနဲ့ထားပီး သူ့ရဲ့ block ထဲမှာရှိတဲ့ statmentတွေကို with blockထဲမှာရှိတဲ့ objectရဲ့
+data နဲ့ အလုပ်လုပ်ပေးသွားတာမျိုးကိုခေါ်တာဖြစ်တယ်။
+syntaxအနေနဲ့ကတော့ အောက်ကလိုမျိုးဖြစ်တယ်။
+with (object) statement
 
+ဥပမာအနေနဲ့ဆိုအောက်က example ကိုကြည့်ရအောင်
+ <body>
+    <form >
+        <div>
+          <label>Name</label>
+          <input type="text" id="lblName" name="lblName"/>
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="text" id="lblEmail" name="lblEmail"/>
+          </div>
+        <button type="button" id="btnClick">
+            Click
+        </button>
+    </form>
+</body>
+<script>
+    document.getElementById('btnClick').addEventListener('click',()=>{
+        document.forms[0].lblName.value ='DummyName';
+        document.forms[0].lblEmail.value = 'DummyEmail'; 
+    });
 
+</script>
 
+ဒီဥပမာမှာဆိုရင်formကို document.forms[0]ဆိုပီးတော့ selectလုပ်ပီး
+အဲ့ form ထဲမှာရှိတဲ့ textbox တစ်ခုချင်းစီကို dummy data ထည့်လိုက်တာဖြစ်တယ်
+ဒီcodeကိုကြည့်မယ်ဆိုရင် document.forms[0] ကတူနေတာကိုတွေ့ရမယ်
+အဲ့ကောင်တွေကို with သုံးပြီးတော့အောက်ပါအတိုင်းပြန်ရေးလို့ရတယ်။
+ with(document.forms[0])
+{
+    lblName.value ='DummyName';
+    lblEmail.value = 'DummyEmail';
+}
 
+ဘာကိုဆိုလိုတာလဲဆိုရင် အောက်မှာရှိနေတဲ့ lblEmail.value, lblName.value ဟာဆိုရင်
+document.forms[0]ဆိုတဲ့ object selectorကနေ သက်ဆိုင်တဲ့ ကောင်ဖြစ်ပီး အဲ့object
+ကနေ select လုပ်ထားတယ်ဆိုပီးလုပ်ဆောင်သွားမှာဖြစ်တယ်။
 
+debugger
+javascript မှာ debug လိုက်ရင် debugger သုံးလို့ရတယ်။
+ဥပမာ အားဖြင့်
 
+function sum(a, b){
+    debugger
+    return a + b;
+}
+sum(a, b)
+ဒီကုဒ်ကို run လိုက်ရင် sum functionရဲ့ debuggerဆိုတဲ့နေရာမှာ debug ၀င်လာမှာဖြစ်ပီး
+မိမိကုဒ်ရဲ့ step တခုချင်းစီမှာဖြစ်သွားတဲ့ အကြောင်းအရာတွေကို trackingလုပ်လို့ရမှာဖြစ်တယ်။
+တခုကတော့ ဒီကောင်ကို သုံးတယ်ဆိုရင် production မှာ ဖြတ်ခဲ့ဖို့ မမေ့ဖို့ပဲဖြစ်တယ်။
+မဟုတ်ရင်မိမိcodeက production မှာပါ debug mode အထဲ ဝင်နေမှာဖြစ်တယ်
 
+“use strict”
+- ကိုဘာလို့ သုံးလဲဆိုရင် JS မှာရှိတဲ့ unexpected or သတိမထားမိတဲ့ error တွေကိုကာကွယ်ဖို့
+အသုံးပြုတယ် ။ ဥပမာအားဖြင့်
 
+javascript မှာ variableကို မကြေညာထားဘဲသုံးလို့ရတယ်
+username = 'hello';
+console.log(username);
 
+တစ်ခါတစ်လေမှာ မကြေညာထားဘဲသုံးတဲ့အတွက် မမျှော်လင့်ထားတယ် error တွေတတ်နိုင်တယ်
+အဲ့လို့ကောင်မျိုးကိုကာကွယ်ဖို့ဆိုလို့ရှိရင် use strict ကိုသုံးနိုင်တယ်
+'use strict'
+username = 'hello';
+console.log(username)
 
+'use strict' ကိုတာသုံးလိုက်မယ်ဆိုအောက်ကလိုမျိုး error ထွက်လာမှာဖြစ်တယ်။
+' username is not defined' 
+မဖြစ်သင့်တဲ့ error တွေကို စောစောကျိုမြင်ပီး ကာကွယ်နိုင်မှာဖြစ်တယ်။
 
+နောက်တခုက 'use strict'ကိုသုံးထားမယ်ဆိုရင် withကိုသုံးလို့ရမှာမဟုတ်ဘူးဖြစ်တယ်။
+အထက်က with က use strict modeမှာဆိုရင် error တက်မှာဖြစ်တယ်။
 
+function မှာဆိုရင် default this တန်ဖိုးက window objectကိုရည်ညွှန်းတယ်
+တကယ်လို့ strict မှာဆိုရင်တော့ အဲ့ကောင်က current function ကိုညွှန်းတာဖြစ်တဲ့တွက်
+undefined ဆိုပီးထွက်မှာဖြစ်တယ်။ အောက်က ဥပမာကို ကြည့်ကြရအောင်။
+function hello(){
+    console.log(this); // window object here
+}
 
+'use strict'
+function hello(){
+    console.log(this); // undefined
+}
 
+နောက်တခုက eval. use strict mode မဟုတ်ဘူးဆိုရင် eval ထဲကို အခြား တန်ဖိုးတခုခုထည့်လို့ရတယ်
+ဥပမာအားဖြင့်
+let eval = 'something';
+console.log(eval);
 
+ဒါပေမဲ့ strict modeမှာဆိုရင်တော့ အဲ့ကောင်က 'Unexpected eval or arguments in strict mode'
+ဆိုပီးတက်မှာဖြစ်တယ်။ language ရဲ့ default featuresတွေကို ပြန်လည်ပြင်ဆင်ခွင့် မပေးတဲ့ သဘောမျိုးဖြစ်တယ်။
 
+readonly propertiesတွေကို use strict mode မဟုတ်ရင်ပြင်လို့ရတယ် ဥပမာအားဖြင့်
+windowရဲ့ topကိုပြင်လိုက်လို့ရတယ်။ ဒါပေမဲ့ တန်ဖိုးတော့ပြောင်းလဲသွားမှာ မဟုတ်ပါဘူး
+window.top = 10;
+console.log(window.top)
+
+တကယ်လို့ use strictမှာဆိုရင်တော့ အောက်ပါတိုင်း error တွေ့ရမှာဖြစ်တယ်။
+'use strict'
+window.top = 10;
+console.log(window.top)
+Cannot set property top of #<Window> which has only a getter
+
+strict mode မဟုတ်ရင် ကျွန်တော်တို့က delete ကိုသုံးပီး variableကို ဖြတ်လို့ရတယ်။
+ဒါပေမဲ့ပြတ်သွားမှာတော့မဟုတ်ပါဘူး။ ဘာလို့ဆို delete က object properties, array indexတွေကို
+သာလျှင် ဖြတ်လို့ရတာဖြစ်တယ်။ အဲ့လိုဖြတ်လို့မရတဲ့ကောင်တွေကို ဖြတ်ရင် ဖြတ်မသွားပေမဲ့ ဘာမှ error တနဖိုးထွက်လာမှာမဟုတ်ပါဘူး
+မဖြစ်သင့်ဘူးပေါ့ အဲ့တာကို ကာကွယ်ချင်ရင် strict modeကိုသု့းလို့ရတယ်။
+'use strict'
+delete something
+// Delete of an unqualified identifier in strict mode.
+
+အထက်ကလို ဖြတ်မရပါဘူးဆိုတဲ့ error တက်မှာဖြစ်တယ်။
+
+နောက်တခုက writteable မဟုတ်တဲ့ objectတွေကိုပြင်မယ်ဆိုရင် dataက တကယ်မပြင်သွားပေမဲ့
+ပြင်ခွင့်ပေးတယ်။ အောက်က ဥပမာကိုကြည့်ရအောင်
+let obj = Object.create({}, {
+    x: {
+        value: 1
+    }
+})
+console.log(obj); // {x: 1}
+obj.x = 2
+console.log(obj); // {x: 1}
+
+အဲ့လိုမျိုး မဖြစ်သင့်တဲ့ error တွေကို ကာကွယ်ဖို့ဆိုရင် use strict ကိုသုံးလို့ရတယ်။
+'use strict'
+let obj = Object.create({}, {
+    x: {
+        value: 1
+    }
+})
+console.log(obj); // {x: 1}
+obj.x = 2
+console.log(obj); // {x: 1}
+
+အဲ့လိုတာသုံးလိုက်မယ်ဆို အောက်ပါ error တက်မှာပဲဖြစ်တယ်။
+Cannot assign to read only property 'x' of object
+
+အဲ့တော့ use strict ကိုသုံးတာက ဘာကောင်းလဲပေ့ါ။ ကျွန်တော်တို့ သတိမထားမိတဲ့ အမှားတွေကို ကာကွယ်နိုင်မှာဖြစ်တယ်။
+language designအ၇ မဖြစ်သင့်တဲ့အရာတွေ မဖြစ်နိုင်တဲ့အရာတွေကို စောစောသိပီး errorကို 
+စောစောသိနိုင်တယ်။ ဒါမို့ use strcitကိုသုံးဖို့ recommendပေးချင်ပါတယ်။
+
+const, let, var
+- ဆိုတာက variable ကိုကြေညာရင်သု့းတဲ့ keywordsတွေပဲဖြစ်တယ်။
+သူတို့က ဘာကွာလဲဆိုရင် scope ကွာတယ်။ ဟုတ်ပီ scope ဆိုတာက ဘာလဲဆိုရင်
+variable တခု ကိုယူသု့းနိင်တဲ့ နယ်ပယ်ကိုပြောတာဖြစ်တယ်။
+const, let ကတော့ block scope ဖြစ်ပီး varကတော့ function scopeဖြစ်တယ်။
+ဟုတ်ပီ မြင်သာအောင် ဥပမာအနေနဲ့ကြည့်ရအောင်
+
+function scopeCheck(){
+    let hello = 'hello';
+    console.log('Before scope changed ', hello)
+    {
+        let hello = 'hello world';
+        console.log('Inside scope changed ', hello);
+    }
+
+    console.log('After scope changed ', hello)
+}
+scopeCheck()
+
+ဒိကုဒ်ကိုတာ runလိုက်မယ်ဆိုရင် အောက်ပါတ်ိုင်းရမှာဖြစ်တယ်။
+Before scope changed  hello
+Inside scope changed  hello world
+After scope changed  hello
+
+ပထမ scope အပြင်က ကျေညာထားတဲ့ တန်ဖိုး hello ကို ထုတ်ပီး 
+scope ထဲမှာ တန်ဖိုးတခုကိုပြန်ကြေညာပီးထည့်လိုက်တဲ့ hello worldဆိုတာ ထွက်လာမှာဖြစ်တယ်။
+အဲ့ တန်ဖိုးပြောင်းလိုက်တဲ့ block ပီးလို့ ပြန်ပီးတန်ဖိုးထုတ်ကြည့်ရင်တော့ helloဆိုတာကိုပဲတွေ့ရမှာဖြစ်တယ်။
+ဘာလို့လဲဆိုရင် letက block scope ဖြစ်တဲ့တွက်ကြောင့် block ထဲမှာရှိတဲ့ hello က block အပြင်မှာဆိုရင်
+သူ့ရဲ့ lifetime က မရှိတော့လိုဖြစ်တယ်
+
+အဲ့ကုဒ်ကိုပဲ ကျွန်တော်တို့က var နဲ့ရေးကြည့်ရအောင်
+function scopeCheck(){
+    var hello = 'hello';
+    console.log('Before scope changed ', hello)
+    {
+        var hello = 'hello world';
+        console.log('Inside scope changed ', hello);
+    }
+
+    console.log('After scope changed ', hello)
+}
+scopeCheck()
+ဒိကုဒ်ကိုတာ runလိုက်မယ်ဆိုရင် အောက်ပါတ်ိုင်းရမှာဖြစ်တယ်။
+Before scope changed  hello
+Inside scope changed  hello world
+After scope changed  hello world
+
+ပထမ scope အပြင်က ကျေညာထားတဲ့ တန်ဖိုး hello ကို ထုတ်ပီး 
+scope ထဲမှာ တန်ဖိုးတခုကိုပြန်ကြေညာပီးထည့်လိုက်တဲ့ hello worldဆိုတာ ထွက်လာမှာဖြစ်တယ်။
+ဒါပေမဲ့ ဒီမှာကြတော့ တန်ဖိုးပြောင်းလိုက်တဲ့ block ပီးလို့ ပြန်ပီးတန်ဖိုးထုတ်ကြည့်ရင်တော့ hello worldဆိုတာကိုပဲတွေ့ရမှာဖြစ်တယ်။
+ဘာလို့လဲဆိုရင် varက function scope ဖြစ်တဲ့တွက်ကြောင့် 
+funtion ထဲက မည်သည့်နေရာကမဆိုတန်ဖိုးပြောင်းလဲလိုက်ရင် ကျန်တဲ့နေရာမှာပါ သက်ရောက်မှုရှိမှာဖြစ်တယ်။
+နောက်တခု var ကိုသုံးပီး funtion အပြင်မှာ variable ကိုကြေညာလိုက်တယ်ဆိုရင် 
+သူက window ရဲ့ properties အနေနဲ့ ဖြစ်သွားတယ်ဆိုတာကို သိထားရမယ်။
+ဥပမာအားဖြင့်
+var age = 21;
+console.log(window.age); // 21
+
+ဒီမှာဆိုရင် ageဆိုတဲ့variable ကို var နဲ့ကြေညာလိုက်တယ်။
+ဒါပေမဲ့ သူ့ရဲ့တန်ဖိုးကို window.ageဆိုပီး ထုတ်ကြည့်ရင် 21ဆိုတာတွေ့၇မှာဖြစ်တယ်။
+တကယ်လို့ windowဆိုတဲ့ propertiesကို logထုတ်ပီးရှာမယ်ဆို ageဆိုတဲ့ကောင်ကို တွေ့ရမှာဖြစ်တယ်။
+
+var, const, let ကတော့ scope ကွာတာဖြစ်ပီး။ const နဲ့ let ကကျတော့ ဘာကွာလဲဆိုရင်
+တန်ဖ်ိုးကို ပြန်ပြင်လို့ရမရကွာတာဖြစ်တယ်။
+တကယ်လို့ တန်ဖိုးက ပြောင်းလဲနေမှာဆိုရင် let ကိုသု့းသင့်ပီး PIလိုမျိုးမပြောင်းလဲတဲ့တန်ဖိုးဆိုရင်တော့
+const ကိုသုံးသင့်ပါတယ်။
+ဥပမာ အနေနဲ့ဆိုရင်
+let userName = 'HWH'
+username = 'Hein';
+const PI = 3.14;
+
+ဟုတ်ပီ ကျွန်တော်တို့က PI const တန်ဖိုးကို ထပ်ပီး ပြင်လိုက်မယ်ဆိုရင် ဘာဖြစ်မလဲဆိုအောက်က error တက်မှာဖြစ်ပါတယ်။
+PI = 3.14159;
+// Assignment to constant variable.
 
 
 
