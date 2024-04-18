@@ -1,0 +1,216 @@
+Object ဆိုတာကိုဘာကြောင့်သုံးရလဲဆိုရင် ဥပမာအားဖြင့်
+တစ်ခုနဲ့တစ်ခုဆက်နေတဲ့ဒေတာတွေကို တခုခုလုပ်ချင်တယ်ဆိုပါစို့။
+အောက်က ဥပမာကိုကြည့်ကြရအောင်။
+
+let name1 = "TK";
+let age1 = 38;
+let address1 = "Somewhere";
+
+let name2 = "Aung Aung";
+let age2 = 20;
+let address2 = "Ygn";
+
+function printInfo(name,age,address)
+{
+    console.log('Name ',name, ' Age ',age , 'Address ',address);
+}
+printInfo(name1,age1,address2);
+
+ဒီexampleမှာ userနှစ်ယောက်ရှိတယ်
+user info ကိုထုတ်ပြလို့ရှိရင်တခုနဲ့တခု မှားယွင်းပြီး ထုတ်ပြနိုင်တယ်။
+ပြောချင်တာကဒေတာတွေက သူ့ဒေတာနဲ့သူရှိမနေဘူး
+အဲလိုမျိုးပြဿနာတွေဖြေရှင်းဖို့ဆိုရင်တော့ ကျနော်တို့က object ကိုသုံးနိုင်တယ်
+ဥပမာအားဖြင့်ခုနက example ကို အောက်ဖော်ပြပါအတိုင်းပြန်ရေးနိုင်တယ်
+
+let obj = {
+    name : "HWH",
+    age : 38,
+    address : "Somewhere",
+    print:function()
+    {
+        console.log('Name ',this.name, ' Age ',this.age, ' Address ',this.address);
+    }
+
+};
+obj.print();
+
+ဒီဥပမာဆိုလို့ရှိရင် obj object ကပိုင်ဆိုင်တဲ့ nameကို အခြား သူက မှားယွင်းပီး သုံးနိုင်စရာ
+အကြောင်းမရှိဘူး နောက်တခုက print ဆိုတဲ့ functionမှာ ကိုယ့်ဒေတာနဲ့ကိုထုတ်ပီး သုံးထားတာ
+ဖြစ်တဲ့အတွက်ကြောင့် encapsulation အားဖြင့်လဲကောင်းတယ်လို့ပြောလို့ရပါတယ်။
+
+Createing Object
+Object တွေကိုတည်ဆောက်တော့မယ်ဆိုလို့ရှိရင် အောက်ပါနည်းလမ်းတွေကို သုံးပြုနိုင်ပါတယ်
+
+1. Object Literals
+ - ဒီနည်းလမ်းကတော့အလွယ်ကူဆုံးနဲ့အရိုးရှိဆုံးဖြစ်ပါတယ်
+ဘယ်လိုမျိုး တည်ဆောက်မလဲဆိုရင် ဖော်ပြပါအတိုင်းရေးလို့ရတယ်
+
+let obj = {
+    name : "HWH",
+    age : 38,
+    address : "Somewhere",
+    print:function()
+    {
+        console.log('Name ',this.name, ' Age ',this.age, ' Address ',this.address);
+    }
+
+};
+
+ညီမျှခြင်းရဲ့တဖက်မှာ array lateral way ကြေညာမယ်ဆိုရင် တွန့်ကွင်းကိုအသုံးပြုပြီး ကြေညာနိုင်ပါတယ်။
+တွန့်ကွင်းထဲမှာမှ ဒေတာတွေကို properties(key): value နည်းအတိုင်းကြေညာနိုင်ပါတယ်။
+object မှာ ကိုယ်ပိုင် method တွေကိုလည်း ကြေညာနိုင်ပါတယ်။
+methodName : function(parameter){
+    // method body
+}
+တန်ဖိုးတစ်ခုစီတခုစီကြား method တခုစီတခုစီကြားကို comma အသုံးပြုပီး ခွဲခြားဖို့လိုအပ်ပါတယ်။
+
+2. Object.create()
+- ဒီနည်းလမ်းကတော့ object တွေကို တည်ဆောက်တဲ့အခါ Object.create()ဆိုတဲ့ method ကို အသုံးပြုပီး
+တည်ဆောက်နည်းပဲဖြစ်ပါတယ်။ syntax အနေနဲ့ကတော့ အောက်ပါတိုင်းဖြစ်ပါတယ်။
+Object.create(prototype, propertiesObject)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

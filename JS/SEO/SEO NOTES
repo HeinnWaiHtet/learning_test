@@ -1,0 +1,106 @@
+Things required for the good SEO -
+1. Keyword Research
+2. On-Page Optimization
+3. Quality Content Creation
+4. Mobile Optimization
+5. User Experience (UX)
+6. Utilize Meta Descriptions
+7. Technical SEO
+8. Social Media Integration
+9. Regular Monitoring and Analysis
+10. Stay Updated
+
+1. Keyword Research
+Identify relevant keywords related to your website’s content.
+use meta keyword in your page head.
+meta name='keywords' not work for google search not sure for other search engine.
+you need to add 
+name="description", name="google-site-verification", etc
+description should be your business explanation
+check example in keyword.html
+
+2. On-Page Optimization
+Optimize your website’s pages by including target keywords in titles,
+meta descriptions, headings, and body content. 
+Ensure your website is well-structured with proper URL structures, 
+headings (H1, H2, etc.),adding favor icon and image alt attributes, etc.
+Need To Add Link for your website like linking contact page by # tag
+when click contact us button.
+
+3. Quality Content Creation
+Create high-quality, valuable content that addresses the needs of your target audience. 
+Content should be well-written, engaging, and optimized for relevant keywords. 
+Regularly update your content to keep it fresh and relevant.
+This mean you should provide detail specific information for your websites
+by your own sentences.
+
+4. Mobile Optimization
+Your website needs to be responsive also for mobile view.
+Google prioritizes mobile-responsive websites in its search results.
+check details in this link
+https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing#mobile
+
+5. User Experience (UX)
+should be good for user experience by improving website navigation, 
+reducing page load times, and optimizing for readability and accessibility. 
+like using lazy loading for video loading, minified css, js file
+direct CDN links, etc
+
+6. Utilize Meta Descriptions
+Meta descriptions are the short snippets of text that appear under the title of your website. 
+They are an important part of SEO content creation because 
+they can influence whether or not a user clicks on the link to your page.
+
+Here are some additional tips for writing an effective meta description:
+. Keep it short at around 150 characters or less.
+. Use strong verbs and action words.
+. Highlight the benefits of your product or service.
+
+7. Technical SEO
+Ensure your website is technically optimized for search engines 
+by fixing crawl errors, optimizing site speed, implementing schema markup, 
+and creating XML sitemaps. 
+you can check about sitemaps in this link :
+https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview
+how to create sitemaps in this link :
+https://developers.google.com/search/docs/crawling-indexing/sitemaps/large-sitemaps
+
+8. Social Media Integration
+social media platforms can promote your content and engage with your audience. 
+Social signals can indirectly impact your site’s SEO by increasing 
+brand visibility and attracting more traffic.
+
+9. Regular Monitoring and Analysis
+Continuously monitor your website’s performance using analytics tools 
+like Google Analytics and Search Console. 
+
+10. Stay Updated
+SEO is constantly evolving, so stay informed about the latest trends, 
+algorithm updates, and best practices in the industry.
+
+you can check about upated SEO in the following link.
+https://developers.google.com/search/docs/fundamentals/seo-starter-guide
+
+to configure google-site-verification
+https://search.google.com/search-console/welcome
+
+for the SEO checklists
+https://techjackie.com/get-audit-checklist/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

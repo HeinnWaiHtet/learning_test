@@ -1,0 +1,145 @@
+<html>
+    <script>
+   
+   const Failure = (value)=>({
+        tag: 'Failure',
+        map(){
+            return Failure.of(value);
+        },
+        flatMap(fn)
+        {
+            return Failure.of(value);
+        },
+        val(){
+            return value;
+        },
+        matchWith(context)
+        {
+            return context.failure(value);
+        },
+        and(another)
+        {
+            return another.matchWith({
+                success:(x)=> Failure.of(value),
+                failure:(x)=> Failure.of( value+',' +x)
+            });
+        }
+       
+
+   });
+   Failure.of = value=> Failure(value);
+
+   const Sucess = (value)=>({
+        tag: 'Sucess',
+        val(){
+            return value;
+        },
+        map(fn){
+            return Sucess.of(fn(value));
+        },
+        flatMap(fn)
+        {
+            return fn(value);
+        },
+        matchWith(context)
+        {
+            return context.success(value);
+        },
+        and(another)
+        {
+            return another.matchWith({
+                success:(x)=> Sucess.of(x),
+                failure:(x)=> Failure.of(x)
+            });
+        }
+
+       
+   });
+   Sucess.of = Sucess;
+
+   
+    
+    const notEmpty = (x)=> x!='';
+    const minLength = (len)=>(x)=> x.length >= len;
+    const maxLength = (len)=>(x)=> x.length <= len;
+
+
+ 
+
+    function andCombinators(...validators)
+    {
+        return function(x)
+        {
+            return validators.reduce((a,validator)=>{
+                //console.log('A ',a , ' B ',validator);
+                return a && validator(x);
+            }, true);
+        }
+
+    }
+    function orCombinators(...validators)
+    {
+        return function(x)
+        {
+            return validators.reduce((a,validator)=>{
+                //console.log('A ',a , ' B ',validator);
+                return a || validator(x);
+            }, false);
+        }
+
+    }
+    /*
+    [ validator->Sucess|Failure, ]
+    */
+    function validatorCombinator(...validators)
+    {
+        return function(obj)
+        {
+            return validators.reduce((previousResult,validator)=>{
+                let nextResult = validator(obj);
+                return previousResult.and(nextResult);
+            }, Sucess(obj));
+        }
+    }
+    /*
+    let result = isNameNotEmpty({name: 'TK',})
+                            .map(emailNotEmpty);
+    */
+    //const combinator = validatorCombinator(isNameNotEmpty,emailNotEmpty);
+    
+    /*
+   combinator({
+        name :'',
+        email: '',
+    }).matchWith({
+        success:(obj)=>console.log('Validation ok ',obj),
+        failure:(obj)=> console.log('Validaton failed ',obj)
+    });       
+    //console.log('Combinator ',combinator(obj).val()); 
+    combinator(obj)
+              .map(x=> console.log('Save into db',x)); 
+    */
+    let obj = {
+        name : '',
+        age : 38,
+        email : 'someone@gmail.com'
+    };
+    const isNameNotEmpty = (obj)=> notEmpty(obj.name)?
+                                            Sucess(obj)
+                                            :Failure('Name is empty');
+    const emailNotEmpty = (obj)=> notEmpty(obj.email) ?
+                                            Sucess(obj)
+                                            :Failure('Email is empty');
+    const validEmail = (obj)=> obj.email.includes('@')
+                                            ?Sucess(obj)
+                                            :Failure('Invalid email');
+    const ageValidRange = (obj)=> obj.age >0 && obj.age < 100 
+                                            ?Sucess(obj)
+                                            :Failure('Invalid age');
+
+    let validationResult= Sucess.of(obj)
+                                .flatMap(isNameNotEmpty) //Box(Box(x))
+                                .flatMap(validEmail);//validEmail(Box(x)) =>
+    console.log('Validation Result ',validationResult.val());
+    </script>
+</html>
