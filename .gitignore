@@ -517,3 +517,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/Java/JavaSE/target/
