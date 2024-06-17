@@ -13,6 +13,11 @@ public class TypeConversion {
         char ch = 'A';
         int num = ch;
         
+        System.out.println(num); // 65
+        short s = num; // cannot assign
+        
+        // Type Casting
         byte b = (byte)num;
+        
     }
 }
