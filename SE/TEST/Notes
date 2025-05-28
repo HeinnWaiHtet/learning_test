@@ -1,0 +1,81 @@
+Unit Test
+ဆိုတာကကျေတာ့ production code ရေးပီးမှ ဒါမှမဟုတ် မရေးခင်မှာ 
+မှန်မမှန်ကို စစ်ဆေးဖို့ရေးတဲ့ကောင်ဖြစ်တယ်။
+
+TDD - Test Driven Development
+ဆိုတာကကျတော့ production code မရေးခင် အရင် Test caseရေးပြီးမှ production code ရေးတာပဲဖြစ်တယ်။
+
+
+TDD မှာ Red, Green, Refactor ဆိုတာကို သုံးတယ်။
+Red ဆိုတာက Unit Test ကိုအရင်ရေးတာဖြစ်တယ်။ ဒီအဆင့်မှာ စစ်စရာ ကုဒ်ကမရှိသေးဘူး။
+ဘာကို test caseကိုအရင် ရေးရလဲဆိုတာက test caseက တကယ် အလုပ်လုပ်မလုပ် သေချာအောင်လို့ဖြစ်တယ်။
+
+Green ဆိုတာက Unit Test ပေါ်မူတည်ပီး production code ရေးတာဖြစ်တယ်။
+Green state ကိုရေးရင် fake it until  you make it ဆိုတာကို သုံးသင့်တယ်။
+ဆိုလိုချင်တာက ပထမဆုံးစရေးတဲ့ချိန်မှာ method Aကိုခေါ်ရင် ၁ပြန်မယ်
+ဒါဆို အဲ့ method Aကို fully implement မလုပ်ခင်မှာ fakeအနေနဲ့ ၁ပြန်ပေးလိုက်တာမျိုး
+အရင်ရေးတာမျိုးကိုဆိုလိုတာဖြစ်တယ်။
+
+Refactor ဆိုတာက production code ကို ပြန်လည်စစ်ဆေးပြီး အဆင်ပြေအောင် ပြန်လည်ရေးတာဖြစ်တယ်။
+
+Test case တခုကိုရေးရင် AAAဆိုတာနဲ့ရေးရတယ်။
+Arrange, Act, Assert ဆိုတာကို သုံးတယ်။
+Arrange ဆိုတာက လိုတဲ့ကောင်တွေကို ပြင်ဆင်တာဖြစ်တယ်။
+ဆိုလိုတာက Car ဆိုတဲ့ class ကိုစစ်မယ်ဆို အဲ့ကောင်ရဲ့ instance ကိုဆောက်ပေးတာမျိုးဖြစ်တယ်။
+Act ဆိုတာက အဲ့ကောင်ကိုသုံးတာဖြစ်တယ်။
+Car ရဲ့ Engine startဆိုတဲ့ method ကိုသုံးတာဖြစ်တယ်။
+Assert ဆိုတာက ကိုခေါ်လိုက် အလုပ်လုပ်လိုက်တဲ့ method or something တခုခုက
+မှန်ကန်တဲ့ အဖြေကို ပြန်ပေးမပေး စစ်တာဖြစ်တယ်။
+
+testရေးရင် အောက်ပါအခြေနေတွေအကုန် ခြုံငုံမိအောင်ရေးသင့်တယ်။
+postive case,
+negative case,
+edge case,
+exception case,
+boundary case
+
+TDD က behavior ကိုစမ်းတာဖြစ်တယ်။
+ဆိုလိုတာက methodကိုခေါ်လိုက်တယ် ဘာရရမယ်ဆိုတာကို စမ်းတာဖြစ်တယ်။
+အဲ့ကောင်က ဘယ်လိုရေးထားလဲဆိုတဲ့ implemtationကို စစ်တာမဟုတ်ဘူး။
+ဘာလို့ behaviorကိုစစ်ရလဲဆိုရင် implementationက ပြောင်းနိုင်တယ်, business requirement
+ကလဲပြောင်းနိုင်တယ်။
+ဒါကြောင့်ဒိကောင်ကိုခေါ်ရင် ဘာရရမယ်ဆိုတဲ့ behavior ကိုစစ်တာဖြစ်တယ်။
+
+why should test case write before production code?
+ဘာကြောင့်လဲဆိုရင် production caseက testလုပ်လို့ရမရဆိုတာမျိုး reasonable မဖြစ်နိုင်ဘူး။
+ဘာလို့ဆိုရင် အဲ့ကောင်က testablility ဖြစ်မဖြစ်ကို စဥ်းစားပီးမရေးတာမျိုးတွေဖြစ်နိုင်လို့ဖြစ်တယ်။
+
+
+Three Laws of TDD
+1. You are not allowed to write any production code unless it is to make a failing unit test pass.
+ဘာ့ကြောင့်လဲဆိုရင် test caseရှိတော့မှ ဘယ် feature ကိုလုပ်မှာလဲ ပီးလို့ရှိရင် နောင်မှာ ပိုပီး reasonableဖြစ်နိုင်အောင်ဖြစ်တယ်။
+
+2. You are not allowed to write any more of a unit test than is sufficient to fail
+ and compilation failures are failures.
+ဆိုလိုခြင်တာက ပထမဆုံး red state ကိုရောက်ရင်ပီးပီ။
+အဓိကက test case runလားဆိုတာသေချာခြင်လို့ဖြစ်တယ်။
+ဘာကိုဆိုလိုချင်လဲဆိုရင် တချိန်မှာ test case တခုကိုပဲ အာရုံစိုက်ဖို့ဖြစ်တယ်။
+အကြောင်းအရင်းက ကိုဘ့်ရဲ့ကုဒ်က အဘက်ဘက်ကနေ robust ဖြစ်ဖို့ဖြစ်တယ်။
+
+3. You are not allowed to write any more production code 
+than is sufficient to pass the one failing unit test.
+test caseကို ပြေလည်စေတဲ့ production code ကိုရေးတာဖြစ်တယ်။
+ဘာလို့ဆိုရင် test caseကိုပြေလည်စေတဲ့ကေင်ကိုရေးရင်းနဲ့
+ကိုဘ့်ရဲ့ကုဒ်က အကုန်ပြည့်စုံသွားမှာဖြစ်တယ်။
+
+Test case 1ခုမှာ assertion တခုပဲရှိရမယ်။
+တကြိမ်မှာ behavior တခုကိုပဲ focus ထားတာဖြစ်ရမယ်။
+
+test caseက မြန်သင့်တယ်။
+တခုနဲ့တခု independent ဖြစ်ရမယ်။
+self validating ဖြစ်ရမယ်။ ပြောချင်တာက behavior တိုင်းကို ကုဒ်က စစ်နိုင်ရမယ်။
+
+
+DB callတွေပါလာရင်တော့ unit test လို့မခေါ်တော့ဘူး။
+အဲ့ကောင်က integration test ဖြစ်တယ်။
+သူတို့က slow down ဖြစ်တယ်။
+အဲ့တော့ အဲ့ကောင်တွေကို unit test ထဲမှာပဲ ရောမရေးသင့်ဘူး။
+
+
+
+

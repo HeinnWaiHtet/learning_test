@@ -1,0 +1,154 @@
+Funtions
+Funtions တွေကို ဘာ့ကြောင့်သုံးလဲဆိုရင် 
+abstarct, reusable, တွက်သုံးတာဖြစ်တယ်။
+reusable only တွက် function ခွဲသင့်တာ မဟုတ်ဘူးဆိုတာမှတ်ထားသင့်တယ်။
+funciton လေးတွေခွဲလိုက်တဲ့တွက် readablity နဲ့ testablility မှာလဲ
+ပိုကောင်းတယ်ဆိုတာ မှတ်ထားသင့်တယ်။
+
+abstarct လုပ်တာ ဘာကောင်းလဲဆိုရင် devide and conquer
+တွက်ကောင်းတယ် ပြောရမယ်ဆို ကုဒ်ပြင်လိုက်ကြီး လိုင်းတထောင်လောက်ဖတ်မဲ့အစား
+အပိုင်းပိုင်း ခွဲလိုက်ပီး သူ့ processနဲ့သူ ဖတ်လိုက်တဲ့တွက် ပိုပီးနားလည်ရလွယ်တယ်။
+robustဖြစ်သွားတယ်။
+
+Cargo Cult ဆိုပီး programming မှာလဲပြောတာရှိတယ်။
+အဲ့တာက ဘာပြောချင်လဲဆိုရင် WW2တုန်းက ကျွန်းတကျွန်းပေါ် အမေရီကန်စစ်သားတွေရာက်သွားတယ်။
+အဲ့မှာ ကျွန်းသူကျွန်းသားတွေရှိတယ်။ အဲ့မှာ စစ်သားတွေက ကျွန်းသားတွေနဲ့ရင်းနှီးအောင်
+မုန့်တွေဘာတွေပေးတယ်။ စစ်သားတွေက စစ်ရေးပြတာတွေလေယာဥ်တွေကိုမြင်ပီး
+သူတို့လဲ အဲ့လိုလုပ်ရင် စားသောက်ဖွယ်ရာတွေရောက်လာမယ်ထင်ပီး
+မှတ်နေကျတယ် အဲ့လိုမျိုး လှေနံဓားထစ်လုပ်တာမျိုးကို Cargo cult thinking
+လို့ခေါ်ခြင်တာ။
+ပြောချင်တာက library, frameworkတွေကိုသုံးပေမဲ့
+ဘာလိုလို့သုံးတာလဲ မသိ ဒါလုပ်ရင်ဒါရသွားမှာပဲထင်နေတဲ့ အစွဲမျိုးကို
+cargo cult thinking လို့ခေါ်တဘ်။
+ပြောချင်တာက ကြောင်းရာခြေမြစ် ကောင်းကောင်းမသိပဲ သု့းနေတာမျိုးကိုခေါ်ခြင်တာဖြစ်တယ်။
+
+Funtion တွေသည် small ဖြစ်ရမယ် ဘယ်လောက်ထိ small ရမလဲဆို
+SRP ကို လိုက်နာသည်ထိ small ရမယ်။
+နောက်တခုက function တခုကို scroll ဆွဲပီး ကြည့်ဖို့မလိုအောင်
+သေးရမယ်။ ဖြစ်နိုင်ရင်ပေါ့။
+function တခုသည် အကြောင်းရာတခုတွက်ပဲဖြစ်သင့်တယ်။
+Eg. 
+ValidationAndSave()ဆိုတာမျိုးကို ရှောင်သင့်တယ်။
+အဲ့အစား
+validate(){}
+save(){}
+process() {
+    validate();
+    save();
+}
+
+အဲ့လိုမျိုးသုံးသင့်တယ်။
+
+abstraction
+abstractionဆိုတာ complexity ကို shield လုပ်ထားတာကို abstractionလို့ခေါ်တယ်။
+ဥပမာအားဖြင့် ဖုန်းကိုသုံးမယ်ဆို ဖုန်းရဲ့ internal desing working ကိုသိစရာမလို့ပဲ ခေါ်သုံးလို့ရအောင် 
+လွယ်အောင်လုပ်ထားတာကို abstraction လို့ခေါ်တယ်။
+
+one level abstraction per function
+ပြောချင်တာက funcitonတခုထဲမှာပဲ သူ့ကို implementation ကုဒ်တွေရေးတဘ်
+ပီးတော့ အခြားfunction တခုကို ခေါ်တာမျိုးမလုပ်သင့်ဘူး
+ဥပမာအားဖြင့်
+function binarySearch(list, target) {
+    // sort
+    for(){
+
+    }
+
+    // search
+    search()
+}
+
+အဲ့လိုမျိုးမလုပ်ပဲ sorting တွက်ကိုလဲ သပ်သပ် functionခွဲပီးခေါ်သင့်တယ်
+function binarySearch(list, target) {
+    // sort
+    sort()
+
+    // search
+    search()
+}
+
+abstractionတင်မကပဲ concern တွေကိုပါ ပိုင်းခြားတာကို လုပ်သင့်တယ်။
+concernဆိုတာက 
+db, validation, security, error handling,
+business logic, logging, စတဲ့အခြေအနေတွေကိုခေါ်တယ်။ 
+
+abstractionတွေခွဲတဲ့အခါမှာ ကုဒ်တွေသည် top to bottomကပ်နေတာမျိုးမှာရှိသင့်တယ်
+ဥပအမာ အောက်ကလိုမျိုးပေါ့
+
+funciton main(){
+    errorHandling()
+    db()
+    payment()
+}
+
+payment(){
+    checkAmount()
+}
+checkAmount(){}
+
+အဲ့လိုမိျိုးနေနဲ့ top down ကပ်နေတာမျိုးရှိသင့်တယ်။
+
+*Use Descriptive Names*
+နာမည်မှာ Andပါတာမျိုး more than one action တွေရှိတာမျိုးကိုပဲ 
+ရှောင်ရှားသင့်တယ်။
+
+* Function Arguments *
+maximum number of arguments ၃ ခုလောက်ပဲဖြစ်သင့်တယ်။
+အဲ့ထပ်ပိုများသွားရင်ဘာလုပ်မလဲ
+အဲ့တာမျိုးဆိုရင်ကျတော့ object,recordလိုမျိုး DTOမျိုးပြန်ခွဲပီးသုံးသင့်တယ်။
+
+functionတွေကို easy to use, hard to misuse ဖြစ်ရမယ်။
+
+* boolean flag arguments *
+- ပါတာမျိုးရှောင်သင့်တယ်။
+အဲ့ကောင်က flag argumentsပါတာနဲ့တင်ကို SRPကိုချိုးဖောက်နေတယ်။
+
+* Output Arguments *
+pointer, referece argumentsလိုမျိုးကို ဖြစ်နိုင်ရင်ရှောင်သင့်တယ်။
+ဘာလို့ရှောင်သင့်တာလဲဆိုရင် သူ့ကို ဘယ်ကောင်က တန်ဖိုးပြောင်းလဲသွားလဲဆိုတာ
+reasonalbleမလုပ်နိုင်လို့ဖြစ်တယ်။
+
+* Command-Query Separation *
+Operation, Processသပ်သပ် Getterသပ်သပ် အဲ့လိုမျိုးခွဲခြားသင့်တယ်။
+
+Idempotencyဖြစ်ရမယ်။ 
+ဥပမာ REST APIက method တွေလိုမျိုး Getဆို ဒေတာပဲပြန်ပေးတာမျိုး
+ဖြစ်ရမယ်။
+ဘာလို့လဲဆိုရင် Microservice တွေမှာဆို တကြီမ်failureဖြစ်သွားရင် ပြန်ပီး
+retry လုပ်တာမျိုးရှိတဘ် တကယ်လို့ Get & processကို တာရောထားမယ်ဆို
+reasonalble လုပ်လို့မရသလို processက ပီးသွားတာလားဘာလားဆိုတာမျိုးလဲမသိနိုင်တော့ဘူး။
+အဲ့တာမျိုး အကြိမ်ကြိမ်ခါခါ ခေါ်လို့ရတာကို Idempotencyဖြစ်တယ်လို့ခေါ်တယ်။
+အဲ့ကျတော့ဘာဖြစ်လဲဆိုတော့ reliability, resilienceပိုကောင်းတယ်လို့ပြောလို့ရတယ်။
+
+* Prefer Exceptions to Returning Error Codes *
+Error Codes တွေ ပြန်ပေးထားထပ်စာရင် ဘာErrorဆိုတဲ့
+Exceptionsမျိုးကိုပြန်ပေးတာကောင်းတယ်။
+
+Don't Repeat Yourself
+ပြောချင်တာက ထပ်နေတဲ့ကုဒ်တွေကို ထပ်တလဲလဲပြန်မရေးနဲ့
+အဲ့အစား functionတွေခွဲပီး အဲ့တာကိုပြန်သုံးပါလို့ပြောချင်တာ။
+webတွေမှာဆို Auth စစ်တဲ့ကုဒ်ဆို method တွေတာမှာပြန်စစ်တာမျိုး
+မဟုတ်ပဲနဲ့ middlewareလိုကောင်မျိုးခံပီး သုံးတာမျိုးပေါ့
+အဲ့လိုကောင်မျိုးကိုပြောချင်တာဖြစ်တယ်။
+
+Structured Programming
+အဲ့တာကိုမပြောခင်မှာ unstructured programming ဆိုတာကိုပြောချင်တယ်။
+ဘယ်လိုကောင်မျိုးလဲဆိုရင် အရင် sudo codeတွေမှာသုံးသလို
+labelတွေသုံးပီး goto, break, continue တွေကိုသုံးတာကိုပြောချင်တာဖြစ်တယ်။
+
+အဲ့အစား control structure(loop, if, switch) တွေကိုလာကြတယ်။
+control structure ကောင်းတခုမှာ single entry,
+single exit ဖြစ်ရမယ်။
+
+------------------------------------------------------
+
+Redundant Comment 
+Meaningful ဖြစ်ပီးသားကုဒ်မှာ အခြား Meaning ထပ်မပေးနိုင်ပဲ 
+comment ထပ်ရေးတာမျိုး မလုပ်သင့်ဘူး။
+
+ဖြစ်နိုင်ရင် comment ရေးဖို့မလိုပဲနားလည်ရလွယ်တဲ့ ကုဒ်မျိုးဖြစ်သင့်တယ်။
+
+
+
+
+

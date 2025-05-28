@@ -1,0 +1,159 @@
+ဖတ်လို့လွယ်တဲ့ကုဒ် နားလည်လွယ်တဲ့ကုဒ်ကို clean code လို့ခေါ်တယ်။
+maintenance လုပ်ဖို့လွယ်တဲ့ ကုဒ်ကို clean code လို့ခေါ်တယ်။    
+
+ဖတ်ရခတ် ပြင်ရခတ်ပီးတော့ ကုဒ်ရဲ့ ပမာဏကလဲများတာမျိုးကို techinal debt လို့ခေါ်တယ်။
+techinal debtရှိတဲ့ကောင်တွေက feature အသစ်ထည့်ဖို့ ခက်တယ်ကြာတယ်။
+
+boy Scout Rule
+always leave the campground cleaner than you found it.
+ကိုမရောက်ခင်ကထက် ကိုနေခဲ့လုပ်ခဲ့တဲ့နေရာက သန့်ရှင်းရမယ်။
+အဲ့တာက clean codeမှာ အ၇ေးကြီးတယ်။
+
+Broken window theory
+ပြောချင်တာက ကားတစီးက မှန်ကွဲပီးပီဆို ကျန်တဲ့အရာတွေကို အခြားသူတွေက ဖြတ်စီးဖို့လွယ်သလိုပဲ
+techinal debtတွေအ၇မ်းများတဲ့ကုဒ်ဆိုရင်လဲ ဒီ့ထက်ပိုပီး ဆိုးသွားဖို့ပဲရှိတာမျိုးကိုပြောချင်တာဖြစ်တယ်။
+
+
+clean code ကို definition ဖွင့်ပုံတွေများပြားရှိတယ်။
+elegant and clean ဖြစ်ရမယ်။
+clean code does one thing well.ပြောချင်တာက SRPနဲ့ကိုက်ညီရမယ်။
+simple and direct ဖြစ်ရမယ်။
+
+-----------
+
+Meaning Full Name
+နာမည်ပေးတဲ့အခါမှာလဲ နားလည်ပီး လွယ်ကူရိုးရှင်းပီး သု့းနေကျနာမည်မျိုးကို ပေးသင့်တယ်။
+
+Computer Science မှာ အခက်ဆုံး ၂ခုဆိုပီးရှိတယ်။
+ဘာလဲဆိုရင် naming နဲ့ caching လို့ လူတွေပြောကြတယ်။
+
+နာမည်ပေးတယ်ဆိုတဲ့နေရာမှာဘာကိုပြောချင်တာလဲဆို နာမည်ပေးလို့ရသမျှကို ပေးတာပြောချင်တာဖြစ်တယ်။
+ဥပမာ Api, Method, Class, Variable, Folder, File name
+
+* Intention Revealing Name
+Eg. int d;  // elapsed time in days
+d လို့ပေးလိုက်တယ် ဒါပေမဲ့ အဲ့ dက ဘာကိုဆိုလိုမှန်းမသိ ဘူးcoment တွေရေးဖို့လိုလာ source ကိုဖတ်ဖို့လိုလာတယ်။
+အချိန်ကြာတယ် နားလည်ဖို့ စဥ်းစားနေရတယ်။
+ပြောချင်တာက conginitive load လိုကောင်မျိုးကိုဆိုလိုတာဖြစ်တယ်။
+conginitive loadဆိုတာ ဘာပြောချင်တာလဲဆိုရင် RAM လိုမျိုး လူ့ဦးဏှောက်မှာ short term မှတ်နိုင်တဲ့
+memory ကိုပြောတဖြစ်တယ်။
+လူတယောက်က short termနေနဲ့ ၇ခုလောက်ပဲမှတ်နိုင်တယ်။
+
+ဒီနေရာမှာ ခုဏက dဆိုတဲ့ကောင်ကို ဆိုရင် အောက်မှာခေါ်သု့းထားတယ်ဆိုရင်
+ဘာလဲဆိုတာ ပြန်စဥ်းစားနေရမယ် အဲ့လိုမျိုးကောင်တွေအရမ်းများလာရင် ဘာက ဘာလုပ်တယ်ဆိုတာ
+ပြန်စဥ်းစားဖို့ အချိန်တွေကြာပီး ဦးဏှောက်ပင်ပန်းတာမျိုးတွေဖြစ်လာနို်ငတယ်
+အဲ့တာမို့ အဲ့လိုမျိုးအရာတွေရှောင်ရှားသင့်တယ်။
+အံတာမို့ readability ကောင်းတာမျိုးဖြစ်ရမယ်။
+ဒါပေမဲ့ readability ဖြစ်တိုင်းလဲ understandable ဖြစ်တာမဟုတ်ဘူး
+ဥပမာဆိုရင် 
+int time;
+time လို့ပြောလိုက်တယ် အဲ့ time က ဘာလဲ year လား နေ့လား နာရီလား အဲ့တာကို သိရမယ်။
+အဲ့တော့ understandable ဖြစ်အောင် အောက်ကလိုမျိုးပေးတာကောင်းမယ်။
+
+ဥပမာအားဖြင့်
+int elapsedTimeInDays;
+int daysSinceCreation;
+int daysSinceModification;
+int fileAgeInDays;
+
+ပြောချင်တာက ကိုယ်မဟုတ်တဲ့ အခြားသူက အဲ့ကောင်ကို ဖတ်ရင် နားလည်လွယ်ပီး ပြင်နိုင်ရမယ်။
+
+ကောင်းတာကတော့ ကိုလုပ်နေတဲ့ business flow ရဲ့ domain nameတွေကိုရင်းနှီးပီး
+အဲ့ termတွေကို ပေးတာကောင်းတယ်။
+
+* Avoid DisInforation
+ပြောချင်တာက informationကို မှားယွင်းစွာနားလည်စေနိုင်တာမျိုး ရှောင်ရှားသင့်တယ်။
+
+ဥပမာဆိုရင် var accountList;
+ဒီနေရာမှာဆိုရင်  accountList ဆိုတဲ့နေရာမှာ userAccout, bankAccount, IMAaccountအမျိုးမျိုးဖြစ်နိုင်တယ်။
+အဲ့တော့ တိကျတဲ့ ဘယ်ကောင်မျိုးလဲဆိုတာသေခြာေပးသင့်တယ်။
+
+* Make Meaningful Distinction
+MeaningFul ဖြစ်ပီး ကိုကိုတိုင်ကြည့်ရင်တောင် နားမလည်တာမျိုးမပေးသင့်ဘူး။
+ဥပမာအားဖြင့်
+GetActiveAccount();
+GetActiveAccounts();
+GetActiveAccountInfo();
+
+
+* Use Pronounceable Name
+ပြောချင်တာက ဖတ်လို့ ရတဲ့ နာမည်မျိုးပေးသင့်တယ်။
+ဥပမာအားဖြင်
+Date genymdhms;
+Date genymd;
+
+အဲ့လိုကောင်မျိုးကို ရှောင်ရှားသင့်တယ်။
+
+အောက်ကလိုကောင်မျိုးပေးသင့်တယ်။
+Date generationTimestamp;
+Date generationDate;
+
+* Use Searchable Name
+Single letter , numeric nameတွေက ရှာရဖွေရတာခက်တယ်။
+အဲ့တော့ အဲ့လိုမျိုးကောင်တွေကို ရှောင်ရှားသင့်တယ်။
+constant တွေမှာဆိုရင်လည်း အကြီးတွေကြည့်ပေးတာမျိုးလုပ်သင့်တယ်။
+
+Eg. MAX_CLASSES_PER_STUDENT = 100;
+
+
+* Avoid Encodings
+ပြောချင်တာက unicode character သုံးတာတွေ ရှောင်ရှားသင့်တယ်။
+ဒါပေမဲ့ form control တွေမှာသုံးတဲ့ အောက်ကလိုကောင်မျိုးဆိုရင်တော့
+သုံးနိုင်တယ်။
+Eg. txtUserName, btnSave, lblSchoolName
+
+* Class Names
+Class, objects နာမည်တွေပေးတဲ့အခါမှာ noun phrase ဖြစ်သင့်တယ်။
+ဥပမာအားဖြင့်
+Customer, WikiPage, Account, AddressParser
+
+* Method Names
+Method Nameတွေပေးရင်တော့ Verb ဖြစ်သင့်တယ်။
+ဥပမာအားဖြင်
+postPayment, deletePage, save
+
+* Don't Be Cute
+ပြောချင်တာက နာမည်ပေးတဲ့အချာမှာ အရမ်းနူးတဲ့ နာမည်တွေမပေးနဲ့။
+ဥပမာအားဖြင့်
+whack()လိုကောင်မျိုးကို မပေးသင့်ဘူး။
+အဲ့အစား kill() ဆိုတာမျိုးပဲသုံးသင့်တယ်။
+jargon ဗန်းစကားတွေပေးတာလဲရှောင်သင့်တယ်။
+
+* Pick One Word Per Concept
+ပြောချင်တာက concept တခုတွက် စကားလုံးတခုပဲသုံးသင့်တယ်။
+ဒေတာယူတဲ့နေရာမှာ fetch, get, retrive ဆိုတာရှိပေမဲ့
+ကိုယ့်teamက ဘယ်လိုမျိုးသုံးထားတာလဲ အဲ့ standard ပေါ်မှာမူတည်ပီး
+သုံးသင့် ထားသင့်တယ်။
+
+
+* Don't Pun
+မတူညီတဲ့ရည်ရွဘ်ချက်တွေတဲ့ တူညီတဲ့ နာမည်တွေကို မသုံးနဲ့လို့ပြောချင်တာဖြစ်တယ်။
+ဥပမာအားဖြင့်
+class Address, class AddressParser
+
+Problem domain (Service Layer)
+ဘာပြောချင်တာလဲဆိုရင် busineess level နဲ့ကပ်နေတဲ့ကောင်မျိုးကို
+ခေါ်တာဖြစ်တယ်။
+အဲ့မှာဆိုရင်တော့ busineess term ဆိုင်ရာတွေပေးသင့်တယ်။
+ဥပမာအားဖြင့် 
+Payroll, Employee, Account, Money 
+
+Solution domain (Implementation Layer)
+ကကျတော့ ဘာကိုပြောချင်တာလဲဆိုတော့ အဲ့ business domainကို
+ခေါ်ထားတဲ့ကောင်မျိုး 
+ဥပမာအားဖြင့်
+DAO, Repositoryလိုကောင်မျိုးကို ခေါ်တာဖြစ်တယ်။
+အဲ့လိုကောင်မျိုးမှာဆိုရင် techinal term တွေပေးသင့်တယ်။
+
+* Add Meaningful Context
+ဥပမာအားဖြင့် သိပ်ပီးကွဲကွဲပြားပြားမရှိတဲ့ကော်ငမျိုးဆိုရင် ပိုပီးကွဲကွဲပြားဖြစ်သွားအောင်
+ထည်ပေးတာမျိုး ထည့်ပေးသင့်တယ်။
+ပြည်နယ်ကို stateလို့သုံးမယ်အစား addState or regionဆိုတာမျိုးသုံးသင့်တယ်။
+stateဆိုတာက application state လား အခြား ဘာအခြေနေလဲဆိုတာ မသဲကွဲနိုင်လို့
+အဲ့လိုကောင်မျိုးတွေရှောင်ရှားသင့်တယ်။
+
+
+
+
+
+
