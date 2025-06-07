@@ -1,0 +1,87 @@
+JavaSE
+JavaEE
+JavaME
+ဆိုပီးသုံးမျိုးရှိတယ်။
+
+Java Team Oracle ကနေသတ်မှတ်ထားတာကို ကျတော့
+Java Offical standardလို့ခေါ်ပေမဲံ
+အသုံးများတာကတော့ open JVMကနေသတ်မှတ်ထားတဲ့
+အများသုံးတဲ့ Defacto standardကိုသုံးတာများတယ်။
+
+Spring vs Spring Boot
+အရင်တုန်းက spring မှာကျတော့ ပရောဂျက်တခုလုံးကို
+ကိုကနေပီး အစဆုံး setup လုပ်ပေးရတယ်။
+အဲ့တော့ဘာဖြစ်လဲဆိုတော့ configuration မှာ ပြဿနာဖြစ်
+တာတွေများတယ်။
+
+အဲ့တော့ JS frameworkတွေကို inspire ယူပီး
+Spring Boot ဆိုတာဖြစ်လာတယ်။
+configure တွေကို ကိုတိုင် လိုက်လုပ်စရာမလိုတော့တာပေါ့။
+
+Why Spring?
+
+အရင်တုန်းကဆိုရင် Java သုံးပီး Server side code
+တွေကိုရေးဖို့တွက် servlet ဆိုတာကိုသုံးခဲ့တယ်။
+အဲကောင်တွေက အလုပ်ရှုပ်တယ် ရေးရတာလဲခက်တယ်။
+အဲ့ကောင်တွေကို run ဖို့တွက် Tomcatလို container
+လိုအပ်တယ်။
+
+အဲ့နောက်မှာ JSF ဆိုတာမျိုးပေါ်ခဲ့သေးတယ်။
+
+ခုနောက်ပိုင်းကျတော့ SRPလိုကောင်မျိုးတွေခေတ်စားလာတော့
+အဲ့ပြဿနာတွေကိုဖြေရှင်းဖို့ Spring Boot လိုကောင်မျိုးကို
+တီတွင်ခဲ့ကျတော့။
+အဲ့ကောင်မှာကျတော့ သပ်သပ် container ဆောက်ဖို့မလိုပဲ
+သူကိုတိုင်မှာကိုက container ပါပေးတာကြောင့်ပိုအဆင်ပြေလာတယ်။
+
+Spring က DI(Dependency Injection) ကိုအဓိကထားတဲ့
+Framework ဖြစ်တယ်။
+
+IOC (Inversion of Control)
+Controlဆိုတာက object creation, method callတို့ကိုပြောတာ
+IOC မှာမှ Hollywood Principle ကိုသုံးတယ်။
+Hollywood Principle - Dont call us, we will call you.
+ပြောရမယ်ဆို controller ကိုရေးလိုက်တယ် app တခုrunတယ်
+နောက်ကွယ်က ဘာတွေခေါ်သွားမယ် ဘယ်ကောင်စ runမယ်ဆိုတာ
+ကိုကလုပ်စရာမလိုဘူး framework ကလုပ်ပေးသွားတယ်။
+အဲ့လိုမျိုးကောင်ကို Hollywood Principle လို့ခေါ်တယ်။
+
+SPring Prj မှာ configuration တွက် 
+maven or gradle ကိုသုံးနိုင်တယ်။
+အဲ့ကောင်တွေကဘာလဲဆိုရင် လိုအပ်တဲ့ prj configတွက်
+ဒေတာတွေကို ဆွဲဖို့ဖြစ်တယ်။
+
+pom.xml ဖိုင်မှာက ပရောဂျက်မှာသုံးထားတဲ့ library တွေကို သတ်မှတ်ထားတာဖြစ်တယ်။
+Dependency အသစ်ထပ်ထည့်ချင်တယ်ဆိုရင် pom.xml မှာ 
+arttifactId, groupId, version တို့ကို ထပ်ထည့်ပီး ပြန် update & build လုပ်ရမယ်။
+
+Java Bean
+0 argument constructor ပါရမယ်။
+getter, setter ပါရမယ်။အဲ့လိုကောင်မျိုးကို java bean လို့ခေါ်တယ်။
+
+Spring Bean
+Spring Bean ဆိုတာကကျတော့ spring က manageလုပ်တဲ့
+controller, service, repository တို့ကိုခေါ်တာဖြစ်တယ်။
+
+Spring မှာ Bean တွေကို ဘာလို့သုံးလဲဆိုရင်
+Project မှာရှိတဲ့ Data callတွေကိုသိဖို့ရတာတွက်
+DIအနေနဲ့ပြန်လဲသုံးဖို့တွက် object creation တွေကိုရေးဖို့တွက်သု့းတာဖြစ်တယ်။
+
+
+static resource တွေကိုဆိုရင် resourcesဆိုတဲ့ package အောက်မှာထားတယ်။
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
