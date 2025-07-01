@@ -1,0 +1,117 @@
+macOS မှာ Microsoft SQL Server ကို native အနေနဲ့ တိုက်ရိုက် install လုပ်လို့မရပါဘူး။ SQL Server ဟာ Windows OS မှာပဲ run ပေးနိုင်တဲ့ system ဖြစ်လို့၊ macOS မှာသုံးဖို့အတွက် **Docker** သုံးပြီး container အနေနဲ့ run ချတယ်။ ဒါကြောင့် Docker ကိုအသုံးပြုပြီး SQL Server ကို install လုပ်နည်းကို **တစ်ဆင့်ချင်း**နဲ့ **မြန်မာဘာသာ**ဖြင့် ရှင်းပြပေးပါမယ်။
+
+---
+
+## ✅ Step-by-step - macOS မှာ SQL Server Install လုပ်နည်း (Docker အသုံးပြု)
+
+### **Step 1: Docker Install လုပ်ပါ**
+
+1. [Docker for Mac](https://www.docker.com/products/docker-desktop/) ကိုဝင်ပါ။
+2. `Download Docker for Mac (Apple Silicon / Intel)` ကို Download လုပ်ပါ။
+3. `.dmg` ဖိုင်ကိုဖွင့်ပြီး Docker ကို drag-and-drop ဖြင့် Application folder ထဲထည့်ပါ။
+4. Docker app ကိုဖွင့်ပြီး login လုပ်ပါ (Docker Hub account လိုတတ်ပါတယ်)။
+
+✅ Docker install ပြီးတဲ့အခါ terminal မှာ `docker --version` ရိုက်ကြည့်ပြီး version ပြလာရင် အောင်မြင်ပါတယ်။
+
+---
+
+### **Step 2: SQL Server Docker Image ကို Download လုပ်ပါ**
+
+Terminal ကိုဖွင့်ပြီး အောက်ပါ command ကိုရိုက်ပါ:
+
+```bash
+docker pull mcr.microsoft.com/mssql/server:2022-latest
+```
+
+🔹 ဒီအတွက် `mcr.microsoft.com` ဟာ Microsoft ရဲ့ container registry ဖြစ်ပြီး `2022-latest` က SQL Server 2022 version ဖြစ်ပါတယ်။
+
+---
+
+### **Step 3: SQL Server Container ကို Run လုပ်ပါ**
+
+```bash
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=YourStrong@Password1" \
+   -p 1433:1433 --name sqlserver \
+   -d mcr.microsoft.com/mssql/server:2022-latest
+```
+
+🔸 အသေးစိတ်:
+
+* `-e "ACCEPT_EULA=Y"` → Microsoft ရဲ့ License ကိုသဘောတူပါတယ်။
+* `-e "SA_PASSWORD=..."` → SA (System Admin) password ဖြစ်ပါတယ်။ (Must have uppercase, lowercase, number, special char, and ≥8 characters)
+* `-p 1433:1433` → Host port 1433 ကို container port 1433 နဲ့ချိတ်တယ်။
+* `--name sqlserver` → Container name ဖြစ်ပါတယ်။
+* `-d` → Background မှာ run ပါမယ်။
+
+❗ Password မှာ `@`, Uppercase, Lowercase, နံပါတ် တွေပါဖို့လိုပါတယ်။ မဟုတ်ရင် error တက်ပါတယ်။
+
+---
+
+### **Step 4: SQL Server Running ဖြစ်/မဖြစ်စစ်ပါ**
+
+```bash
+docker ps
+```
+
+ဒါက container လုပ်ဆောင်နေမှုကို ပြပါတယ်။ `sqlserver` ဆိုတဲ့ name နဲ့ run ဖြစ်နေတာကို မြင်ရမယ်။
+
+---
+
+### **Step 5: SQL Server ကို Client Tools (eg: Azure Data Studio) နဲ့ ချိတ်ပါ**
+
+**Azure Data Studio** (SQL GUI tool) ကို install လုပ်ပြီး SQL Server ကို ချိတ်နိုင်ပါတယ်။
+
+#### Azure Data Studio Install
+
+1. [Download Azure Data Studio](https://learn.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio)
+2. macOS version ကို Download လုပ်ပါ။
+3. `.zip` ဖိုင်ကို unzip လုပ်ပြီး Application folder ထဲသို့ ရွှေ့ပါ။
+4. Azure Data Studio ကိုဖွင့်ပါ။
+
+#### Connect Settings
+
+* **Server name** → `localhost`
+* **Authentication type** → `SQL Login`
+* **Login** → `sa`
+* **Password** → သင် Docker မှာသတ်မှတ်ထားတဲ့ password (`YourStrong@Password1`)
+* **Port** → `1433`
+
+🎉 Connect အောင်မြင်ရင် SQL Server ကို macOS မှာ အသုံးပြုနိုင်ပါပြီ။
+
+---
+
+## 🧼 အသုံးဝင်သော Command များ
+
+* **Container ရပ်ချင်ရင်**:
+
+  ```bash
+  docker stop sqlserver
+  ```
+
+* **Container ပြန်ဖွင့်ချင်ရင်**:
+
+  ```bash
+  docker start sqlserver
+  ```
+
+* **Container ဖျက်ချင်ရင်**:
+
+  ```bash
+  docker rm -f sqlserver
+  ```
+
+---
+
+## 📌 အညွှန်း
+
+| အဆင့် | အလုပ်                     | အသုံးပြုတဲ့ Command |
+| ----- | ------------------------- | ------------------- |
+| 1     | Docker Install            | Website မှ Download |
+| 2     | SQL Server Image Download | `docker pull`       |
+| 3     | Container Run             | `docker run`        |
+| 4     | Running Status            | `docker ps`         |
+| 5     | Client Tool               | Azure Data Studio   |
+
+---
+
+မေးမြန်းလိုတာများ, GUI မသုံးဘဲ CLI မှတစ်ဆင့် SQL ချိတ်ဖို့ လိုလားရင်လည်း ပြောနိုင်ပါတယ်။
